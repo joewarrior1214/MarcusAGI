@@ -1,0 +1,3 @@
+from marcus_curriculum_system import run_marcus_development_simulation
+
+run_marcus_development_simulation()
