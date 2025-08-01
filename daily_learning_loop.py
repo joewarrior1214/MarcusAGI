@@ -183,7 +183,6 @@ def conduct_sm2_reviews(concepts_to_review: List[Dict], session_history: List[Di
     reviews = []
     
     for concept_data in concepts_to_review:
-        # Create review object
         review = ConceptReview(
             concept_id=concept_data.get('id', f"concept_{len(reviews)}"),
             content=concept_data.get('content', 'Unknown concept'),
