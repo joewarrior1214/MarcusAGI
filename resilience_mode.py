@@ -1,160 +1,124 @@
 #!/usr/bin/env python3
 """
-Marcus BULLETPROOF Integration - Handles All Error Cases and Saves Logs
+Fixed Daily Learning Loop - Standalone version
+This version works without importing from resilience_mode
 """
 
-import datetime
-import logging
-import os
+from datetime import date
 import json
-from typing import Optional, Dict, Any, List
+import os
 
-# Configure logging
-os.makedirs("logs", exist_ok=True)
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler("logs/resilience_mode.log"),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+# Import your existing systems
+try:
+    from reflection_system import generate_reflection
+    from concept_graph_system import learn_new_concepts, review_previous_concepts
+except ImportError:
+    print("⚠️ Warning: Could not import reflection_system or concept_graph_system")
+    print("Using mock functions instead")
+    
+    # Mock functions if imports fail
+    def generate_reflection():
+        return "Today I learned new things and practiced what I know!"
+    
+    def learn_new_concepts():
+        return ["colors", "shapes", "numbers", "letters", "kindness"]
+    
+    def review_previous_concepts(history):
+        return ["review1", "review2", "review3"]
 
-def safe_import_marcus_systems():
-    """Safely import Marcus systems with fallbacks"""
-    systems = {}
-    fallbacks = []
+# Constants
+OUTPUT_DIR = "output/sessions"
+TODAY = str(date.today())
 
-    try:
-        from marcus_memory_system import MarcusMemorySystem, Concept
-        systems['memory_system'] = MarcusMemorySystem
-        systems['concept'] = Concept
-    except ImportError as e:
-        logger.error("Cannot import memory system", exc_info=True)
-        return None, ['memory_import_failed']
+def generate_analytics_report(session_history):
+    """Simple analytics report generation"""
+    if not session_history:
+        return {}
+    
+    total_concepts = sum(len(s.get('concepts_learned', [])) for s in session_history)
+    total_reviews = sum(s.get('reviews_completed', 0) for s in session_history)
+    avg_retention = sum(s.get('retention_rate', 0) for s in session_history) / len(session_history)
+    
+    return {
+        'total_sessions': len(session_history),
+        'total_concepts_learned': total_concepts,
+        'total_reviews': total_reviews,
+        'average_retention': avg_retention,
+        'daily_average_concepts': total_concepts / len(session_history) if session_history else 0
+    }
 
-    try:
-        from marcus_curriculum_system import MarcusCurriculumSystem
-        systems['curriculum_system'] = MarcusCurriculumSystem
-    except ImportError as e:
-        logger.warning("Curriculum system unavailable", exc_info=True)
-        systems['curriculum_system'] = None
-        fallbacks.append("curriculum_missing")
-
-    try:
-        from reflection_system import MarcusReflectionSystem
-        systems['reflection_system'] = MarcusReflectionSystem
-    except ImportError as e:
-        logger.warning("Reflection system unavailable", exc_info=True)
-        systems['reflection_system'] = None
-        fallbacks.append("reflection_missing")
-
-    return systems, fallbacks
-
-def run_bulletproof_marcus_session():
-    """Run Marcus session with error handling and logging"""
-    print("🌅 Starting BULLETPROOF Marcus Session")
+def run_daily_learning_loop():
+    print("🌸 Marcus Daily Learning Session")
     print("=" * 50)
+    
+    # Step 1: Load yesterday's session (if it exists)
+    session_history = []
+    if os.path.exists(OUTPUT_DIR):
+        for fname in sorted(os.listdir(OUTPUT_DIR)):
+            if fname.endswith(".json"):
+                try:
+                    with open(os.path.join(OUTPUT_DIR, fname)) as f:
+                        session = json.load(f)
+                        session_history.append(session)
+                except Exception as e:
+                    print(f"Could not load {fname}: {e}")
 
-    systems, fallbacks = safe_import_marcus_systems()
-    if not systems:
-        print("❌ Critical error: Cannot import required systems")
-        return None
+    print(f"📚 Loaded {len(session_history)} previous sessions")
 
-    try:
-        memory_system = systems['memory_system']("marcus_bulletproof.db")
-        curriculum_system = systems.get('curriculum_system')
-        reflection_system = systems.get('reflection_system')
+    # Step 2: Review Concepts
+    print("\n🔄 Reviewing previous concepts...")
+    reviews = review_previous_concepts(session_history)
+    print(f"  Completed {len(reviews)} reviews")
+    
+    # Step 3: Learn New Concepts
+    print("\n📘 Learning new concepts...")
+    new_concepts = learn_new_concepts()
+    for concept in new_concepts:
+        print(f"  ✓ Learned: {concept}")
+    
+    # Step 4: Reflect
+    print("\n💭 Generating reflection...")
+    reflection = generate_reflection()
 
-        review_results = safe_conduct_reviews(memory_system)
-        learning_results = safe_conduct_learning(memory_system, systems['concept'])
-        reflection_data = safe_conduct_reflection(reflection_system, learning_results)
+    # Step 5: Calculate retention rate
+    # For now, simulate based on review count
+    retention_rate = 0.85 if len(reviews) > 0 else 1.0
 
-        session_report = {
-            'date': datetime.datetime.now().strftime('%Y-%m-%d'),
-            'reviews_completed': len(review_results),
-            'concepts_learned': len(learning_results.get('new_concepts', [])),
-            'reflection': reflection_data.get('content', 'Today was a learning day!'),
-            'fallbacks_used': fallbacks + reflection_data.get('fallbacks', []),
-            'success': True
-        }
+    # Step 6: Save session
+    session = {
+        "date": TODAY,
+        "reviews_completed": len(reviews),
+        "concepts_learned": new_concepts,
+        "reflection": reflection,
+        "retention_rate": retention_rate
+    }
 
-        print("\n✅ Session completed successfully!")
-        print(f"📊 Reviews: {session_report['reviews_completed']}")
-        print(f"📚 New concepts: {session_report['concepts_learned']}")
-        print(f"💭 Reflection: {session_report['reflection'][:100]}...")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    out_path = os.path.join(OUTPUT_DIR, f"{TODAY}_session.json")
+    with open(out_path, "w") as f:
+        json.dump(session, f, indent=2)
 
-        # Save session report
-        os.makedirs("output/sessions", exist_ok=True)
-        filename = f"output/sessions/{session_report['date']}_report.json"
-        with open(filename, "w") as f:
-            json.dump(session_report, f, indent=2)
-        print(f"📝 Report saved: {filename}")
+    # Step 7: Generate analytics if we have enough history
+    if len(session_history) >= 7:
+        print("\n📊 Generating analytics...")
+        analytics = generate_analytics_report(session_history + [session])
+        analytics_path = os.path.join(OUTPUT_DIR, f"{TODAY}_analytics.json")
+        with open(analytics_path, "w") as f:
+            json.dump(analytics, f, indent=2)
+        print(f"  Analytics saved to: {analytics_path}")
 
-        return session_report
+    # Print summary
+    print("\n" + "="*50)
+    print("✅ Session Complete!")
+    print("="*50)
+    print(f"📅 Date: {TODAY}")
+    print(f"🔄 Reviews completed: {len(reviews)}")
+    print(f"🧠 New concepts learned: {len(new_concepts)}")
+    print(f"💬 Reflection: {reflection}")
+    print(f"🎯 Retention rate: {session['retention_rate']:.2%}")
+    print(f"📁 Session saved to: {out_path}")
 
-    except Exception as e:
-        logger.error("Critical error in Marcus session", exc_info=True)
-        return {
-            'date': datetime.datetime.now().strftime('%Y-%m-%d'),
-            'error': str(e),
-            'fallbacks_used': fallbacks,
-            'success': False
-        }
-
-def safe_conduct_reviews(memory_system) -> List[Dict[str, Any]]:
-    review_results = []
-    try:
-        if hasattr(memory_system, 'get_due_reviews'):
-            due_reviews = memory_system.get_due_reviews()
-            for review_data in due_reviews[:3]:
-                concept_id = review_data.get('id')
-                if concept_id:
-                    import random
-                    success = random.random() > 0.25
-                    memory_system.review_concept(concept_id, success)
-                    review_results.append({'concept_id': concept_id, 'success': success})
-                    print(f"🔍 Reviewed {concept_id}: {'✅' if success else '🔄'}")
-    except Exception as e:
-        logger.error("Error in review phase", exc_info=True)
-    return review_results
-
-def safe_conduct_learning(memory_system, ConceptClass) -> Dict[str, Any]:
-    results = {'new_concepts': [], 'errors': []}
-    examples = [
-        {'id': 'kindness_today', 'content': 'Being kind helps others', 'subject': 'social_skills', 'emotional_context': 'warm'},
-        {'id': 'colors_mixing', 'content': 'Red and blue make purple', 'subject': 'art', 'emotional_context': 'wonder'}
-    ]
-    try:
-        for item in examples:
-            concept = ConceptClass(**item)
-            if memory_system.learn_concept(concept):
-                results['new_concepts'].append(item['id'])
-                print(f"📘 Learned: {item['content']}")
-    except Exception as e:
-        logger.error("Learning failed", exc_info=True)
-        results['errors'].append(str(e))
-    return results
-
-def safe_conduct_reflection(reflection_system, learning_results) -> Dict[str, Any]:
-    if not reflection_system:
-        return {'content': 'Fallback reflection: Learning is fun!', 'fallbacks': ['reflection_fallback']}
-    try:
-        reflection_input = {
-            'concepts_learned': learning_results.get('new_concepts', []),
-            'success_rate': 0.8,
-            'emotional_growth': ['joy', 'curiosity']
-        }
-        moment = reflection_system.generate_contextual_reflection(reflection_input)
-        return {'content': getattr(moment, 'content', str(moment)), 'fallbacks': []}
-    except Exception as e:
-        logger.error("Reflection failed", exc_info=True)
-        return {'content': 'Fallback after error: I learned today!', 'fallbacks': ['reflection_error']}
+    return session
 
 if __name__ == "__main__":
-    session = run_bulletproof_marcus_session()
-    if session and session.get('success'):
-        print("\n🎉 BULLETPROOF session completed successfully!")
-    else:
-        print("\n⚠️ Session encountered errors.")
+    run_daily_learning_loop()
