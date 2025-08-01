@@ -10,29 +10,6 @@ from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 from pathlib import Path
 import random
-from marcus_memory_system import MarcusMemorySystem, Concept
-
-@dataclass
-class LearningObjective:
-    """Represents a specific learning goal"""
-    id: str
-    title: str
-    description: str
-    subject: str
-    grade_level: str
-    emotional_component: str
-    mr_rogers_episode: Optional[str] = None
-    prerequisite_concepts: List[str] = None
-
-@dataclass 
-class DailyLesson:
-    """Represents a complete daily learning session"""
-    date: str
-    objectives: List[LearningObjective]
-    mr_rogers_experience: Optional[Dict[str, Any]] = None
-    reflection_prompt: str = ""
-    emotional_focus: str = "curiosity"
-    concepts_learned: List[str] = None
 
 class MarcusCurriculumSystem:
     """Manages Marcus's educational curriculum and daily learning progression"""
