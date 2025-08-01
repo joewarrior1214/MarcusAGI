@@ -43,7 +43,7 @@ def safe_import_marcus_systems():
         fallbacks.append("curriculum_missing")
 
     try:
-        from enhanced_reflection_system import MarcusReflectionSystem
+        from reflection_system import MarcusReflectionSystem
         systems['reflection_system'] = MarcusReflectionSystem
     except ImportError as e:
         logger.warning("Reflection system unavailable", exc_info=True)
