@@ -9,5 +9,51 @@
     "weather types (science)"
   ],
   "reflection": "I helped my friend understand sharing today. Learning together is better!",
-  "retention_rate": 0.9
+  "retention_rate": 0.9,
+  "timestamp": "2025-08-01T12:00:00",
+  "metrics": {
+    "retention_rate": 0.9,
+    "learning_velocity": 5,
+    "difficulty_progression": 0.1,
+    "mastery_by_subject": {
+      "math": 0.4,
+      "reading": 0.5,
+      "science": 0.3,
+      "social": 0.6,
+      "art": 0.4
+    }
+  },
+  "review_results": [
+    {
+      "concept_id": "review_0",
+      "quality": 3,
+      "success": true,
+      "interval_days": 1,
+      "ease_factor": 2.5,
+      "next_review": "2025-08-01"
+    },
+    {
+      "concept_id": "review_1",
+      "quality": 4,
+      "success": true,
+      "interval_days": 2,
+      "ease_factor": 2.5,
+      "next_review": "2025-08-01"
+    },
+    {
+      "concept_id": "review_2",
+      "quality": 5,
+      "success": true,
+      "interval_days": 3,
+      "ease_factor": 2.5,
+      "next_review": "2025-08-01"
+    }
+  ],
+  "curriculum_progression": {
+    "advanced": false,
+    "current_unit": "Kindergarten Basics",
+    "current_mastery": 0.45,
+    "target_mastery": 0.85,
+    "estimated_concepts_needed": 20
+  }
 }
