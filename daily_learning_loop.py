@@ -442,14 +442,37 @@ def calculate_learning_metrics(session: Dict[str, Any], session_history: List[Di
     else:
         metrics.learning_trend = concepts_learned
     
-    # Add physical exploration metrics if available
+    # Add embodied social exploration metrics if available
     if session.get('physical_exploration'):
         embodied_concepts = len(session.get('embodied_concepts', []))
         metrics.embodied_learning_rate = embodied_concepts
         metrics.grounded_concept_ratio = embodied_concepts / max(1, concepts_learned)
+        
+        # Add enhanced embodied social metrics
+        if session.get('embodied_social_exploration'):
+            metrics.social_interactions = session.get('social_interactions', 0)
+            metrics.sensory_integration_score = session.get('sensory_integration_score', 0)
+            metrics.social_physical_coherence = session.get('social_physical_coherence', 0)
+            metrics.learning_engagement = session.get('learning_engagement', 0)
+            metrics.skills_practiced = session.get('skills_practiced', 0)
+            metrics.sensory_modalities_used = session.get('sensory_modalities_used', 0)
+        else:
+            # Basic embodied learning metrics
+            metrics.social_interactions = 0
+            metrics.sensory_integration_score = 0
+            metrics.social_physical_coherence = 0
+            metrics.learning_engagement = 0
+            metrics.skills_practiced = 0
+            metrics.sensory_modalities_used = 0
     else:
         metrics.embodied_learning_rate = 0
         metrics.grounded_concept_ratio = 0
+        metrics.social_interactions = 0
+        metrics.sensory_integration_score = 0
+        metrics.social_physical_coherence = 0
+        metrics.learning_engagement = 0
+        metrics.skills_practiced = 0
+        metrics.sensory_modalities_used = 0
     
     # Convert to dictionary for compatibility
     metrics_dict = {
@@ -463,6 +486,13 @@ def calculate_learning_metrics(session: Dict[str, Any], session_history: List[Di
         'learning_trend': metrics.learning_trend,
         'embodied_learning_rate': getattr(metrics, 'embodied_learning_rate', 0),
         'grounded_concept_ratio': getattr(metrics, 'grounded_concept_ratio', 0),
+        # Enhanced embodied social metrics
+        'social_interactions': getattr(metrics, 'social_interactions', 0),
+        'sensory_integration_score': getattr(metrics, 'sensory_integration_score', 0),
+        'social_physical_coherence': getattr(metrics, 'social_physical_coherence', 0),
+        'learning_engagement': getattr(metrics, 'learning_engagement', 0),
+        'skills_practiced': getattr(metrics, 'skills_practiced', 0),
+        'sensory_modalities_used': getattr(metrics, 'sensory_modalities_used', 0),
         'transfer_learning': measure_transfer_learning(),
         'meta_learning': {
             'adaptation_rate': calculate_adaptation_rate(session),
@@ -622,53 +652,111 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
         reasoning_engine = None
         print("⚠️  Advanced Reasoning Engine not available")
     
-    # Step 3: Physical Exploration
-    print("\n🎮 Physical Exploration...")
-    current_session = {'date': TODAY, 'physical_exploration': False}
+    # Step 3: Enhanced Embodied Social Exploration
+    print("\n🎮🤝 Enhanced Embodied Social Exploration...")
+    current_session = {'date': TODAY, 'physical_exploration': False, 'embodied_social_exploration': False}
     
     try:
-        # Import the physical world system
+        # Import the enhanced embodied social system
         import sys
         sys.path.append('/workspaces')
-        from marcus_simple_body import MarcusGridWorld, EmbodiedLearning
-        from memory_system import MarcusMemorySystem, Concept
         
-        # Initialize physical world
-        world = MarcusGridWorld()
-        embodied = EmbodiedLearning(world)
-        memory_system = MarcusMemorySystem("marcus_embodied.db")
+        # Try to use the new embodied social integration system first
+        try:
+            from marcus_embodied_social_integration import (
+                MarcusEmbodiedSocialIntegration, PhysicalSocialContext
+            )
+            
+            print("  🎯 Using Enhanced Embodied Social Learning System")
+            
+            # Initialize the comprehensive embodied social system
+            integration = MarcusEmbodiedSocialIntegration(world_size=10)
+            
+            # Run an embodied social learning session
+            learning_experience = integration.run_embodied_social_session(
+                duration_minutes=20,
+                context=PhysicalSocialContext.FREE_PLAY
+            )
+            
+            # Extract comprehensive learning data
+            concepts_discovered = len(learning_experience.concepts_discovered)
+            social_interactions = len(learning_experience.social_exchanges)
+            sensory_modalities = len(learning_experience.sensory_modalities)
+            skills_practiced = len(set(learning_experience.physical_skills_practiced + 
+                                     learning_experience.social_skills_practiced))
+            
+            print(f"  ✅ Embodied Social Learning Complete:")
+            print(f"    • Concepts Discovered: {concepts_discovered}")
+            print(f"    • Social Interactions: {social_interactions}")
+            print(f"    • Sensory Modalities Used: {sensory_modalities}/6")
+            print(f"    • Skills Practiced: {skills_practiced}")
+            print(f"    • Integration Score: {learning_experience.sensory_integration_score:.3f}")
+            print(f"    • Social-Physical Coherence: {learning_experience.social_physical_coherence:.3f}")
+            
+            # Extract key insights from embodied social learning
+            key_insights = learning_experience.concepts_discovered[:3]  # Top 3 discoveries
+            
+            current_session.update({
+                'physical_exploration': True,
+                'embodied_social_exploration': True,
+                'concepts_discovered': concepts_discovered,
+                'social_interactions': social_interactions,
+                'sensory_integration_score': learning_experience.sensory_integration_score,
+                'social_physical_coherence': learning_experience.social_physical_coherence,
+                'learning_engagement': learning_experience.learning_engagement_level,
+                'key_insights': key_insights,
+                'skills_practiced': skills_practiced,
+                'sensory_modalities_used': sensory_modalities,
+                'embodied_concepts': learning_experience.concepts_discovered
+            })
+            
+        except ImportError:
+            # Fallback to basic embodied learning system
+            print("  🔄 Falling back to Basic Embodied Learning System")
+            from marcus_simple_body import MarcusGridWorld, EmbodiedLearning
+            from memory_system import MarcusMemorySystem, Concept
+            
+            # Initialize physical world
+            world = MarcusGridWorld()
+            embodied = EmbodiedLearning(world)
+            memory_system = MarcusMemorySystem("marcus_embodied.db")
+            
+            # Conduct physical exploration - QUIET MODE
+            physical_learnings = embodied.explore_and_learn(20)
+            
+            # Show summary instead of verbose output
+            concepts_discovered = physical_learnings.get('concepts_discovered', 0)
+            print(f"  ✅ Explored world: {concepts_discovered} new concepts discovered")
+            
+            # Extract key insights
+            key_insights = []
+            for category, learnings in physical_learnings.get('key_learnings', {}).items():
+                if learnings:
+                    key_insights.extend(learnings[:2])  # Top 2 per category
+            
+            if key_insights:
+                print("  🧠 Key Discoveries:")
+                for insight in key_insights[:3]:  # Show top 3 insights
+                    print(f"    • {insight}")
+            
+            current_session.update({
+                'physical_exploration': True,
+                'concepts_discovered': concepts_discovered,
+                'key_insights': key_insights[:3],
+                'total_experiences': physical_learnings.get('total_experiences', 0),
+                'embodied_concepts': key_insights[:3]
+            })
         
-        # Conduct physical exploration - QUIET MODE
-        physical_learnings = embodied.explore_and_learn(20)
-        
-        # Show summary instead of verbose output
-        concepts_discovered = physical_learnings.get('concepts_discovered', 0)
-        print(f"  ✅ Explored world: {concepts_discovered} new concepts discovered")
-        
-        # Extract key insights
-        key_insights = []
-        for category, learnings in physical_learnings.get('key_learnings', {}).items():
-            if learnings:
-                key_insights.extend(learnings[:2])  # Top 2 per category
-        
-        if key_insights:
-            print("  🧠 Key Discoveries:")
-            for insight in key_insights[:3]:  # Show top 3 insights
-                print(f"    • {insight}")
-        
-        current_session.update({
-            'physical_exploration': True,
-            'concepts_discovered': concepts_discovered,
-            'key_insights': key_insights[:3],
-            'total_experiences': physical_learnings.get('total_experiences', 0)
-        })
-        
-        # Feed physical insights to reasoning engine
+        # Feed embodied insights to reasoning engine
         if reasoning_engine:
             reasoning_engine.extract_causal_relations_from_session(current_session)
         
     except Exception as e:
-        print(f"  ⚠️ Physical exploration error: {str(e)[:50]}...")
+        print(f"  ⚠️ Embodied exploration error: {str(e)[:50]}...")
+        current_session.update({
+            'physical_exploration': False,
+            'embodied_social_exploration': False
+        })
     
     # Step 4: Advanced Reasoning Challenge
     reasoning_results = []
@@ -829,10 +917,22 @@ def generate_reports(session_history: List[Dict], today: str) -> None:
                 concepts_count = len(session.get('concepts_learned', []))
                 reviews_count = len(session.get('review_results', []))
                 physical_exploration = "✅" if session.get('physical_exploration') else "❌"
+                embodied_social = "✅" if session.get('embodied_social_exploration') else "❌"
                 
                 f.write(f"  {i}. {session_id}\n")
                 f.write(f"     Date: {session.get('date')}\n")
                 f.write(f"     Physical Exploration: {physical_exploration}\n")
+                f.write(f"     Embodied Social Learning: {embodied_social}\n")
+                
+                # Add embodied social metrics if available
+                if session.get('embodied_social_exploration'):
+                    social_interactions = session.get('social_interactions', 0)
+                    integration_score = session.get('sensory_integration_score', 0)
+                    coherence_score = session.get('social_physical_coherence', 0)
+                    skills_practiced = session.get('skills_practiced', 0)
+                    f.write(f"     Social Interactions: {social_interactions} | Integration: {integration_score:.3f}\n")
+                    f.write(f"     Social-Physical Coherence: {coherence_score:.3f} | Skills: {skills_practiced}\n")
+                
                 f.write(f"     Concepts: {concepts_count} | Reviews: {reviews_count}\n\n")
         
         print(f"📊 Report saved: {report_id}")
