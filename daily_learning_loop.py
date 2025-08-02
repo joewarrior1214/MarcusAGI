@@ -122,8 +122,7 @@ class LearningMetrics:
     def calculate_learning_velocity(self) -> float:
         """Calculate rate of learning progress"""
         return (self.review_success_rate * 0.6 + 
-                self.concept_acquisition_rate * 0.4) * 
-                self.adaptive_difficulty
+                self.concept_acquisition_rate * 0.4) * self.adaptive_difficulty
 
     def get_optimal_difficulty(self) -> float:
         """Determine optimal challenge level"""
@@ -479,23 +478,13 @@ def generate_analytics_report(session_history: List[Dict]) -> Dict[str, Any]:
     }
 
 def generate_parent_summary(session: Dict) -> str:
-    """
-    Generate parent-friendly summary
-    Enhancement for Issue #3
-    """
+    """Generate parent-friendly summary"""
     summary = f"""📅 Marcus's Daily Learning Report - {session['date']}
 
 🌟 Today's Achievements:
 • Learned {len(session.get('concepts_learned', []))} new concepts
 • Completed {session.get('reviews_completed', 0)} reviews
-• Success rate: {session.get('metrics', {}).get('retention_rate', 0):.0%}
-
-📚 What Marcus Learned Today:
 """
-    
-    # List concepts in friendly format
-    for i, concept in enumerate(session.get('concepts_learned', []), 1):
-        summary += f"{i}. {concept}\n"
     
     # Add progression status
     progression = session.get('curriculum_progression', {})
@@ -507,10 +496,12 @@ def generate_parent_summary(session: Dict) -> str:
         if progression.get('weakest_subject'):
             summary += f"\n💡 Focus area: {progression['weakest_subject']}"
     
-    # Add reflection
+    # Add metrics section using session metrics
+    metrics = session.get('metrics', {})
+    if metrics:
         summary += f"\n📈 Learning Stats:\n"
         summary += f"• Retention rate: {metrics.get('retention_rate', 0):.0%}\n"
-        summary += f"• Learning speed: {metrics.get('learning_velocity', 0)} concepts/session\n"
+        summary += f"• Learning velocity: {metrics.get('learning_velocity', 0)} concepts/session\n"
     
     return summary
 
@@ -551,6 +542,7 @@ def review_previous_concepts(history: List[Dict]) -> List[str]:
     """Temporary review generator"""
     return ["using kind words (social)", "bigger and smaller (math)"]
 
+# Add config validation
 # Add config validation
 def validate_config() -> None:
     required_keys = ['max_new_concepts', 'max_reviews', 'mastery_threshold']
@@ -713,6 +705,14 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
     for i, concept in enumerate(all_concepts, 1):
         print(f"  {i}. {concept}")
     
+    # Step 6: Calculate metrics
+    print("\n📈 Calculating learning metrics...")
+    
+    # Create session before metrics calculation
+    session = {
+        'date': TODAY,
+        'timestamp': datetime.now().isoformat(),
+        'reviews_completed': len(review_results),
     # Step 6: Calculate metrics
     print("\n📈 Calculating learning metrics...")
     
