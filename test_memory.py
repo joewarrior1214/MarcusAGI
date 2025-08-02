@@ -1,3 +1,3 @@
-from marcus_memory_system import test_marcus_memory
+from memory_system import test_marcus_memory
 
 test_marcus_memory()

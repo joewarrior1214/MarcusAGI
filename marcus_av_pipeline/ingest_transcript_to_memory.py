@@ -7,7 +7,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 import json
 from pathlib import Path
-from marcus_memory_system import MarcusMemorySystem, Concept
+from memory_system import MarcusMemorySystem, Concept
 
 def ingest_labeled_transcript(transcript_path: str, episode_title: str):
     memory = MarcusMemorySystem()

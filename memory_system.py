@@ -9,7 +9,7 @@ import sqlite3
 import json
 import datetime
 from typing import Dict, List, Optional, Any
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from pathlib import Path
 import logging
 
@@ -19,8 +19,12 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class MemoryRecord:
-    """Represents a single memory record with spaced repetition data"""
+    """Enhanced memory record with types"""
     concept_id: str
+    memory_type: str = "semantic"  # semantic, episodic, procedural
+    context_vector: List[float] = field(default_factory=list)
+    related_concepts: Dict[str, float] = field(default_factory=dict)
+    emotional_strength: float = 0.0
     mastery_level: int = 0
     ease_factor: float = 2.5
     interval_days: int = 1
@@ -56,6 +60,10 @@ class MarcusMemorySystem:
             cursor.execute("""
                 CREATE TABLE IF NOT EXISTS memory_records (
                     concept_id TEXT PRIMARY KEY,
+                    memory_type TEXT NOT NULL DEFAULT 'semantic',
+                    context_vector TEXT NOT NULL DEFAULT '[]',
+                    related_concepts TEXT NOT NULL DEFAULT '{}',
+                    emotional_strength REAL NOT NULL DEFAULT 0.0,
                     mastery_level INTEGER NOT NULL DEFAULT 0,
                     ease_factor REAL NOT NULL DEFAULT 2.5,
                     interval_days INTEGER NOT NULL DEFAULT 1,
@@ -77,6 +85,18 @@ class MarcusMemorySystem:
                     grade_level TEXT NOT NULL DEFAULT 'kindergarten',
                     emotional_context TEXT DEFAULT 'neutral',
                     created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+            
+            # Create concept_relationships table
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS concept_relationships (
+                    concept_id TEXT,
+                    related_id TEXT,
+                    strength REAL DEFAULT 1.0,
+                    PRIMARY KEY (concept_id, related_id),
+                    FOREIGN KEY (concept_id) REFERENCES concepts (id) ON DELETE CASCADE,
+                    FOREIGN KEY (related_id) REFERENCES concepts (id) ON DELETE CASCADE
                 )
             """)
             
@@ -132,11 +152,16 @@ class MarcusMemorySystem:
                 
                 cursor.execute("""
                     INSERT OR REPLACE INTO memory_records 
-                    (concept_id, mastery_level, ease_factor, interval_days, 
-                     repetitions, next_review, success_streak, total_attempts)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    (concept_id, memory_type, context_vector, related_concepts, emotional_strength, 
+                     mastery_level, ease_factor, interval_days, repetitions, next_review, 
+                     success_streak, total_attempts)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     memory_record.concept_id,
+                    memory_record.memory_type,
+                    json.dumps(memory_record.context_vector),
+                    json.dumps(memory_record.related_concepts),
+                    memory_record.emotional_strength,
                     memory_record.mastery_level,
                     memory_record.ease_factor,
                     memory_record.interval_days,
@@ -183,14 +208,18 @@ class MarcusMemorySystem:
                 # Parse current state
                 memory = MemoryRecord(
                     concept_id=row[0],
-                    mastery_level=row[1],
-                    ease_factor=row[2],
-                    interval_days=row[3],
-                    repetitions=row[4],
-                    last_reviewed=row[5],
-                    next_review=row[6],
-                    success_streak=row[7],
-                    total_attempts=row[8]
+                    memory_type=row[1],
+                    context_vector=json.loads(row[2]),
+                    related_concepts=json.loads(row[3]),
+                    emotional_strength=row[4],
+                    mastery_level=row[5],
+                    ease_factor=row[6],
+                    interval_days=row[7],
+                    repetitions=row[8],
+                    last_reviewed=row[9],
+                    next_review=row[10],
+                    success_streak=row[11],
+                    total_attempts=row[12]
                 )
                 
                 # Update based on SuperMemo-2 algorithm
@@ -382,6 +411,59 @@ class MarcusMemorySystem:
         """
         
         return reflection.strip()
+
+    def strengthen_connections(self, concept_id: str, related_ids: List[str], strength: float):
+        """Build neural-like memory connections"""
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            for related_id in related_ids:
+                cursor.execute("""
+                    INSERT OR REPLACE INTO concept_relationships
+                    (concept_id, related_id, strength)
+                    VALUES (?, ?, ?)
+                """, (concept_id, related_id, strength))
+
+    def deep_reflection(self) -> Dict[str, Any]:
+        """Generate deeper learning insights"""
+        return {
+            'knowledge_clusters': self._find_concept_clusters(),
+            'learning_patterns': self._analyze_learning_patterns(),
+            'memory_strength': self._calculate_memory_strength(),
+            'knowledge_gaps': self._identify_knowledge_gaps()
+        }
+
+    def process_emotional_memory(
+        self, 
+        concept_id: str,
+        emotional_context: Dict[str, float]
+    ) -> bool:
+        """Process and store emotional context of memories"""
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                    UPDATE concepts 
+                    SET emotional_context = ?
+                    WHERE id = ?
+                """, (json.dumps(emotional_context), concept_id))
+                return True
+        except Exception as e:
+            logger.error(f"Error processing emotional memory: {e}")
+            return False
+
+    def consolidate_memories(self) -> None:
+        """Daily memory consolidation process"""
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            today = datetime.datetime.now().date()
+            
+            # Strengthen frequently accessed memories
+            cursor.execute("""
+                UPDATE memory_records 
+                SET strength = strength * 1.2
+                WHERE last_accessed >= ? 
+                AND access_count > 5
+            """, (today - datetime.timedelta(days=1),))
 
 # Example usage and testing functions
 def test_marcus_memory():
