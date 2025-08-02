@@ -1,0 +1,1034 @@
+{
+  "system_info": {
+    "integration_type": "embodied_social_learning",
+    "world_size": 12,
+    "total_sessions": 5,
+    "creation_timestamp": "2025-08-02T06:53:28.131621"
+  },
+  "embodied_social_skills": {
+    "personal_space_awareness": {
+      "description": "Understanding comfortable distances in social interactions",
+      "mastery_level": 0.14898377878817998,
+      "practice_sessions": 2,
+      "physical_components": [
+        "proximity_sensing",
+        "movement_control",
+        "spatial_awareness"
+      ],
+      "social_components": [
+        "reading_comfort_cues",
+        "respecting_boundaries",
+        "appropriate_closeness"
+      ],
+      "sensory_requirements": [
+        "spatial",
+        "visual",
+        "social"
+      ],
+      "practice_contexts": [
+        "classroom_circle",
+        "free_play"
+      ]
+    },
+    "collaborative_movement": {
+      "description": "Coordinating physical actions with peers",
+      "mastery_level": 0.23170694545315393,
+      "practice_sessions": 4,
+      "physical_components": [
+        "synchronized_movement",
+        "following_leaders",
+        "spatial_coordination"
+      ],
+      "social_components": [
+        "taking_turns",
+        "following_instructions",
+        "group_coordination"
+      ],
+      "sensory_requirements": [
+        "kinesthetic",
+        "visual",
+        "social"
+      ],
+      "practice_contexts": [
+        "group_activity",
+        "playground"
+      ]
+    },
+    "touch_social_communication": {
+      "description": "Using appropriate touch in social contexts",
+      "mastery_level": 0.0,
+      "practice_sessions": 0,
+      "physical_components": [
+        "gentle_touch",
+        "touch_sensitivity",
+        "touch_timing"
+      ],
+      "social_components": [
+        "consent_understanding",
+        "comfort_expression",
+        "affection_appropriateness"
+      ],
+      "sensory_requirements": [
+        "tactile",
+        "social"
+      ],
+      "practice_contexts": [
+        "shared_workspace",
+        "free_play"
+      ]
+    },
+    "visual_social_tracking": {
+      "description": "Using vision to understand social dynamics",
+      "mastery_level": 0.14898377878817998,
+      "practice_sessions": 2,
+      "physical_components": [
+        "eye_movement",
+        "attention_direction",
+        "visual_scanning"
+      ],
+      "social_components": [
+        "reading_expressions",
+        "following_social_cues",
+        "group_awareness"
+      ],
+      "sensory_requirements": [
+        "visual",
+        "social"
+      ],
+      "practice_contexts": [
+        "classroom_circle",
+        "group_activity"
+      ]
+    },
+    "shared_object_play": {
+      "description": "Playing cooperatively with shared physical objects",
+      "mastery_level": 0.33848926348128205,
+      "practice_sessions": 5,
+      "physical_components": [
+        "object_manipulation",
+        "sharing_movements",
+        "cooperative_handling"
+      ],
+      "social_components": [
+        "turn_taking",
+        "sharing_negotiation",
+        "collaborative_creativity"
+      ],
+      "sensory_requirements": [
+        "tactile",
+        "visual",
+        "social"
+      ],
+      "practice_contexts": [
+        "shared_workspace",
+        "free_play"
+      ]
+    }
+  },
+  "learning_experiences": [
+    {
+      "session_id": "embodied_social_1",
+      "timestamp": "2025-08-02T06:53:28.115213",
+      "sensory_modalities": [
+        "kinesthetic",
+        "visual",
+        "tactile"
+      ],
+      "physical_context": "free_play",
+      "social_participants": [
+        "Alice",
+        "Bob"
+      ],
+      "marcus_position": [
+        3,
+        6
+      ],
+      "objects_interacted": [],
+      "movements_made": [
+        "approach_Alice",
+        "approach_Alice",
+        "north: True"
+      ],
+      "touch_experiences": [
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        }
+      ],
+      "visual_observations": [
+        {
+          "visible_objects": [
+            {
+              "object": "wall",
+              "color": "gray",
+              "distance": 2,
+              "direction": "north",
+              "position": [
+                5,
+                5
+              ]
+            },
+            {
+              "object": "block",
+              "color": "blue",
+              "distance": 2,
+              "direction": "south",
+              "position": [
+                7,
+                7
+              ]
+            }
+          ],
+          "facing": "north",
+          "vision_range": 3,
+          "social_observations": [
+            {
+              "peer": "Alice",
+              "position": [
+                3,
+                8
+              ],
+              "distance": 3.605551275463989,
+              "activity": "organizing materials",
+              "body_language": "focused on their activity",
+              "interaction_opportunity": "False"
+            },
+            {
+              "peer": "Bob",
+              "position": [
+                8,
+                3
+              ],
+              "distance": 3.605551275463989,
+              "activity": "drawing pictures",
+              "body_language": "moving around actively",
+              "interaction_opportunity": "False"
+            }
+          ],
+          "social_objects": [
+            {
+              "object": "playground_ball",
+              "type": "shared_toy",
+              "distance": 1.4142135623730951,
+              "current_users": [],
+              "interaction_type": "cooperative_play",
+              "available": true
+            },
+            {
+              "object": "story_book",
+              "type": "shared_learning",
+              "distance": 1.4142135623730951,
+              "current_users": [],
+              "interaction_type": "collaborative_reading",
+              "available": true
+            },
+            {
+              "object": "building_blocks",
+              "type": "construction_play",
+              "distance": 4.0,
+              "current_users": [],
+              "interaction_type": "cooperative_building",
+              "available": true
+            }
+          ],
+          "interaction_zones": [
+            {
+              "zone": "circle_time",
+              "distance_to_center": 1.4142135623730951,
+              "inside_zone": "True",
+              "activity_suggestion": "Join group discussion or story time"
+            }
+          ]
+        }
+      ],
+      "social_exchanges": [
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice notices you and waves"
+        }
+      ],
+      "peer_proximities": {
+        "Alice": 3.605551275463989,
+        "Bob": 3.605551275463989
+      },
+      "collaborative_actions": [],
+      "physical_skills_practiced": [],
+      "social_skills_practiced": [],
+      "concepts_discovered": [
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing"
+      ],
+      "emotional_responses": [
+        "curious_discovery"
+      ],
+      "sensory_integration_score": 0.5,
+      "social_physical_coherence": 0.14285714285714285,
+      "learning_engagement_level": 0.1
+    },
+    {
+      "session_id": "embodied_social_2",
+      "timestamp": "2025-08-02T06:53:28.119309",
+      "sensory_modalities": [
+        "social",
+        "visual",
+        "tactile"
+      ],
+      "physical_context": "classroom_circle",
+      "social_participants": [
+        "Alice"
+      ],
+      "marcus_position": [
+        3,
+        7
+      ],
+      "objects_interacted": [],
+      "movements_made": [
+        "approach_Alice"
+      ],
+      "touch_experiences": [
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        }
+      ],
+      "visual_observations": [
+        {
+          "visible_objects": [
+            {
+              "object": "wall",
+              "color": "gray",
+              "distance": 3,
+              "direction": "south",
+              "position": [
+                5,
+                5
+              ]
+            }
+          ],
+          "facing": "north",
+          "vision_range": 3,
+          "social_observations": [
+            {
+              "peer": "Alice",
+              "position": [
+                3,
+                8
+              ],
+              "distance": 2.0,
+              "activity": "reading a book",
+              "body_language": "making eye contact and smiling",
+              "interaction_opportunity": "True"
+            }
+          ],
+          "social_objects": [
+            {
+              "object": "playground_ball",
+              "type": "shared_toy",
+              "distance": 4.123105625617661,
+              "current_users": [],
+              "interaction_type": "cooperative_play",
+              "available": true
+            },
+            {
+              "object": "story_book",
+              "type": "shared_learning",
+              "distance": 2.23606797749979,
+              "current_users": [],
+              "interaction_type": "collaborative_reading",
+              "available": true
+            }
+          ],
+          "interaction_zones": []
+        }
+      ],
+      "social_exchanges": [
+        {
+          "type": "sharing",
+          "peer": "Alice",
+          "success_rate": 0.844286858225537,
+          "response": "Alice happily shares: 'Of course! Here you go!'",
+          "learning": "Sharing creates good feelings between friends - This interaction went really well!"
+        },
+        {
+          "type": "collaboration",
+          "peer": "Alice",
+          "success_rate": 0.6010598492385063,
+          "response": "Alice hesitates: 'I'm not sure... maybe later?'",
+          "learning": "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "comfort",
+          "peer": "Alice",
+          "success_rate": 0.658117248052118,
+          "response": "Alice nods: 'That sounds hard. I hope you feel better.'",
+          "learning": "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "greeting",
+          "peer": "Alice",
+          "success_rate": 0.7309630577985744,
+          "response": "Alice looks up briefly and gives a small wave",
+          "learning": "Friendly greetings help start positive interactions - Sometimes interactions don't go as expected, and that's okay"
+        }
+      ],
+      "peer_proximities": {
+        "Alice": 2.0
+      },
+      "collaborative_actions": [
+        "collaborated_with_Alice"
+      ],
+      "physical_skills_practiced": [
+        "shared_object_play",
+        "collaborative_movement",
+        "personal_space_awareness",
+        "visual_social_tracking"
+      ],
+      "social_skills_practiced": [
+        "sharing",
+        "collaboration",
+        "comfort",
+        "greeting"
+      ],
+      "concepts_discovered": [
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Sharing creates good feelings between friends - This interaction went really well!",
+        "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay",
+        "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay",
+        "Friendly greetings help start positive interactions - Sometimes interactions don't go as expected, and that's okay"
+      ],
+      "emotional_responses": [
+        "proud_cooperation",
+        "curious_discovery"
+      ],
+      "sensory_integration_score": 0.5,
+      "social_physical_coherence": 1.0,
+      "learning_engagement_level": 0.5
+    },
+    {
+      "session_id": "embodied_social_3",
+      "timestamp": "2025-08-02T06:53:28.123002",
+      "sensory_modalities": [
+        "social",
+        "kinesthetic",
+        "visual"
+      ],
+      "physical_context": "playground",
+      "social_participants": [
+        "Alice"
+      ],
+      "marcus_position": [
+        3,
+        7
+      ],
+      "objects_interacted": [],
+      "movements_made": [
+        "approach_Alice",
+        "south: True",
+        "approach_Alice",
+        "approach_Alice",
+        "approach_Alice",
+        "west: True"
+      ],
+      "touch_experiences": [],
+      "visual_observations": [
+        {
+          "visible_objects": [
+            {
+              "object": "wall",
+              "color": "gray",
+              "distance": 4,
+              "direction": "south",
+              "position": [
+                5,
+                5
+              ]
+            }
+          ],
+          "facing": "east",
+          "vision_range": 3,
+          "social_observations": [
+            {
+              "peer": "Alice",
+              "position": [
+                3,
+                8
+              ],
+              "distance": 1.0,
+              "activity": "playing with blocks",
+              "body_language": "gesturing for you to come over",
+              "interaction_opportunity": "True"
+            }
+          ],
+          "social_objects": [
+            {
+              "object": "playground_ball",
+              "type": "shared_toy",
+              "distance": 4.0,
+              "current_users": [],
+              "interaction_type": "cooperative_play",
+              "available": true
+            },
+            {
+              "object": "story_book",
+              "type": "shared_learning",
+              "distance": 2.8284271247461903,
+              "current_users": [],
+              "interaction_type": "collaborative_reading",
+              "available": true
+            }
+          ],
+          "interaction_zones": [
+            {
+              "zone": "circle_time",
+              "distance_to_center": 4.0,
+              "inside_zone": "False",
+              "activity_suggestion": "Join group discussion or story time"
+            }
+          ]
+        }
+      ],
+      "social_exchanges": [
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice is right next to you and smiles"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice is right next to you and smiles"
+        },
+        {
+          "type": "comfort",
+          "peer": "Alice",
+          "success_rate": 0.8976400063616273,
+          "response": "Alice gently responds: 'It's okay, I understand how you feel.'",
+          "learning": "Being kind when someone is sad helps them feel better - This interaction went really well!"
+        },
+        {
+          "type": "sharing",
+          "peer": "Alice",
+          "success_rate": 0.7719787297588918,
+          "response": "Alice considers: 'I need this right now, but you can have it next'",
+          "learning": "Sharing creates good feelings between friends - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "comfort",
+          "peer": "Alice",
+          "success_rate": 0.6484523935414165,
+          "response": "Alice nods: 'That sounds hard. I hope you feel better.'",
+          "learning": "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "greeting",
+          "peer": "Alice",
+          "success_rate": 0.8319710358630827,
+          "response": "Alice smiles warmly and says 'Hi Marcus! Want to play?'",
+          "learning": "Friendly greetings help start positive interactions - This interaction went really well!"
+        }
+      ],
+      "peer_proximities": {
+        "Alice": 1.0
+      },
+      "collaborative_actions": [],
+      "physical_skills_practiced": [
+        "shared_object_play",
+        "personal_space_awareness",
+        "visual_social_tracking"
+      ],
+      "social_skills_practiced": [
+        "comfort",
+        "sharing",
+        "comfort",
+        "greeting"
+      ],
+      "concepts_discovered": [
+        "Being kind when someone is sad helps them feel better - This interaction went really well!",
+        "Sharing creates good feelings between friends - Sometimes interactions don't go as expected, and that's okay",
+        "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay",
+        "Friendly greetings help start positive interactions - This interaction went really well!"
+      ],
+      "emotional_responses": [
+        "curious_discovery"
+      ],
+      "sensory_integration_score": 0.5,
+      "social_physical_coherence": 1.0,
+      "learning_engagement_level": 0.4
+    },
+    {
+      "session_id": "embodied_social_4",
+      "timestamp": "2025-08-02T06:53:28.126644",
+      "sensory_modalities": [
+        "social",
+        "kinesthetic",
+        "visual"
+      ],
+      "physical_context": "shared_workspace",
+      "social_participants": [
+        "Alice"
+      ],
+      "marcus_position": [
+        3,
+        8
+      ],
+      "objects_interacted": [],
+      "movements_made": [
+        "approach_Alice",
+        "north: True",
+        "east: True",
+        "north: True",
+        "approach_Alice",
+        "approach_Alice",
+        "west: True"
+      ],
+      "touch_experiences": [],
+      "visual_observations": [
+        {
+          "visible_objects": [
+            {
+              "object": "wall",
+              "color": "gray",
+              "distance": 4,
+              "direction": "south",
+              "position": [
+                5,
+                5
+              ]
+            }
+          ],
+          "facing": "west",
+          "vision_range": 3,
+          "social_observations": [
+            {
+              "peer": "Alice",
+              "position": [
+                3,
+                8
+              ],
+              "distance": 1.0,
+              "activity": "looking around curiously",
+              "body_language": "gesturing for you to come over",
+              "interaction_opportunity": "True"
+            }
+          ],
+          "social_objects": [
+            {
+              "object": "playground_ball",
+              "type": "shared_toy",
+              "distance": 4.0,
+              "current_users": [],
+              "interaction_type": "cooperative_play",
+              "available": true
+            },
+            {
+              "object": "story_book",
+              "type": "shared_learning",
+              "distance": 2.8284271247461903,
+              "current_users": [],
+              "interaction_type": "collaborative_reading",
+              "available": true
+            }
+          ],
+          "interaction_zones": [
+            {
+              "zone": "circle_time",
+              "distance_to_center": 4.0,
+              "inside_zone": "False",
+              "activity_suggestion": "Join group discussion or story time"
+            }
+          ]
+        }
+      ],
+      "social_exchanges": [
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice is right next to you and smiles"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Diana",
+          "message": "Diana is nearby playing"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice is right next to you and smiles"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Diana",
+          "message": "Diana notices you and waves"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice notices you and waves"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Diana",
+          "message": "Diana is nearby playing"
+        },
+        {
+          "type": "proximity_encounter",
+          "peer": "Alice",
+          "message": "Alice is right next to you and smiles"
+        },
+        {
+          "type": "collaboration",
+          "peer": "Alice",
+          "success_rate": 0.628937252316839,
+          "response": "Alice hesitates: 'I'm not sure... maybe later?'",
+          "learning": "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "comfort",
+          "peer": "Alice",
+          "success_rate": 0.7801376650045038,
+          "response": "Alice nods: 'That sounds hard. I hope you feel better.'",
+          "learning": "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "collaboration",
+          "peer": "Alice",
+          "success_rate": 0.7258141254874718,
+          "response": "Alice hesitates: 'I'm not sure... maybe later?'",
+          "learning": "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "sharing",
+          "peer": "Alice",
+          "success_rate": 0.8036100520370035,
+          "response": "Alice happily shares: 'Of course! Here you go!'",
+          "learning": "Sharing creates good feelings between friends - This interaction went really well!"
+        }
+      ],
+      "peer_proximities": {
+        "Alice": 1.0
+      },
+      "collaborative_actions": [
+        "collaborated_with_Alice",
+        "collaborated_with_Alice"
+      ],
+      "physical_skills_practiced": [
+        "collaborative_movement",
+        "collaborative_movement",
+        "shared_object_play"
+      ],
+      "social_skills_practiced": [
+        "collaboration",
+        "comfort",
+        "collaboration",
+        "sharing"
+      ],
+      "concepts_discovered": [
+        "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay",
+        "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay",
+        "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay",
+        "Sharing creates good feelings between friends - This interaction went really well!"
+      ],
+      "emotional_responses": [
+        "proud_cooperation",
+        "curious_discovery"
+      ],
+      "sensory_integration_score": 0.5,
+      "social_physical_coherence": 0.6363636363636364,
+      "learning_engagement_level": 0.3
+    },
+    {
+      "session_id": "embodied_social_5",
+      "timestamp": "2025-08-02T06:53:28.129805",
+      "sensory_modalities": [
+        "social",
+        "visual",
+        "tactile"
+      ],
+      "physical_context": "group_activity",
+      "social_participants": [
+        "Alice",
+        "Diana"
+      ],
+      "marcus_position": [
+        3,
+        8
+      ],
+      "objects_interacted": [],
+      "movements_made": [
+        "approach_Alice",
+        "approach_Alice"
+      ],
+      "touch_experiences": [
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        },
+        {
+          "feeling": "empty_space",
+          "learning": "Air feels like nothing"
+        }
+      ],
+      "visual_observations": [
+        {
+          "visible_objects": [
+            {
+              "object": "wall",
+              "color": "gray",
+              "distance": 5,
+              "direction": "south",
+              "position": [
+                5,
+                5
+              ]
+            }
+          ],
+          "facing": "west",
+          "vision_range": 3,
+          "social_observations": [
+            {
+              "peer": "Alice",
+              "position": [
+                3,
+                8
+              ],
+              "distance": 0.0,
+              "activity": "organizing materials",
+              "body_language": "making eye contact and smiling",
+              "interaction_opportunity": "True"
+            },
+            {
+              "peer": "Diana",
+              "position": [
+                2,
+                12
+              ],
+              "distance": 4.123105625617661,
+              "activity": "reading a book",
+              "body_language": "looking up occasionally",
+              "interaction_opportunity": "False"
+            }
+          ],
+          "social_objects": [
+            {
+              "object": "playground_ball",
+              "type": "shared_toy",
+              "distance": 4.123105625617661,
+              "current_users": [],
+              "interaction_type": "cooperative_play",
+              "available": true
+            },
+            {
+              "object": "story_book",
+              "type": "shared_learning",
+              "distance": 3.605551275463989,
+              "current_users": [],
+              "interaction_type": "collaborative_reading",
+              "available": true
+            }
+          ],
+          "interaction_zones": []
+        }
+      ],
+      "social_exchanges": [
+        {
+          "type": "collaboration",
+          "peer": "Alice",
+          "success_rate": 0.7162249371213041,
+          "response": "Alice hesitates: 'I'm not sure... maybe later?'",
+          "learning": "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay"
+        },
+        {
+          "type": "sharing",
+          "peer": "Alice",
+          "success_rate": 0.855826965552192,
+          "response": "Alice happily shares: 'Of course! Here you go!'",
+          "learning": "Sharing creates good feelings between friends - This interaction went really well!"
+        },
+        {
+          "type": "sharing",
+          "peer": "Alice",
+          "success_rate": 0.847015121989868,
+          "response": "Alice happily shares: 'Of course! Here you go!'",
+          "learning": "Sharing creates good feelings between friends - This interaction went really well!"
+        },
+        {
+          "type": "comfort",
+          "peer": "Alice",
+          "success_rate": 0.7299592513429639,
+          "response": "Alice nods: 'That sounds hard. I hope you feel better.'",
+          "learning": "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay"
+        }
+      ],
+      "peer_proximities": {
+        "Alice": 0.0,
+        "Diana": 4.123105625617661
+      },
+      "collaborative_actions": [
+        "collaborated_with_Alice"
+      ],
+      "physical_skills_practiced": [
+        "collaborative_movement",
+        "shared_object_play",
+        "shared_object_play"
+      ],
+      "social_skills_practiced": [
+        "collaboration",
+        "sharing",
+        "sharing",
+        "comfort"
+      ],
+      "concepts_discovered": [
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Working together can be more fun than working alone - Sometimes interactions don't go as expected, and that's okay",
+        "Sharing creates good feelings between friends - This interaction went really well!",
+        "Sharing creates good feelings between friends - This interaction went really well!",
+        "Being kind when someone is sad helps them feel better - Sometimes interactions don't go as expected, and that's okay"
+      ],
+      "emotional_responses": [
+        "happy_social_connection",
+        "proud_cooperation",
+        "curious_discovery"
+      ],
+      "sensory_integration_score": 0.5,
+      "social_physical_coherence": 0.6666666666666666,
+      "learning_engagement_level": 0.4
+    }
+  ],
+  "progress_report": {
+    "total_sessions": 5,
+    "overall_metrics": {
+      "sensory_integration_score": 0.5,
+      "social_physical_coherence": 0.689,
+      "learning_engagement_level": 0.34,
+      "social_interaction_success_rate": 0.754
+    },
+    "skill_development": {
+      "personal_space_awareness": {
+        "mastery_level": 0.14898377878817998,
+        "practice_sessions": 2,
+        "description": "Understanding comfortable distances in social interactions",
+        "readiness_level": "Emerging"
+      },
+      "collaborative_movement": {
+        "mastery_level": 0.23170694545315393,
+        "practice_sessions": 4,
+        "description": "Coordinating physical actions with peers",
+        "readiness_level": "Beginning"
+      },
+      "touch_social_communication": {
+        "mastery_level": 0.0,
+        "practice_sessions": 0,
+        "description": "Using appropriate touch in social contexts",
+        "readiness_level": "Emerging"
+      },
+      "visual_social_tracking": {
+        "mastery_level": 0.14898377878817998,
+        "practice_sessions": 2,
+        "description": "Using vision to understand social dynamics",
+        "readiness_level": "Emerging"
+      },
+      "shared_object_play": {
+        "mastery_level": 0.33848926348128205,
+        "practice_sessions": 5,
+        "description": "Playing cooperatively with shared physical objects",
+        "readiness_level": "Beginning"
+      }
+    },
+    "sensory_modality_usage": {
+      "visual": {
+        "usage_count": 5,
+        "usage_percentage": 33.33333333333333
+      },
+      "tactile": {
+        "usage_count": 3,
+        "usage_percentage": 20.0
+      },
+      "spatial": {
+        "usage_count": 0,
+        "usage_percentage": 0.0
+      },
+      "social": {
+        "usage_count": 4,
+        "usage_percentage": 26.666666666666668
+      },
+      "kinesthetic": {
+        "usage_count": 3,
+        "usage_percentage": 20.0
+      },
+      "multi_modal": {
+        "usage_count": 0,
+        "usage_percentage": 0.0
+      }
+    },
+    "social_interaction_metrics": {
+      "total_interactions": 26,
+      "average_success_rate": 0.754,
+      "interaction_types_practiced": 5
+    },
+    "learning_diversity": {
+      "physical_contexts_explored": 5,
+      "context_diversity_score": 0.833,
+      "unique_peers_interacted": 3
+    },
+    "development_trends": {
+      "engagement_trend": "stable",
+      "recent_session_performance": 0.34,
+      "sessions_in_analysis": 5
+    },
+    "embodied_social_readiness": {
+      "readiness_level": "Ready for Guided Embodied Social Practice",
+      "readiness_score": 0.417,
+      "component_scores": {
+        "sensory_integration": 0.5,
+        "social_physical_coherence": 0.689,
+        "skill_mastery": 0.174,
+        "learning_engagement": 0.34
+      }
+    },
+    "recommendations": [
+      "Focus on multi-sensory activities that combine touch, vision, and movement",
+      "Continue practicing understanding comfortable distances in social interactions in varied contexts",
+      "Continue practicing coordinating physical actions with peers in varied contexts",
+      "Begin practicing using appropriate touch in social contexts",
+      "Continue practicing using vision to understand social dynamics in varied contexts",
+      "Continue practicing playing cooperatively with shared physical objects in varied contexts",
+      "Engage in more exploratory activities to discover new concepts and connections"
+    ]
+  }
+}
