@@ -19,7 +19,7 @@ from concept_graph_system import learn_new_concepts, review_previous_concepts
 OUTPUT_DIR = "output/sessions"
 ANALYTICS_DIR = "output/analytics"
 SUMMARIES_DIR = "output/summaries"
-TODAY = str(date.today())
+
 
 # Configuration for Issue #3 requirements
 LEARNING_CONFIG = {
@@ -175,13 +175,9 @@ def generate_adaptive_lessons(session_history: List[Dict], mastery_levels: Dict[
     
     return lessons
 
-def conduct_sm2_reviews(concepts_to_review: List[Dict], session_history: List[Dict]) -> List[ConceptReview]:
-    """
-    Conduct reviews using SM-2 algorithm
-    Core requirement for Issue #3
-    """
+def conduct_sm2_reviews(concepts_to_review: List[Dict], session_history: List[Dict], today: str) -> List[ConceptReview]:
     reviews = []
-    
+
     for concept_data in concepts_to_review:
         review = ConceptReview(
             concept_id=concept_data.get('id', f"concept_{len(reviews)}"),
@@ -190,31 +186,28 @@ def conduct_sm2_reviews(concepts_to_review: List[Dict], session_history: List[Di
             ease_factor=concept_data.get('ease_factor', 2.5),
             repetitions=concept_data.get('repetitions', 0)
         )
-        
-        # Simulate performance (in real implementation, would test user)
+
         performance = {
             'recall_speed': random.uniform(0.6, 1.0),
             'accuracy': random.uniform(0.5, 1.0),
             'confidence': random.uniform(0.6, 0.95)
         }
-        
-        # Calculate quality using SM-2
+
         quality = calculate_sm2_quality(performance)
         review.quality = quality
         review.success = quality >= 3
-        
-        # Calculate next interval
+
         next_interval, new_ease = calculate_sm2_interval(review, quality)
         review.interval_days = next_interval
         review.ease_factor = new_ease
-        review.last_review = TODAY
+        review.last_review = today
         review.next_review = str(date.today() + timedelta(days=next_interval))
-        
+
         reviews.append(review)
-        
         print(f"  📖 Reviewed: {review.content[:50]}... Quality: {quality}/5")
-    
+
     return reviews
+
 
 def calculate_mastery_levels(session_history: List[Dict]) -> Dict[str, float]:
     """
@@ -432,13 +425,14 @@ def generate_parent_summary(session: Dict) -> str:
     
     return summary
 
-def run_daily_learning_loop():
+def run_daily_learning_loop(run_date: date = date.today()):
     """
     Complete daily learning loop with all Issue #3 requirements
     """
     print("🌸 Marcus Daily Learning Session - Complete Implementation")
     print("=" * 60)
-    
+    TODAY = str(run_date)
+
     # Create output directories
     for directory in [OUTPUT_DIR, ANALYTICS_DIR, SUMMARIES_DIR]:
         os.makedirs(directory, exist_ok=True)
@@ -502,8 +496,8 @@ def run_daily_learning_loop():
         concepts_to_review = [{'id': r, 'content': r} for r in default_reviews]
     
     # Conduct reviews with SM-2
-    review_results = conduct_sm2_reviews(concepts_to_review, session_history)
-    
+    review_results = conduct_sm2_reviews(concepts_to_review, session_history, TODAY)
+
     # Step 5: Learn new concepts
     print(f"\n📘 Learning {len(all_concepts)} new concepts...")
     for i, concept in enumerate(all_concepts, 1):
@@ -581,6 +575,15 @@ def run_daily_learning_loop():
     return session
 
 if __name__ == "__main__":
-    session = run_daily_learning_loop()
+    import sys
+    from datetime import datetime
 
-    print("\n🎉 Learning complete!")
+    if len(sys.argv) > 1:
+        run_date = datetime.strptime(sys.argv[1], "%Y-%m-%d").date()
+    else:
+        run_date = date.today()
+
+    session = run_daily_learning_loop(run_date)
+    print(f"\n🎉 Learning complete for {run_date}!")
+
+
