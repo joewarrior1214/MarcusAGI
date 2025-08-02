@@ -1,0 +1,491 @@
+{
+  "individual_reports": {
+    "emma": {
+      "peer_id": "emma",
+      "name": "Emma",
+      "personality_summary": "High in: extraversion, conscientiousness, empathy. Behaviors: social_initiator, helper_supporter",
+      "development_goals": [
+        "Continue developing friendship and cooperation skills"
+      ],
+      "conversation_patterns": {
+        "preferred_topics": [],
+        "challenging_topics": [],
+        "total_conversations": 1,
+        "average_success": 0.5333333333333333
+      },
+      "adaptive_behaviors": {
+        "social_initiator": {
+          "base_strength": 0.7569992683776601,
+          "marcus_relationship_modifier": 0.0
+        },
+        "social_responder": {
+          "base_strength": 0.54300073162234,
+          "marcus_relationship_modifier": 0.0
+        },
+        "helper_supporter": {
+          "base_strength": 0.6262233478201055,
+          "marcus_relationship_modifier": 0.0
+        },
+        "group_harmonizer": {
+          "base_strength": 0.6262233478201055,
+          "marcus_relationship_modifier": 0.0
+        },
+        "independent_worker": {
+          "base_strength": 0.7981980562495424,
+          "marcus_relationship_modifier": 0.0
+        },
+        "creative_contributor": {
+          "base_strength": 0.6359015583726386,
+          "marcus_relationship_modifier": 0.0
+        },
+        "logical_analyzer": {
+          "base_strength": 0.5640984416273613,
+          "marcus_relationship_modifier": 0.0
+        },
+        "emotional_expresser": {
+          "base_strength": 0.6608106276727619,
+          "marcus_relationship_modifier": 0.0
+        }
+      },
+      "emotional_regulation": {
+        "strategies": [
+          "deep_breathing",
+          "counting_to_ten",
+          "seeks_comfort",
+          "tells_adult",
+          "problem_solving",
+          "making_plans",
+          "talks_to_friends",
+          "group_activities"
+        ],
+        "regulation_speed": 0.7113514978617905,
+        "marcus_support_effectiveness": 0.5
+      },
+      "growth_areas": [
+        "can be bossy",
+        "struggles with being wrong"
+      ],
+      "personality_quirks": [
+        "always volunteers to go first",
+        "remembers everyone's names",
+        "gives encouraging high-fives",
+        "collects interesting rocks or leaves"
+      ]
+    },
+    "oliver": {
+      "peer_id": "oliver",
+      "name": "Oliver",
+      "personality_summary": "High in: agreeableness, conscientiousness, empathy. Behaviors: social_responder, helper_supporter",
+      "development_goals": [
+        "Practice initiating conversations with peers",
+        "Develop better emotional regulation strategies",
+        "Build resilience and coping skills",
+        "Continue developing friendship and cooperation skills"
+      ],
+      "conversation_patterns": {
+        "preferred_topics": [],
+        "challenging_topics": [],
+        "total_conversations": 1,
+        "average_success": 0.5333333333333333
+      },
+      "adaptive_behaviors": {
+        "social_initiator": {
+          "base_strength": 0.283053574484357,
+          "marcus_relationship_modifier": 0.0
+        },
+        "social_responder": {
+          "base_strength": 1.016946425515643,
+          "marcus_relationship_modifier": 0.0
+        },
+        "helper_supporter": {
+          "base_strength": 0.8858056068906526,
+          "marcus_relationship_modifier": 0.0
+        },
+        "group_harmonizer": {
+          "base_strength": 0.8858056068906526,
+          "marcus_relationship_modifier": 0.0
+        },
+        "independent_worker": {
+          "base_strength": 0.7771806103224186,
+          "marcus_relationship_modifier": 0.0
+        },
+        "creative_contributor": {
+          "base_strength": 0.6486414204936264,
+          "marcus_relationship_modifier": 0.0
+        },
+        "logical_analyzer": {
+          "base_strength": 0.5513585795063736,
+          "marcus_relationship_modifier": 0.0
+        },
+        "emotional_expresser": {
+          "base_strength": 0.8179532178351394,
+          "marcus_relationship_modifier": 0.0
+        }
+      },
+      "emotional_regulation": {
+        "strategies": [
+          "deep_breathing",
+          "counting_to_ten",
+          "seeks_comfort",
+          "tells_adult",
+          "problem_solving",
+          "making_plans"
+        ],
+        "regulation_speed": 0.5856374257318885,
+        "marcus_support_effectiveness": 0.5
+      },
+      "growth_areas": [
+        "difficulty speaking up",
+        "needs encouragement to participate"
+      ],
+      "personality_quirks": [
+        "whispers when nervous",
+        "doodles when thinking",
+        "notices small details others miss",
+        "always shares snacks with friends"
+      ]
+    },
+    "zoe": {
+      "peer_id": "zoe",
+      "name": "Zoe",
+      "personality_summary": "High in: extraversion, agreeableness, openness. Behaviors: social_initiator, helper_supporter",
+      "development_goals": [
+        "Improve perspective-taking and empathy skills",
+        "Continue developing friendship and cooperation skills"
+      ],
+      "conversation_patterns": {
+        "preferred_topics": [],
+        "challenging_topics": [],
+        "total_conversations": 1,
+        "average_success": 0.55
+      },
+      "adaptive_behaviors": {
+        "social_initiator": {
+          "base_strength": 0.906396837254196,
+          "marcus_relationship_modifier": 0.0
+        },
+        "social_responder": {
+          "base_strength": 0.39360316274580404,
+          "marcus_relationship_modifier": 0.0
+        },
+        "helper_supporter": {
+          "base_strength": 0.8840924060181548,
+          "marcus_relationship_modifier": 0.0
+        },
+        "group_harmonizer": {
+          "base_strength": 0.8840924060181548,
+          "marcus_relationship_modifier": 0.0
+        },
+        "independent_worker": {
+          "base_strength": 0.436702297620154,
+          "marcus_relationship_modifier": 0.0
+        },
+        "creative_contributor": {
+          "base_strength": 0.7181861734104122,
+          "marcus_relationship_modifier": 0.0
+        },
+        "logical_analyzer": {
+          "base_strength": 0.48181382658958777,
+          "marcus_relationship_modifier": 0.0
+        },
+        "emotional_expresser": {
+          "base_strength": 0.676198219895358,
+          "marcus_relationship_modifier": 0.0
+        }
+      },
+      "emotional_regulation": {
+        "strategies": [
+          "deep_breathing",
+          "counting_to_ten",
+          "seeks_comfort",
+          "tells_adult",
+          "creative_expression",
+          "imaginative_play",
+          "talks_to_friends",
+          "group_activities"
+        ],
+        "regulation_speed": 0.6990414240837137,
+        "marcus_support_effectiveness": 0.5
+      },
+      "growth_areas": [
+        "difficulty waiting turns",
+        "can overwhelm quieter peers"
+      ],
+      "personality_quirks": [
+        "bounces when excited",
+        "hugs friends often",
+        "makes up silly songs",
+        "has a favorite stuffed animal they talk about"
+      ]
+    },
+    "alex": {
+      "peer_id": "alex",
+      "name": "Alex",
+      "personality_summary": "High in: conscientiousness, emotional_stability, resilience. Behaviors: social_responder, helper_supporter",
+      "development_goals": [
+        "Improve perspective-taking and empathy skills",
+        "Continue developing friendship and cooperation skills"
+      ],
+      "conversation_patterns": {
+        "preferred_topics": [],
+        "challenging_topics": [],
+        "total_conversations": 1,
+        "average_success": 0.5333333333333333
+      },
+      "adaptive_behaviors": {
+        "social_initiator": {
+          "base_strength": 0.5683768447790818,
+          "marcus_relationship_modifier": 0.0
+        },
+        "social_responder": {
+          "base_strength": 0.7316231552209183,
+          "marcus_relationship_modifier": 0.0
+        },
+        "helper_supporter": {
+          "base_strength": 0.6648437181020295,
+          "marcus_relationship_modifier": 0.0
+        },
+        "group_harmonizer": {
+          "base_strength": 0.6648437181020295,
+          "marcus_relationship_modifier": 0.0
+        },
+        "independent_worker": {
+          "base_strength": 0.8744348900814094,
+          "marcus_relationship_modifier": 0.0
+        },
+        "creative_contributor": {
+          "base_strength": 0.629016285705688,
+          "marcus_relationship_modifier": 0.0
+        },
+        "logical_analyzer": {
+          "base_strength": 0.5709837142943119,
+          "marcus_relationship_modifier": 0.0
+        },
+        "emotional_expresser": {
+          "base_strength": 0.4853651670674978,
+          "marcus_relationship_modifier": 0.0
+        }
+      },
+      "emotional_regulation": {
+        "strategies": [
+          "deep_breathing",
+          "counting_to_ten",
+          "seeks_comfort",
+          "tells_adult",
+          "problem_solving",
+          "making_plans"
+        ],
+        "regulation_speed": 0.8517078663460018,
+        "marcus_support_effectiveness": 0.5
+      },
+      "growth_areas": [
+        "can be inflexible",
+        "frustrated by imprecision"
+      ],
+      "personality_quirks": [
+        "organizes materials before starting",
+        "asks lots of 'why' questions",
+        "notices patterns everywhere",
+        "makes sound effects during activities"
+      ]
+    },
+    "sofia": {
+      "peer_id": "sofia",
+      "name": "Sofia",
+      "personality_summary": "High in: agreeableness, openness, empathy. Behaviors: social_responder, helper_supporter",
+      "development_goals": [
+        "Develop better emotional regulation strategies",
+        "Build resilience and coping skills",
+        "Continue developing friendship and cooperation skills"
+      ],
+      "conversation_patterns": {
+        "preferred_topics": [],
+        "challenging_topics": [],
+        "total_conversations": 1,
+        "average_success": 0.55
+      },
+      "adaptive_behaviors": {
+        "social_initiator": {
+          "base_strength": 0.5503025572831053,
+          "marcus_relationship_modifier": 0.0
+        },
+        "social_responder": {
+          "base_strength": 0.7496974427168948,
+          "marcus_relationship_modifier": 0.0
+        },
+        "helper_supporter": {
+          "base_strength": 0.7085910219986553,
+          "marcus_relationship_modifier": 0.0
+        },
+        "group_harmonizer": {
+          "base_strength": 0.7085910219986553,
+          "marcus_relationship_modifier": 0.0
+        },
+        "independent_worker": {
+          "base_strength": 0.5308529945768444,
+          "marcus_relationship_modifier": 0.0
+        },
+        "creative_contributor": {
+          "base_strength": 0.8458741024727525,
+          "marcus_relationship_modifier": 0.0
+        },
+        "logical_analyzer": {
+          "base_strength": 0.3541258975272475,
+          "marcus_relationship_modifier": 0.0
+        },
+        "emotional_expresser": {
+          "base_strength": 0.7763915943113133,
+          "marcus_relationship_modifier": 0.0
+        }
+      },
+      "emotional_regulation": {
+        "strategies": [
+          "deep_breathing",
+          "counting_to_ten",
+          "seeks_comfort",
+          "tells_adult",
+          "creative_expression",
+          "imaginative_play"
+        ],
+        "regulation_speed": 0.6188867245509493,
+        "marcus_support_effectiveness": 0.5
+      },
+      "growth_areas": [
+        "difficulty with rigid rules",
+        "gets lost in imagination"
+      ],
+      "personality_quirks": [
+        "sees stories in everything",
+        "adds creative touches to all work",
+        "has imaginary friends",
+        "has a favorite stuffed animal they talk about"
+      ]
+    }
+  },
+  "system_analysis": {
+    "total_peers": 5,
+    "personality_diversity": {
+      "trait_distributions": {
+        "extraversion": {
+          "mean": 0.61302581643568,
+          "range": 0.623343262769839,
+          "diversity_score": 0.4
+        },
+        "agreeableness": {
+          "mean": 0.7539112201659195,
+          "range": 0.2595822590705471,
+          "diversity_score": 0.3
+        },
+        "conscientiousness": {
+          "mean": 0.6834737697700738,
+          "range": 0.4377325924612554,
+          "diversity_score": 0.4
+        },
+        "emotional_stability": {
+          "mean": 0.616656234643586,
+          "range": 0.3325880507676416,
+          "diversity_score": 0.3
+        },
+        "openness": {
+          "mean": 0.6955239080910236,
+          "range": 0.2168578167670645,
+          "diversity_score": 0.3
+        },
+        "empathy": {
+          "mean": 0.7082956362137791,
+          "range": 0.3033672079692996,
+          "diversity_score": 0.4
+        },
+        "resilience": {
+          "mean": 0.7323117718599006,
+          "range": 0.38570454985978064,
+          "diversity_score": 0.3
+        }
+      },
+      "overall_diversity_score": 0.34285714285714286,
+      "assessment": "Low diversity"
+    },
+    "relationship_strengths": {
+      "emma": {
+        "behavior_adaptations": {
+          "social_initiator": 0.0,
+          "social_responder": 0.0,
+          "helper_supporter": 0.0,
+          "group_harmonizer": 0.0,
+          "independent_worker": 0.0,
+          "creative_contributor": 0.0,
+          "logical_analyzer": 0.0,
+          "emotional_expresser": 0.0
+        },
+        "conversation_success": 0.5333333333333333,
+        "total_conversations": 1,
+        "support_effectiveness": 0.5
+      },
+      "oliver": {
+        "behavior_adaptations": {
+          "social_initiator": 0.0,
+          "social_responder": 0.0,
+          "helper_supporter": 0.0,
+          "group_harmonizer": 0.0,
+          "independent_worker": 0.0,
+          "creative_contributor": 0.0,
+          "logical_analyzer": 0.0,
+          "emotional_expresser": 0.0
+        },
+        "conversation_success": 0.5333333333333333,
+        "total_conversations": 1,
+        "support_effectiveness": 0.5
+      },
+      "zoe": {
+        "behavior_adaptations": {
+          "social_initiator": 0.0,
+          "social_responder": 0.0,
+          "helper_supporter": 0.0,
+          "group_harmonizer": 0.0,
+          "independent_worker": 0.0,
+          "creative_contributor": 0.0,
+          "logical_analyzer": 0.0,
+          "emotional_expresser": 0.0
+        },
+        "conversation_success": 0.55,
+        "total_conversations": 1,
+        "support_effectiveness": 0.5
+      },
+      "alex": {
+        "behavior_adaptations": {
+          "social_initiator": 0.0,
+          "social_responder": 0.0,
+          "helper_supporter": 0.0,
+          "group_harmonizer": 0.0,
+          "independent_worker": 0.0,
+          "creative_contributor": 0.0,
+          "logical_analyzer": 0.0,
+          "emotional_expresser": 0.0
+        },
+        "conversation_success": 0.5333333333333333,
+        "total_conversations": 1,
+        "support_effectiveness": 0.5
+      },
+      "sofia": {
+        "behavior_adaptations": {
+          "social_initiator": 0.0,
+          "social_responder": 0.0,
+          "helper_supporter": 0.0,
+          "group_harmonizer": 0.0,
+          "independent_worker": 0.0,
+          "creative_contributor": 0.0,
+          "logical_analyzer": 0.0,
+          "emotional_expresser": 0.0
+        },
+        "conversation_success": 0.55,
+        "total_conversations": 1,
+        "support_effectiveness": 0.5
+      }
+    },
+    "development_recommendations": [
+      "Continue fostering positive peer relationships",
+      "Practice complex social scenarios for skill development"
+    ]
+  },
+  "generation_date": "2025-08-02T08:00:09.344097"
+}
