@@ -1,3 +1,28 @@
 2025-08-02 00:56:59,784 - root - INFO - Session saved successfully to /workspaces/MarcusAGI/output/sessions/2025-08-02_complete_session.json
 2025-08-02 01:38:31,813 - root - INFO - Session saved successfully to /workspaces/MarcusAGI/output/sessions/2025-08-02_complete_session.json
 2025-08-02 02:16:41,616 - root - INFO - Session saved successfully to /workspaces/MarcusAGI/output/sessions/2025-08-02_complete_session.json
+2025-08-02 04:06:39,866 - MarcusAGI.memory_system - INFO - Database initialized at marcus_embodied.db
+2025-08-02 04:06:39,924 - MarcusAGI.memory_system - INFO - Database initialized at marcus_embodied.db
+2025-08-02 04:08:52,677 - MarcusAGI.memory_system - INFO - Database initialized at marcus_embodied.db
+2025-08-02 04:08:52,678 - MarcusAGI.memory_system - INFO - Database initialized at marcus_embodied.db
+2025-08-02 04:08:52,692 - MarcusAGI.memory_system - INFO - Learned new concept: physics_look_1
+2025-08-02 04:08:52,692 - MarcusAGI.memory_system - ERROR - Error learning concept physics_touch_1: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,694 - MarcusAGI.memory_system - ERROR - Error learning concept physics_touch_2: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,695 - MarcusAGI.memory_system - ERROR - Error learning concept physics_grab_1: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,696 - MarcusAGI.memory_system - ERROR - Error learning concept physics_grab_2: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,697 - MarcusAGI.memory_system - ERROR - Error learning concept physics_touch_3: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,698 - MarcusAGI.memory_system - ERROR - Error learning concept physics_touch_4: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,699 - MarcusAGI.memory_system - ERROR - Error learning concept physics_move_1: Error binding parameter 2: type 'dict' is not supported
+2025-08-02 04:08:52,709 - MarcusAGI.memory_system - INFO - Learned new concept: physical_move_0
+2025-08-02 04:08:52,716 - MarcusAGI.memory_system - INFO - Learned new concept: physical_move_1
+2025-08-02 04:08:52,722 - MarcusAGI.memory_system - INFO - Learned new concept: physical_look_2
+2025-08-02 04:08:52,730 - MarcusAGI.memory_system - INFO - Learned new concept: physical_look_3
+2025-08-02 04:08:52,737 - MarcusAGI.memory_system - INFO - Learned new concept: physical_look_4
+2025-08-02 04:08:52,743 - MarcusAGI.memory_system - INFO - Learned new concept: physical_look_5
+2025-08-02 04:08:52,751 - MarcusAGI.memory_system - INFO - Learned new concept: physical_touch_6
+2025-08-02 04:08:52,758 - MarcusAGI.memory_system - INFO - Learned new concept: physical_touch_7
+2025-08-02 04:08:52,762 - MarcusAGI.memory_system - INFO - Learned new concept: physical_touch_8
+2025-08-02 04:08:52,768 - MarcusAGI.memory_system - INFO - Learned new concept: physical_touch_9
+2025-08-02 04:08:52,774 - MarcusAGI.memory_system - INFO - Learned new concept: physical_grab_10
+2025-08-02 04:08:52,779 - MarcusAGI.memory_system - INFO - Learned new concept: physical_grab_11
+2025-08-02 04:08:52,785 - MarcusAGI.memory_system - INFO - Learned new concept: physical_move_into_wall_12

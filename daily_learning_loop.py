@@ -379,500 +379,573 @@ def check_curriculum_progression(mastery_levels: Dict[str, float], current_unit:
             'weakest_subject': min(mastery_levels, key=mastery_levels.get)
         }
 
-def calculate_learning_metrics(session: Dict, session_history: List[Dict]) -> LearningMetrics:
-    """
-    Calculate comprehensive learning metrics
-    Required by Issue #3 for progress tracking
-    """
-    metrics = LearningMetrics()
+def calculate_learning_metrics(session: Dict[str, Any], session_history: List[Dict]) -> Dict[str, Any]:
+    """Calculate comprehensive learning metrics with AGI enhancements"""
     
-    # Retention rate from reviews
-    reviews = session.get('review_results', [])
-    if reviews:
-        successful = sum(1 for r in reviews if r.get('success', False))
-        metrics.retention_rate = successful / len(reviews)
+    # Calculate basic metrics
+    reviews_completed = session.get('reviews_completed', 0)
+    concepts_learned = len(session.get('concepts_learned', []))
+    review_results = session.get('review_results', [])
+    
+    # Calculate success rates
+    if review_results:
+        successful_reviews = sum(1 for r in review_results if r.get('quality', 0) >= 3)
+        review_success_rate = successful_reviews / len(review_results)
     else:
-        metrics.retention_rate = 1.0
+        review_success_rate = 0.0
     
-    # Learning velocity
-    metrics.learning_velocity = len(session.get('concepts_learned', []))
+    # Calculate subject mastery (use the mastery levels from session)
+    subject_mastery = session.get('mastery_levels', {
+        'math': 0.8, 'reading': 0.4, 'science': 0.3, 'social': 0.6, 'art': 0.2
+    })
     
-    # Difficulty progression
-    if session_history:
-        recent_avg = sum(len(s.get('concepts_learned', [])) for s in session_history[-5:]) / 5
-        metrics.difficulty_progression = 0.1 if metrics.learning_velocity > recent_avg else 0.05
-    else:
-        metrics.difficulty_progression = 0.1
+    # Calculate adaptive difficulty
+    avg_mastery = sum(subject_mastery.values()) / len(subject_mastery) if subject_mastery else 0.5
+    adaptive_difficulty = min(0.9, max(0.1, avg_mastery + 0.1))
     
-    # Mastery by subject
-    metrics.mastery_by_subject = calculate_mastery_levels(session_history)
-    
-    # Review performance
-    if reviews:
-        avg_quality = sum(r.get('quality', 0) for r in reviews) / len(reviews)
-        metrics.review_performance = {
-            'average_quality': avg_quality,
-            'success_rate': metrics.retention_rate,
-            'reviews_completed': len(reviews)
-        }
-    
-    return metrics
-
-def generate_analytics_report(session_history: List[Dict]) -> Dict[str, Any]:
-    """
-    Generate comprehensive analytics report
-    Required by Issue #3
-    """
-    if not session_history:
-        return {'error': 'No session history available'}
-    
-    # Calculate metrics
-    total_concepts = sum(len(s.get('concepts_learned', [])) for s in session_history)
-    total_reviews = sum(s.get('reviews_completed', 0) for s in session_history)
-    
-    # Retention trend
-    retention_rates = [s.get('metrics', {}).get('retention_rate', 0) for s in session_history if 'metrics' in s]
-    avg_retention = sum(retention_rates) / len(retention_rates) if retention_rates else 0
-    
-    # Learning velocity trend
-    velocities = [len(s.get('concepts_learned', [])) for s in session_history]
-    avg_velocity = sum(velocities) / len(velocities) if velocities else 0
-    
-    # Subject performance
-    subject_performance = {}
-    for subject in ['math', 'reading', 'science', 'social', 'art']:
-        subject_concepts = 0
-        for session in session_history:
-            for concept in session.get('concepts_learned', []):
-                if subject in concept.lower():
-                    subject_concepts += 1
-        subject_performance[subject] = subject_concepts
-    
-    # Generate recommendations
-    recommendations = []
-    if avg_retention < 0.7:
-        recommendations.append("Focus on review sessions to improve retention")
-    if avg_velocity < 3:
-        recommendations.append("Try to learn at least 3 new concepts per session")
-    if avg_velocity > 7:
-        recommendations.append("Consider reducing concepts per session for deeper learning")
-    
-    weakest_subject = min(subject_performance, key=subject_performance.get)
-    recommendations.append(f"Spend more time on {weakest_subject} concepts")
-    
-    return {
-        'summary': {
-            'total_sessions': len(session_history),
-            'total_concepts_learned': total_concepts,
-            'total_reviews_completed': total_reviews,
-            'average_retention_rate': round(avg_retention, 3),
-            'average_learning_velocity': round(avg_velocity, 1)
-        },
-        'trends': {
-            'retention_trend': 'improving' if len(retention_rates) > 1 and retention_rates[-1] > retention_rates[0] else 'stable',
-            'velocity_trend': 'increasing' if len(velocities) > 1 and velocities[-1] > velocities[0] else 'stable'
-        },
-        'subject_performance': subject_performance,
-        'recommendations': recommendations,
-        'generated_date': TODAY
-    }
-
-def generate_parent_summary(session: Dict) -> str:
-    """Generate parent-friendly summary"""
-    summary = f"""📅 Marcus's Daily Learning Report - {session['date']}
-
-🌟 Today's Achievements:
-• Learned {len(session.get('concepts_learned', []))} new concepts
-• Completed {session.get('reviews_completed', 0)} reviews
-"""
-    
-    # Add progression status
-    progression = session.get('curriculum_progression', {})
-    if progression.get('advanced'):
-        summary += f"\n🎉 Big Achievement: Marcus advanced to {progression['new_unit']}!\n"
-    else:
-        mastery = progression.get('current_mastery', 0)
-        summary += f"\n📊 Progress: {mastery:.0%} toward next level"
-        if progression.get('weakest_subject'):
-            summary += f"\n💡 Focus area: {progression['weakest_subject']}"
-    
-    # Add metrics section using session metrics
-    metrics = session.get('metrics', {})
-    if metrics:
-        summary += f"\n📈 Learning Stats:\n"
-        summary += f"• Retention rate: {metrics.get('retention_rate', 0):.0%}\n"
-        summary += f"• Learning velocity: {metrics.get('learning_velocity', 0)} concepts/session\n"
-    
-    return summary
-
-@dataclass
-class ConceptNode:
-    """Enhanced concept representation for AGI learning"""
-    id: str
-    content: str
-    relationships: Dict[str, float] = field(default_factory=dict)
-    dependencies: List[str] = field(default_factory=list)
-    metadata: Dict[str, Any] = field(default_factory=dict)
-    
-    # Learning parameters
-    activation_threshold: float = 0.5
-    learning_rate: float = 0.1
-    plasticity: float = 0.5
-    
-    def update_relationships(self, related_concept: 'ConceptNode', strength: float) -> None:
-        """Update semantic relationships between concepts"""
-        self.relationships[related_concept.id] = strength
-        
-    def evaluate_readiness(self) -> float:
-        """Check if prerequisites are met"""
-        if not self.dependencies:
-            return 1.0
-        return sum(self.relationships.get(dep, 0.0) for dep in self.dependencies) / len(self.dependencies)
-
-# Replace these imports with default functions
-def generate_reflection() -> str:
-    """Temporary reflection generator"""
-    return "Today's learning session was productive."
-
-def learn_new_concepts() -> List[str]:
-    """Temporary concept generator"""
-    return ["counting objects (math)", "sight word: the (reading)"]
-
-def review_previous_concepts(history: List[Dict]) -> List[str]:
-    """Temporary review generator"""
-    return ["using kind words (social)", "bigger and smaller (math)"]
-
-# Add config validation
-# Add config validation
-def validate_config() -> None:
-    required_keys = ['max_new_concepts', 'max_reviews', 'mastery_threshold']
-    for key in required_keys:
-        if key not in LEARNING_CONFIG:
-            raise ValueError(f"Missing required config key: {key}")
-
-def validate_session_data(session: Dict[str, Any]) -> bool:
-    """Validate required session data fields"""
-    if not isinstance(session, dict):
-        return False
-        
-    required_fields = ['date', 'reviews_completed', 'concepts_learned']
-    return all(
-        field in session and session[field] is not None 
-        for field in required_fields
+    # Create metrics object with proper initialization
+    metrics = LearningMetrics(
+        subject_mastery=subject_mastery,
+        review_success_rate=review_success_rate,
+        concept_acquisition_rate=concepts_learned,
+        adaptive_difficulty=adaptive_difficulty
     )
-
-def measure_transfer_learning() -> float:
-    """Currently returns dummy 0.0"""
-    # Needs real implementation for:
-    # - Cross-subject knowledge transfer
-    # - Skill application in new contexts
-    # - Learning efficiency metrics
-    return 0.0
-
-def calculate_adaptation_rate(session: Dict[str, Any]) -> float:
-    """
-    Stub for adaptation rate calculation.
-    Returns a dummy value for now.
-    """
-    return 0.0
-
-def analyze_concept_integration() -> float:
-    """
-    Stub for concept integration analysis.
-    Returns a dummy value for now.
-    """
-    return 0.0
-
-def analyze_concept_clusters() -> Dict[str, List[str]]:
-    pass
-
-def identify_central_concepts() -> List[str]:
-    pass
-
-def adjust_learning_parameters() -> dict:
-    """
-    Stub for learning rate adjustment logic.
-    Returns a dummy value for now.
-    """
-    return {}
-
-def adapt_learning_strategies() -> dict:
-    """
-    Stub for learning strategy adaptation logic.
-    Returns a dummy value for now.
-    """
-    return {}
-
-def propose_structural_changes() -> dict:
-    """
-    Stub for proposing structural changes.
-    Returns a dummy value for now.
-    """
-    return {}
-
-def enhance_daily_learning_loop(
-    session: Dict[str, Any],
-    enhancement_threshold: float = 0.5
-) -> Dict[str, Any]:
-    """Add AGI-specific enhancements to the learning loop"""
-    try:
-        # Add meta-learning capabilities
-        session['meta_learning'] = {
+    
+    # Add derived metrics
+    metrics.retention_rate = review_success_rate
+    metrics.learning_velocity = concepts_learned
+    metrics.engagement_score = min(1.0, (review_success_rate + (concepts_learned / 10)) / 2)
+    
+    # Add session history analysis
+    if len(session_history) > 1:
+        recent_sessions = session_history[-5:]  # Last 5 sessions
+        recent_concepts = sum(len(s.get('concepts_learned', [])) for s in recent_sessions)
+        metrics.learning_trend = recent_concepts / len(recent_sessions)
+    else:
+        metrics.learning_trend = concepts_learned
+    
+    # Add physical exploration metrics if available
+    if session.get('physical_exploration'):
+        embodied_concepts = len(session.get('embodied_concepts', []))
+        metrics.embodied_learning_rate = embodied_concepts
+        metrics.grounded_concept_ratio = embodied_concepts / max(1, concepts_learned)
+    else:
+        metrics.embodied_learning_rate = 0
+        metrics.grounded_concept_ratio = 0
+    
+    # Convert to dictionary for compatibility
+    metrics_dict = {
+        'subject_mastery': metrics.subject_mastery,
+        'review_success_rate': metrics.review_success_rate,
+        'concept_acquisition_rate': metrics.concept_acquisition_rate,
+        'adaptive_difficulty': metrics.adaptive_difficulty,
+        'retention_rate': metrics.retention_rate,
+        'learning_velocity': metrics.learning_velocity,
+        'engagement_score': metrics.engagement_score,
+        'learning_trend': metrics.learning_trend,
+        'embodied_learning_rate': getattr(metrics, 'embodied_learning_rate', 0),
+        'grounded_concept_ratio': getattr(metrics, 'grounded_concept_ratio', 0),
+        'transfer_learning': measure_transfer_learning(),
+        'meta_learning': {
             'adaptation_rate': calculate_adaptation_rate(session),
-            'transfer_efficiency': measure_transfer_learning(),
             'concept_integration': analyze_concept_integration()
         }
-        
-        # Add knowledge graph analysis
-        session['knowledge_graph'] = {
-            'density': 0.0,  # Placeholder: implement calculate_graph_density if needed
-    
-    return session
-
-TODAY = str(date.today())
-
-def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
-    """Enhanced daily learning loop with AGI capabilities"""
-    print("🌸 Marcus Daily Learning Session - Complete Implementation")
-    print("=" * 60)
-    TODAY = str(run_date)  # Local override of global TODAY
-
-    # Create output directories
-    for directory in [OUTPUT_DIR, ANALYTICS_DIR, SUMMARIES_DIR]:
-        os.makedirs(directory, exist_ok=True)
-    
-    # Step 1: Load session history
-    session_history = []
-    if os.path.exists(OUTPUT_DIR):
-        for fname in sorted(os.listdir(OUTPUT_DIR)):
-            if fname.endswith("_report.json") or fname.endswith("_session.json"):
-                try:
-                    with open(os.path.join(OUTPUT_DIR, fname)) as f:
-                        session_history.append(json.load(f))
-                except Exception as e:
-                    print(f"Warning: Could not load {fname}: {e}")
-    
-    print(f"📚 Loaded {len(session_history)} previous sessions")
-    
-    # Step 2: Calculate current mastery levels
-    print("\n📊 Calculating mastery levels...")
-    mastery_levels = calculate_mastery_levels(session_history)
-    for subject, mastery in mastery_levels.items():
-        print(f"  {subject}: {mastery:.0%}")
-    
-    # Step 3: Generate adaptive lessons
-    print("\n📝 Generating adaptive lessons...")
-    adaptive_lessons = generate_adaptive_lessons(session_history, mastery_levels)
-    
-    # Combine with your existing concept selection
-    basic_concepts = learn_new_concepts()
-    
-    # Merge adaptive and basic concepts
-    all_concepts = []
-    for i, lesson in enumerate(adaptive_lessons[:3]):  # Take top 3 adaptive
-        all_concepts.append(f"{basic_concepts[i] if i < len(basic_concepts) else lesson['content']}")
-    
-    # Step 4: Conduct SM-2 spaced repetition reviews
-    print("\n🔄 Conducting spaced repetition reviews...")
-    
-    # Get concepts due for review
-    concepts_to_review = []
-    if session_history:
-        for session in session_history[-5:]:
-            for concept in session.get('concepts_learned', []):
-                if random.random() < 0.3:
-                    concepts_to_review.append({
-                        'id': concept,
-                        'content': concept,
-                        'interval_days': random.randint(1, 7),
-                        'ease_factor': 2.5,
-                        'repetitions': random.randint(0, 5)
-                    })
-    
-    # Limit reviews
-    concepts_to_review = concepts_to_review[:LEARNING_CONFIG['max_reviews']]
-    
-    # If no concepts to review, use defaults
-    if not concepts_to_review:
-        default_reviews = review_previous_concepts(session_history)
-        concepts_to_review = [{'id': r, 'content': r} for r in default_reviews]
-    
-    # Conduct reviews with SM-2
-    review_results = conduct_sm2_reviews(concepts_to_review, session_history, TODAY)
-
-    # Step 5: Learn new concepts
-    print(f"\n📘 Learning {len(all_concepts)} new concepts...")
-    for i, concept in enumerate(all_concepts, 1):
-        print(f"  {i}. {concept}")
-    
-    # Step 6: Calculate metrics
-    print("\n📈 Calculating learning metrics...")
-    
-    # Create session before metrics calculation
-    session = {
-        'date': TODAY,
-        'timestamp': datetime.now().isoformat(),
-        'reviews_completed': len(review_results),
-    # Step 6: Calculate metrics
-    print("\n📈 Calculating learning metrics...")
-    
-    # Create session before metrics calculation
-    session = {
-        'date': TODAY,
-        'timestamp': datetime.now().isoformat(),
-        'reviews_completed': len(review_results),
-        'review_results': [asdict(r) if hasattr(r, '__dict__') else r for r in review_results],
-        'concepts_learned': all_concepts,
-        'adaptive_lessons': adaptive_lessons,
-        'reflection': generate_reflection()
     }
     
-    metrics = calculate_learning_metrics(session, session_history)
-    session['metrics'] = asdict(metrics)
-    
-    # Step 7: Check curriculum progression
-    print("\n🎯 Checking curriculum progression...")
-    current_unit = "Kindergarten Basics"  # In real implementation, load from state
-    progression = check_curriculum_progression(mastery_levels, current_unit)
-    session['curriculum_progression'] = progression
-    
-    if progression['advanced']:
-        print(f"  🎉 ADVANCED to {progression['new_unit']}!")
-    else:
-        print(f"  📊 Progress: {progression['current_mastery']:.0%} (need {progression['target_mastery']:.0%})")
-        print(f"  📚 Estimated concepts needed: {progression['estimated_concepts_needed']}")
-    
-    # Step 8: Save session
-    print("\n💾 Saving session data...")
-    session_file = os.path.join(OUTPUT_DIR, f"{TODAY}_complete_session.json")
-    try:
-        with open(session_file, "w") as f:
-            json.dump(session, f, indent=2)
-        logging.info(f"Session saved successfully to {session_file}")
-    except Exception as e:
-        logging.error(f"Failed to save session: {e}")
-        raise
-    
-    # Step 9: Generate analytics if enough history
-    if len(session_history) >= 5:
-        print("\n📊 Generating analytics report...")
-        analytics = generate_analytics_report(session_history + [session])
-        analytics_file = os.path.join(ANALYTICS_DIR, f"{TODAY}_analytics.json")
-        with open(analytics_file, "w") as f:
-            json.dump(analytics, f, indent=2)
-        print(f"  ✅ Analytics saved to {analytics_file}")
-        
-        # Display key analytics
-        print("\n📈 Analytics Summary:")
-        for key, value in analytics['summary'].items():
-            print(f"  • {key}: {value}")
-    
-    # Step 10: Generate parent summary
-    print("\n👪 Generating parent summary...")
-    parent_summary = generate_parent_summary(session)
-    summary_file = os.path.join(SUMMARIES_DIR, f"{TODAY}_parent_summary.txt")
-    with open(summary_file, "w") as f:
-        f.write(parent_summary)
-    print(f"  ✅ Parent summary saved to {summary_file}")
-    
-    # Add AGI enhancements
-    session = enhance_daily_learning_loop(session)
-    
-    # Add meta-learning metrics with initialized concept_graph
-    agi_metrics = AGILearningMetrics()
-    concept_graph = {concept: ConceptNode(id=concept, content=concept) 
-                    for concept in session.get('concepts_learned', [])}
-    agi_metrics.calculate_network_metrics(concept_graph)
-    session['agi_metrics'] = asdict(agi_metrics)
-    
-    return session
+    return metrics_dict
 
-def optimize_subject_distribution(current_mastery: Dict[str, float]) -> Dict[str, int]:
-    """Optimize concept distribution with focus on science"""
-    target_mastery = 0.85
-    concept_allocation = {}
+def generate_adaptive_lessons(session_history: List[Dict], mastery_levels: Dict[str, float]) -> List[Dict]:
+    """
+    Generate personalized lessons based on progress
+    Required by Issue #3 for adaptive learning
+    """
+    lessons = []
     
-    # Prioritize science concepts
-    science_weight = 1.5  # Increase science learning weight
+    # Calculate adaptive difficulty for each subject
+    subjects = ['math', 'reading', 'science', 'social', 'art']
+    subject_priorities = []
     
-    for subject, mastery in current_mastery.items():
-        if mastery < target_mastery:
-            gap = target_mastery - mastery
-            weight = science_weight if subject == 'science' else 1.0
-            concepts_needed = int(ceil(gap * 100 * weight / 15))
-            concept_allocation[subject] = concepts_needed
-        else:
-            concept_allocation[subject] = 0
+    for subject in subjects:
+        mastery = mastery_levels.get(subject, 0.0)
+        # Lower mastery = higher priority
+        priority = 1.0 - mastery
+        
+        # Boost core subjects
+        if subject in ['math', 'reading']:
+            priority *= 1.2
             
-    return concept_allocation
-
-def calculate_optimal_difficulty(
-    subject: str,
-    current_mastery: float,
-    recent_performance: List[float]
-) -> float:
-    """Dynamic difficulty adjustment based on performance"""
-    base_difficulty = current_mastery
-    performance_modifier = sum(recent_performance) / len(recent_performance) if recent_performance else 0.5
-    
-    return min(0.95, base_difficulty * (1 + performance_modifier * 0.2))
-
-@dataclass
-class SubjectPriority:
-    subject: str
-    current_mastery: float
-    days_since_practice: int
-    recent_success_rate: float
-    
-    learning_style_adaptation: Dict[str, float] = field(default_factory=dict)
-    difficulty_curve: List[float] = field(default_factory=list)
-    concept_relationships: Graph = field(default_factory=lambda: Graph({}))
-    
-    def calculate_priority(self) -> float:
-        mastery_weight = 1 - self.current_mastery
-        recency_weight = min(1.0, self.days_since_practice / 7)
-        performance_weight = 1 - self.recent_success_rate
+        # Calculate appropriate difficulty
+        difficulty = mastery + LEARNING_CONFIG['difficulty_adjustment_rate']
+        difficulty = min(difficulty, 1.0)  # Cap at 1.0
         
-        return (mastery_weight * 0.5 + 
-                recency_weight * 0.3 + 
-                performance_weight * 0.2)
+        subject_priorities.append({
+            'subject': subject,
+            'priority': priority,
+            'difficulty': difficulty,
+            'mastery': mastery
+        })
+    
+    # Sort by priority and select top subjects
+    subject_priorities.sort(key=lambda x: x['priority'], reverse=True)
+    
+    # Generate lessons for top priority subjects
+    max_lessons = LEARNING_CONFIG['max_new_concepts']
+    for i, subject_data in enumerate(subject_priorities[:max_lessons]):
+        lesson = {
+            'id': f"{subject_data['subject']}_{datetime.now().timestamp()}_{i}",
+            'subject': subject_data['subject'],
+            'difficulty': subject_data['difficulty'],
+            'content': f"Advanced {subject_data['subject']} concept (difficulty: {subject_data['difficulty']:.2f})",
+            'priority_score': subject_data['priority'],
+            'adaptive': True
+        }
+        lessons.append(lesson)
+    
+    return lessons
 
-def select_optimal_concepts(
-    session: Dict[str, Any],
-    concept_pool: List[Dict],
-    target_concepts: int = 5
-) -> List[Dict]:
-    """Select concepts optimized for reaching 85% mastery"""
-    priorities = {}
-    mastery = session['metrics']['mastery_by_subject']
-    
-    for subject in mastery:
-        if mastery[subject] < 0.85:
-            priority = SubjectPriority(
-                subject=subject,
-                current_mastery=mastery[subject],
-                days_since_practice=get_days_since_practice(session, subject),
-                recent_success_rate=get_success_rate(session, subject)
-            )
-            priorities[subject] = priority.calculate_priority()
-    
-    selected_concepts = []
-    for _ in range(target_concepts):
-        subject = max(priorities.items(), key=lambda x: x[1])[0]
-        concept = get_next_concept(concept_pool, subject)
-        if concept:
-            selected_concepts.append(concept)
-            priorities[subject] *= 0.5  # Reduce priority after selection
-    
-    return selected_concepts
+def conduct_sm2_reviews(concepts_to_review: List[Dict], session_history: List[Dict], today: str) -> List[ConceptReview]:
+    reviews = []
 
-def track_mastery_progression(session_history: List[Dict]) -> Dict[str, List[float]]:
-    """Track mastery progression over time for each subject"""
-    progression = defaultdict(list)
+    for concept_data in concepts_to_review:
+        review = ConceptReview(
+            concept_id=concept_data.get('id', f"concept_{len(reviews)}"),
+            content=concept_data.get('content', 'Unknown concept'),
+            interval_days=concept_data.get('interval_days', 1),
+            ease_factor=concept_data.get('ease_factor', 2.5),
+            repetitions=concept_data.get('repetitions', 0)
+        )
+
+        performance = {
+            'recall_speed': random.uniform(0.6, 1.0),
+            'accuracy': random.uniform(0.5, 1.0),
+            'confidence': random.uniform(0.6, 0.95)
+        }
+
+        quality = calculate_sm2_quality(performance)
+        review.quality = quality
+        review.success = quality >= 3
+
+        next_interval, new_ease = calculate_sm2_interval(review, quality)
+        review.interval_days = next_interval
+        review.ease_factor = new_ease
+        review.last_review = today
+        review.next_review = str(date.today() + timedelta(days=next_interval))
+
+        reviews.append(review)
+        print(f"  📖 Reviewed: {review.content[:50]}... Quality: {quality}/5")
+
+    return reviews
+
+
+def calculate_mastery_levels(session_history: List[Dict]) -> Dict[str, float]:
+    """
+    Calculate current mastery level for each subject
+    Required for curriculum progression (Issue #3)
+    """
+    if not session_history:
+        return {subj: 0.2 for subj in ['math', 'reading', 'science', 'social', 'art']}
     
-    for session in session_history:
-        mastery = session.get('metrics', {}).get('mastery_by_subject', {})
-        for subject, level in mastery.items():
+    subject_scores = {'math': [], 'reading': [], 'science': [], 'social': [], 'art': []}
+    
+    # Analyze recent sessions
+    recent_sessions = session_history[-10:]  # Last 10 sessions
+    
+    for session in recent_sessions:
+        # Check review performance
+        for review in session.get('review_results', []):
+            # Extract subject from concept
+            for subject in subject_scores.keys():
+                if subject in str(review.get('concept_id', '')).lower():
+                    if review.get('success', False):
+                        subject_scores[subject].append(1.0)
+                    else:
+                        subject_scores[subject].append(0.5)
+        
+        # Check new concepts learned
+        for concept in session.get('concepts_learned', []):
+            for subject in subject_scores.keys():
+                if subject in concept.lower():
+                    subject_scores[subject].append(0.1)  # Small boost for learning
+    
+    # Calculate mastery as average score
+    mastery_levels = {}
+    for subject, scores in subject_scores.items():
+        if scores:
+            mastery = sum(scores) / len(scores)
+            # Add time-based progression
+            mastery += len(session_history) * 0.01
+            mastery = min(mastery, 1.0)  # Cap at 100%
+        else:
+            mastery = 0.2  # Base level
+        mastery_levels[subject] = mastery
+    
+    return mastery_levels
+
+def check_curriculum_progression(mastery_levels: Dict[str, float], current_unit: str = "Kindergarten Basics") -> Dict[str, Any]:
+    """
+    Check if learner is ready to advance to next curriculum unit
+    Required by Issue #3
+    """
+    # Calculate overall mastery
+    avg_mastery = sum(mastery_levels.values()) / len(mastery_levels) if mastery_levels else 0
+    
+    threshold = LEARNING_CONFIG['mastery_threshold']
+    
+    if avg_mastery >= threshold:
+        # Ready to advance!
+        return {
+            'advanced': True,
+            'previous_unit': current_unit,
+            'new_unit': "Kindergarten Advanced" if "Basics" in current_unit else "First Grade Preparation",
+            'mastery_achieved': avg_mastery,
+            'subject_mastery': mastery_levels
+        }
+    else:
+        # Not ready yet
+        concepts_needed = int((threshold - avg_mastery) * 50)
+        
+        return {
+            'advanced': False,
+            'current_unit': current_unit,
+            'current_mastery': avg_mastery,
+            'target_mastery': threshold,
+            'estimated_concepts_needed': concepts_needed,
+            'subject_mastery': mastery_levels,
+            'weakest_subject': min(mastery_levels, key=mastery_levels.get)
+        }
+
+def calculate_learning_metrics(session: Dict[str, Any], session_history: List[Dict]) -> Dict[str, Any]:
+    """Calculate comprehensive learning metrics with AGI enhancements"""
+    
+    # Calculate basic metrics
+    reviews_completed = session.get('reviews_completed', 0)
+    concepts_learned = len(session.get('concepts_learned', []))
+    review_results = session.get('review_results', [])
+    
+    # Calculate success rates
+    if review_results:
+        successful_reviews = sum(1 for r in review_results if r.get('quality', 0) >= 3)
+        review_success_rate = successful_reviews / len(review_results)
+    else:
+        review_success_rate = 0.0
+    
+    # Calculate subject mastery (use the mastery levels from session)
+    subject_mastery = session.get('mastery_levels', {
+        'math': 0.8, 'reading': 0.4, 'science': 0.3, 'social': 0.6, 'art': 0.2
+    })
+    
+    # Calculate adaptive difficulty
+    avg_mastery = sum(subject_mastery.values()) / len(subject_mastery) if subject_mastery else 0.5
+    adaptive_difficulty = min(0.9, max(0.1, avg_mastery + 0.1))
+    
+    # Create metrics object with proper initialization
+    metrics = LearningMetrics(
+        subject_mastery=subject_mastery,
+        review_success_rate=review_success_rate,
+        concept_acquisition_rate=concepts_learned,
+        adaptive_difficulty=adaptive_difficulty
+    )
+    
+    # Add derived metrics
+    metrics.retention_rate = review_success_rate
+    metrics.learning_velocity = concepts_learned
+    metrics.engagement_score = min(1.0, (review_success_rate + (concepts_learned / 10)) / 2)
+    
+    # Add session history analysis
+    if len(session_history) > 1:
+        recent_sessions = session_history[-5:]  # Last 5 sessions
+        recent_concepts = sum(len(s.get('concepts_learned', [])) for s in recent_sessions)
+        metrics.learning_trend = recent_concepts / len(recent_sessions)
+    else:
+        metrics.learning_trend = concepts_learned
+    
+    # Add physical exploration metrics if available
+    if session.get('physical_exploration'):
+        embodied_concepts = len(session.get('embodied_concepts', []))
+        metrics.embodied_learning_rate = embodied_concepts
+        metrics.grounded_concept_ratio = embodied_concepts / max(1, concepts_learned)
+    else:
+        metrics.embodied_learning_rate = 0
+        metrics.grounded_concept_ratio = 0
+    
+    # Convert to dictionary for compatibility
+    metrics_dict = {
+        'subject_mastery': metrics.subject_mastery,
+        'review_success_rate': metrics.review_success_rate,
+        'concept_acquisition_rate': metrics.concept_acquisition_rate,
+        'adaptive_difficulty': metrics.adaptive_difficulty,
+        'retention_rate': metrics.retention_rate,
+        'learning_velocity': metrics.learning_velocity,
+        'engagement_score': metrics.engagement_score,
+        'learning_trend': metrics.learning_trend,
+        'embodied_learning_rate': getattr(metrics, 'embodied_learning_rate', 0),
+        'grounded_concept_ratio': getattr(metrics, 'grounded_concept_ratio', 0),
+        'transfer_learning': measure_transfer_learning(),
+        'meta_learning': {
+            'adaptation_rate': calculate_adaptation_rate(session),
+            'concept_integration': analyze_concept_integration()
+        }
+    }
+    
+    return metrics_dict
+
+def generate_adaptive_lessons(session_history: List[Dict], mastery_levels: Dict[str, float]) -> List[Dict]:
+    """
+    Generate personalized lessons based on progress
+    Required by Issue #3 for adaptive learning
+    """
+    lessons = []
+    
+    # Calculate adaptive difficulty for each subject
+    subjects = ['math', 'reading', 'science', 'social', 'art']
+    subject_priorities = []
+    
+    for subject in subjects:
+        mastery = mastery_levels.get(subject, 0.0)
+        # Lower mastery = higher priority
+        priority = 1.0 - mastery
+        
+        # Boost core subjects
+        if subject in ['math', 'reading']:
+            priority *= 1.2
+            
+        # Calculate appropriate difficulty
+        difficulty = mastery + LEARNING_CONFIG['difficulty_adjustment_rate']
+        difficulty = min(difficulty, 1.0)  # Cap at 1.0
+        
+        subject_priorities.append({
+            'subject': subject,
+            'priority': priority,
+            'difficulty': difficulty,
+            'mastery': mastery
+        })
+    
+    # Sort by priority and select top subjects
+    subject_priorities.sort(key=lambda x: x['priority'], reverse=True)
+    
+    # Generate lessons for top priority subjects
+    max_lessons = LEARNING_CONFIG['max_new_concepts']
+    for i, subject_data in enumerate(subject_priorities[:max_lessons]):
+        lesson = {
+            'id': f"{subject_data['subject']}_{datetime.now().timestamp()}_{i}",
+            'subject': subject_data['subject'],
+            'difficulty': subject_data['difficulty'],
+            'content': f"Advanced {subject_data['subject']} concept (difficulty: {subject_data['difficulty']:.2f})",
+            'priority_score': subject_data['priority'],
+            'adaptive': True
+        }
+        lessons.append(lesson)
+    
+    return lessons
+
+def conduct_sm2_reviews(concepts_to_review: List[Dict], session_history: List[Dict], today: str) -> List[ConceptReview]:
+    reviews = []
+
+    for concept_data in concepts_to_review:
+        review = ConceptReview(
+            concept_id=concept_data.get('id', f"concept_{len(reviews)}"),
+            content=concept_data.get('content', 'Unknown concept'),
+            interval_days=concept_data.get('interval_days', 1),
+            ease_factor=concept_data.get('ease_factor', 2.5),
+            repetitions=concept_data.get('repetitions', 0)
+        )
+
+        performance = {
+            'recall_speed': random.uniform(0.6, 1.0),
+            'accuracy': random.uniform(0.5, 1.0),
+            'confidence': random.uniform(0.6, 0.95)
+        }
+
+        quality = calculate_sm2_quality(performance)
+        review.quality = quality
+        review.success = quality >= 3
+
+        next_interval, new_ease = calculate_sm2_interval(review, quality)
+        review.interval_days = next_interval
+        review.ease_factor = new_ease
+        review.last_review = today
+        review.next_review = str(date.today() + timedelta(days=next_interval))
+
+        reviews.append(review)
+        print(f"  📖 Reviewed: {review.content[:50]}... Quality: {quality}/5")
+
+    return reviews
+
+
+def calculate_mastery_levels(session_history: List[Dict]) -> Dict[str, float]:
+    """
+    Calculate current mastery level for each subject
+    Required for curriculum progression (Issue #3)
+    """
+    if not session_history:
+        return {subj: 0.2 for subj in ['math', 'reading', 'science', 'social', 'art']}
+    
+    subject_scores = {'math': [], 'reading': [], 'science': [], 'social': [], 'art': []}
+    
+    # Analyze recent sessions
+    recent_sessions = session_history[-10:]  # Last 10 sessions
+    
+    for session in recent_sessions:
+        # Check review performance
+        for review in session.get('review_results', []):
+            # Extract subject from concept
+            for subject in subject_scores.keys():
+                if subject in str(review.get('concept_id', '')).lower():
+                    if review.get('success', False):
+                        subject_scores[subject].append(1.0)
+                    else:
+                        subject_scores[subject].append(0.5)
+        
+        # Check new concepts learned
+        for concept in session.get('concepts_learned', []):
+            for subject in subject_scores.keys():
+                if subject in concept.lower():
+                    subject_scores[subject].append(0.1)  # Small boost for learning
+    
+    # Calculate mastery as average score
+    mastery_levels = {}
+    for subject, scores in subject_scores.items():
+        if scores:
+            mastery = sum(scores) / len(scores)
+            # Add time-based progression
+            mastery += len(session_history) * 0.01
+            mastery = min(mastery, 1.0)  # Cap at 100%
+        else:
+            mastery = 0.2  # Base level
+        mastery_levels[subject] = mastery
+    
+    return mastery_levels
+
+def check_curriculum_progression(mastery_levels: Dict[str, float], current_unit: str = "Kindergarten Basics") -> Dict[str, Any]:
+    """
+    Check if learner is ready to advance to next curriculum unit
+    Required by Issue #3
+    """
+    # Calculate overall mastery
+    avg_mastery = sum(mastery_levels.values()) / len(mastery_levels) if mastery_levels else 0
+    
+    threshold = LEARNING_CONFIG['mastery_threshold']
+    
+    if avg_mastery >= threshold:
+        # Ready to advance!
+        return {
+            'advanced': True,
+            'previous_unit': current_unit,
+            'new_unit': "Kindergarten Advanced" if "Basics" in current_unit else "First Grade Preparation",
+            'mastery_achieved': avg_mastery,
+            'subject_mastery': mastery_levels
+        }
+    else:
+        # Not ready yet
+        concepts_needed = int((threshold - avg_mastery) * 50)
+        
+        return {
+            'advanced': False,
+            'current_unit': current_unit,
+            'current_mastery': avg_mastery,
+            'target_mastery': threshold,
+            'estimated_concepts_needed': concepts_needed,
+            'subject_mastery': mastery_levels,
+            'weakest_subject': min(mastery_levels, key=mastery_levels.get)
+        }
+
+def calculate_learning_metrics(session: Dict[str, Any], session_history: List[Dict]) -> Dict[str, Any]:
+    """Calculate comprehensive learning metrics with AGI enhancements"""
+    
+    # Calculate basic metrics
+    reviews_completed = session.get('reviews_completed', 0)
+    concepts_learned = len(session.get('concepts_learned', []))
+    review_results = session.get('review_results', [])
+    
+    # Calculate success rates
+    if review_results:
+        successful_reviews = sum(1 for r in review_results if r.get('quality', 0) >= 3)
+        review_success_rate = successful_reviews / len(review_results)
+    else:
+        review_success_rate = 0.0
+    
+    # Calculate subject mastery (use the mastery levels from session)
+    subject_mastery = session.get('mastery_levels', {
+        'math': 0.8, 'reading': 0.4, 'science': 0.3, 'social': 0.6, 'art': 0.2
+    })
+    
+    # Calculate adaptive difficulty
+    avg_mastery = sum(subject_mastery.values()) / len(subject_mastery) if subject_mastery else 0.5
+    adaptive_difficulty = min(0.9, max(0.1, avg_mastery + 0.1))
+    
+    # Create metrics object with proper initialization
+    metrics = LearningMetrics(
+        subject_mastery=subject_mastery,
+        review_success_rate=review_success_rate,
+        concept_acquisition_rate=concepts_learned,
+        adaptive_difficulty=adaptive_difficulty
+    )
+    
+    # Add derived metrics
+    metrics.retention_rate = review_success_rate
+    metrics.learning_velocity = concepts_learned
+    metrics.engagement_score = min(1.0, (review_success_rate + (concepts_learned / 10)) / 2)
+    
+    # Add session history analysis
+    if len(session_history) > 1:
+        recent_sessions = session_history[-5:]  # Last 5 sessions
+        recent_concepts = sum(len(s.get('concepts_learned', [])) for s in recent_sessions)
+        metrics.learning_trend = recent_concepts / len(recent_sessions)
+    else:
+        metrics.learning_trend = concepts_learned
+    
+    # Add physical exploration metrics if available
+    if session.get('physical_exploration'):
+        embodied_concepts = len(session.get('embodied_concepts', []))
+        metrics.embodied_learning_rate = embodied_concepts
+        metrics.grounded_concept_ratio = embodied_concepts / max(1, concepts_learned)
+    else:
+        metrics.embodied_learning_rate = 0
+        metrics.grounded_concept_ratio = 0
+    
+    # Convert to dictionary for compatibility
+    metrics_dict = {
+        'subject_mastery': metrics.subject_mastery,
+        'review_success_rate': metrics.review_success_rate,
+        'concept_acquisition_rate': metrics.concept_acquisition_rate,
+        'adaptive_difficulty': metrics.adaptive_difficulty,
+        'retention_rate': metrics.retention_rate,
+        'learning_velocity': metrics.learning_velocity,
+        'engagement_score': metrics.engagement_score,
+        'learning_trend': metrics.learning_trend,
+        'embodied_learning_rate': getattr(metrics, 'embodied_learning_rate', 0),
+        'grounded_concept_ratio': getattr(metrics, 'grounded_concept_ratio', 0),
+        'transfer_learning': measure_transfer_learning(),
+        'meta_learning': {
+            'adaptation_rate': calculate_adaptation_rate(session),
+            'concept_integration': analyze_concept_integration()
+        }
+    }
+    
+    return metrics_dict
+
+def generate_adaptive_lessons(session_history: List[Dict], mastery_levels: Dict[str, float]) -> List[Dict]:
+    """
+    Generate personalized lessons based on progress
+    Required by Issue #3 for adaptive learning
+    """
+    lessons = []
+    
+    # Calculate adaptive difficulty for each subject
+    subjects = ['math', 'reading', 'science', 'social', 'art']
+    subject_priorities = []
+    
+    for subject in subjects:
+        mastery = mastery_levels.get(subject, 0.0)
+        # Lower mastery = higher priority
+        priority = 1.0 - mastery
+        
+        # Boost core subjects
+        if subject in ['math', 'reading']:
+            priority *= 1.2
+            
+        # Calculate appropriate difficulty
+        difficulty = mastery + LEARNING_CONFIG['difficulty_adjustment_rate']
             progression[subject].append(level)
     
     return dict(progression)
@@ -982,5 +1055,26 @@ if __name__ == "__main__":
 
     session = run_daily_learning_loop(run_date)
     print(f"\n🎉 Learning complete for {run_date}!")
+
+# Enhanced physical exploration for advanced capabilities
+def advanced_physical_exploration(world, embodied):
+    # Add multi-agent scenarios
+    world.add_social_agents()
+    
+    # Add complex problem scenarios  
+    world.create_puzzles()
+    
+    # Record meta-learning insights
+    meta_experiences = embodied.track_learning_strategies()
+    
+    # Build causal models from physical experience
+    causal_models = embodied.extract_causal_relationships()
+    
+    return {
+        'social_experiences': world.social_interactions,
+        'problem_solving_patterns': world.puzzle_solutions,
+        'meta_learning_insights': meta_experiences,
+        'causal_understanding': causal_models
+    }
 
 
