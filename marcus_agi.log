@@ -343,3 +343,12 @@
 2025-08-02 09:03:16,206 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(1, 0)_32
 2025-08-02 09:03:16,211 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_33
 2025-08-02 09:03:16,215 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_34
+2025-08-02 09:46:39,155 - advanced_reasoning_engine - INFO - 🧠 Advanced Reasoning Engine initialized with physical experience patterns
+2025-08-02 09:46:39,257 - root - WARNING - Social Integration System not available
+2025-08-02 09:46:39,261 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 09:46:39,261 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 09:46:39,261 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 09:46:39,264 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: Apply physical insight: Air feels like nothing
+2025-08-02 09:46:39,264 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 09:46:39,265 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: How to optimize learning strategy based on past performance
+2025-08-02 09:46:39,265 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
