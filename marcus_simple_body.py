@@ -458,10 +458,14 @@ class EmbodiedLearning:
     def _form_concept(self, learning_experience):
         """Convert physical experience into knowledge!"""
         
-        # Handle different input formats
+        # Extract the learning content properly
         if isinstance(learning_experience, dict):
             if 'learning' in learning_experience:
-                concept_content = learning_experience['learning']
+                if isinstance(learning_experience['learning'], dict):
+                    # Handle nested learning object
+                    concept_content = learning_experience['learning'].get('learning', str(learning_experience['learning']))
+                else:
+                    concept_content = str(learning_experience['learning'])
                 concept_key = learning_experience.get('action', 'exploration')
             else:
                 concept_content = str(learning_experience)
@@ -483,7 +487,7 @@ class EmbodiedLearning:
                 from MarcusAGI.memory_system import Concept
                 concept = Concept(
                     id=f"physics_{concept_key}_{len(self.concept_mappings[concept_key])}",
-                    content=concept_content,
+                    content=concept_content,  # Ensure this is a string
                     subject="physics",
                     grade_level="kindergarten",
                     emotional_context="discovered"
