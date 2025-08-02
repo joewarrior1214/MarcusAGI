@@ -71,3 +71,275 @@
 2025-08-02 07:02:30,654 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
 2025-08-02 07:02:30,654 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: How to optimize learning strategy based on past performance
 2025-08-02 07:02:30,654 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 08:33:26,269 - root - WARNING - Social Integration System not available
+2025-08-02 08:33:26,275 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 08:33:26,276 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 08:33:26,276 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 08:33:26,276 - marcus_spatial_learning_loop - INFO - ✅ Embodied Social Integration system initialized
+2025-08-02 08:33:26,276 - memory_system - INFO - Database initialized at marcus_spatial_learning.db
+2025-08-02 08:33:26,277 - marcus_spatial_learning_loop - INFO - ✅ Memory system initialized
+2025-08-02 08:33:26,285 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 1)_0
+2025-08-02 08:33:26,290 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_1
+2025-08-02 08:33:26,295 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_2
+2025-08-02 08:33:26,302 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 1)_3
+2025-08-02 08:33:26,307 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_4
+2025-08-02 08:33:26,312 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_5
+2025-08-02 08:33:26,319 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_6
+2025-08-02 08:33:26,325 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 0)_7
+2025-08-02 08:33:26,331 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_8
+2025-08-02 08:33:26,335 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_9
+2025-08-02 08:33:26,340 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_10
+2025-08-02 08:33:26,345 - memory_system - INFO - Learned new concept: spatial_object_object_8_located_at_(0, 1)_11
+2025-08-02 08:33:26,351 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_12
+2025-08-02 08:33:26,355 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_13
+2025-08-02 08:33:26,361 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_14
+2025-08-02 08:33:26,366 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 0)_15
+2025-08-02 08:33:26,371 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 0)_16
+2025-08-02 08:33:26,377 - memory_system - INFO - Learned new concept: spatial_object_object_8_located_at_(1, 0)_17
+2025-08-02 08:33:26,384 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_18
+2025-08-02 08:33:26,390 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_19
+2025-08-02 08:33:26,396 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_20
+2025-08-02 08:33:26,401 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 2)_21
+2025-08-02 08:33:26,421 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_22
+2025-08-02 08:33:26,431 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 2)_23
+2025-08-02 08:33:26,438 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_24
+2025-08-02 08:33:26,445 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_25
+2025-08-02 08:33:26,449 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_26
+2025-08-02 08:33:26,454 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_27
+2025-08-02 08:33:26,458 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_28
+2025-08-02 08:33:26,462 - memory_system - INFO - Learned new concept: spatial_object_object_1_located_at_(0, 1)_29
+2025-08-02 08:33:26,466 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_30
+2025-08-02 08:33:26,469 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_31
+2025-08-02 08:33:26,474 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_32
+2025-08-02 08:33:26,479 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_33
+2025-08-02 08:33:26,483 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_34
+2025-08-02 08:33:26,488 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_35
+2025-08-02 08:33:26,494 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_36
+2025-08-02 08:33:26,514 - advanced_reasoning_engine - INFO - 🧠 Advanced Reasoning Engine initialized with physical experience patterns
+2025-08-02 08:33:26,517 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 08:33:26,517 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 08:33:26,518 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 08:33:26,521 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: How to optimize learning strategy based on past performance
+2025-08-02 08:33:26,521 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 08:33:26,550 - memory_system - INFO - Learned new concept: spatial_discovered_location_(2, 2)_0
+2025-08-02 08:33:26,558 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(2, 2)_1
+2025-08-02 08:33:26,568 - memory_system - INFO - Learned new concept: spatial_object_object_3_located_at_(2, 2)_2
+2025-08-02 08:33:26,573 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_3
+2025-08-02 08:33:26,586 - memory_system - INFO - Learned new concept: spatial_discovered_location_(2, 3)_4
+2025-08-02 08:33:26,596 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_5
+2025-08-02 08:33:26,607 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 3)_6
+2025-08-02 08:33:26,614 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 3)_7
+2025-08-02 08:33:26,623 - memory_system - INFO - Learned new concept: spatial_object_object_1_located_at_(1, 3)_8
+2025-08-02 08:33:26,630 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_9
+2025-08-02 08:33:26,635 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 3)_10
+2025-08-02 08:33:26,640 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 3)_11
+2025-08-02 08:33:26,645 - memory_system - INFO - Learned new concept: spatial_object_object_4_located_at_(0, 3)_12
+2025-08-02 08:33:26,651 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_13
+2025-08-02 08:33:26,656 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_14
+2025-08-02 08:33:26,660 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_15
+2025-08-02 08:33:26,666 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_16
+2025-08-02 08:33:26,671 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_17
+2025-08-02 08:33:26,676 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_18
+2025-08-02 08:33:26,695 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_19
+2025-08-02 08:33:26,700 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_20
+2025-08-02 08:33:26,711 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_21
+2025-08-02 08:33:26,716 - memory_system - INFO - Learned new concept: spatial_object_object_7_located_at_(1, 1)_22
+2025-08-02 08:33:26,721 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_23
+2025-08-02 08:33:26,727 - memory_system - INFO - Learned new concept: spatial_discovered_location_(2, 1)_24
+2025-08-02 08:33:26,731 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(2, 1)_25
+2025-08-02 08:33:26,735 - memory_system - INFO - Learned new concept: spatial_object_object_8_located_at_(2, 1)_26
+2025-08-02 08:33:26,740 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_27
+2025-08-02 08:33:26,745 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(2, 1)_28
+2025-08-02 08:33:26,750 - memory_system - INFO - Learned new concept: spatial_object_detail_1_located_at_(2, 1)_29
+2025-08-02 08:33:26,754 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(2, 1)_30
+2025-08-02 08:33:26,759 - memory_system - INFO - Learned new concept: spatial_object_detail_1_located_at_(2, 1)_31
+2025-08-02 08:33:26,764 - memory_system - INFO - Learned new concept: spatial_discovered_location_(3, 1)_32
+2025-08-02 08:33:26,768 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(3, 1)_33
+2025-08-02 08:33:26,772 - memory_system - INFO - Learned new concept: spatial_object_object_3_located_at_(3, 1)_34
+2025-08-02 08:33:26,779 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_35
+2025-08-02 08:33:26,784 - memory_system - INFO - Learned new concept: spatial_discovered_location_(4, 1)_36
+2025-08-02 08:33:26,810 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_37
+2025-08-02 08:34:01,425 - root - WARNING - Social Integration System not available
+2025-08-02 08:34:01,434 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 08:34:01,434 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 08:34:01,434 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 08:34:01,435 - marcus_spatial_learning_loop - INFO - ✅ Embodied Social Integration system initialized
+2025-08-02 08:34:01,435 - memory_system - INFO - Database initialized at marcus_spatial_learning.db
+2025-08-02 08:34:01,435 - marcus_spatial_learning_loop - INFO - ✅ Memory system initialized
+2025-08-02 08:34:01,446 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_0
+2025-08-02 08:34:01,464 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 0)_1
+2025-08-02 08:34:01,469 - memory_system - INFO - Learned new concept: spatial_object_detail_5_located_at_(0, 0)_2
+2025-08-02 08:34:01,475 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_3
+2025-08-02 08:34:01,481 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_4
+2025-08-02 08:34:01,494 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_5
+2025-08-02 08:34:01,501 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_6
+2025-08-02 08:34:01,508 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_7
+2025-08-02 08:34:01,514 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_8
+2025-08-02 08:34:01,520 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 1)_9
+2025-08-02 08:34:01,527 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_10
+2025-08-02 08:34:01,534 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_11
+2025-08-02 08:34:01,541 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 1)_12
+2025-08-02 08:34:01,548 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_13
+2025-08-02 08:34:01,554 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(1, 1)_14
+2025-08-02 08:34:01,561 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_15
+2025-08-02 08:34:01,567 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_16
+2025-08-02 08:34:01,573 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_17
+2025-08-02 08:34:01,586 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_18
+2025-08-02 08:34:01,590 - memory_system - INFO - Learned new concept: spatial_object_detail_2_located_at_(0, 1)_19
+2025-08-02 08:34:01,597 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_20
+2025-08-02 08:34:01,602 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_21
+2025-08-02 08:34:01,609 - memory_system - INFO - Learned new concept: spatial_object_detail_4_located_at_(0, 1)_22
+2025-08-02 08:34:01,614 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_23
+2025-08-02 08:34:01,620 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_24
+2025-08-02 08:34:01,625 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_25
+2025-08-02 08:34:01,629 - memory_system - INFO - Learned new concept: spatial_object_detail_3_located_at_(0, 1)_26
+2025-08-02 08:34:01,634 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_27
+2025-08-02 08:34:01,639 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_28
+2025-08-02 08:34:01,646 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_29
+2025-08-02 08:34:01,651 - memory_system - INFO - Learned new concept: spatial_object_detail_1_located_at_(0, 1)_30
+2025-08-02 08:34:01,659 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_31
+2025-08-02 08:34:01,665 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_32
+2025-08-02 08:34:01,673 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_33
+2025-08-02 08:34:01,677 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_34
+2025-08-02 08:34:01,682 - memory_system - INFO - Learned new concept: spatial_object_object_3_located_at_(1, 1)_35
+2025-08-02 08:34:01,687 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_36
+2025-08-02 08:34:01,694 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_37
+2025-08-02 08:34:01,700 - memory_system - INFO - Learned new concept: spatial_object_object_6_located_at_(0, 1)_38
+2025-08-02 08:34:01,706 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_39
+2025-08-02 08:34:01,711 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_40
+2025-08-02 08:34:01,715 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_41
+2025-08-02 08:34:01,721 - memory_system - INFO - Learned new concept: spatial_object_detail_2_located_at_(0, 1)_42
+2025-08-02 08:34:01,725 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_43
+2025-08-02 08:34:01,729 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 2)_44
+2025-08-02 08:34:01,732 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_45
+2025-08-02 08:34:01,736 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_46
+2025-08-02 08:34:01,740 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_47
+2025-08-02 08:34:01,745 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_48
+2025-08-02 08:34:01,754 - advanced_reasoning_engine - INFO - 🧠 Advanced Reasoning Engine initialized with physical experience patterns
+2025-08-02 08:34:01,754 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 08:34:01,755 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 08:34:01,755 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 08:34:01,757 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: Apply physical insight: Air feels like nothing
+2025-08-02 08:34:01,757 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 08:34:01,757 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: How to optimize learning strategy based on past performance
+2025-08-02 08:34:01,757 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 08:34:01,773 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 2)_0
+2025-08-02 08:34:01,777 - memory_system - INFO - Learned new concept: spatial_object_detail_2_located_at_(0, 2)_1
+2025-08-02 08:34:01,786 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_2
+2025-08-02 08:34:01,791 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 2)_3
+2025-08-02 08:34:01,798 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_4
+2025-08-02 08:34:01,804 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_5
+2025-08-02 08:34:01,809 - memory_system - INFO - Learned new concept: spatial_object_object_4_located_at_(1, 1)_6
+2025-08-02 08:34:01,814 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_7
+2025-08-02 08:34:01,818 - memory_system - INFO - Learned new concept: spatial_discovered_location_(2, 1)_8
+2025-08-02 08:34:01,824 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_9
+2025-08-02 08:34:01,829 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_10
+2025-08-02 08:34:01,833 - memory_system - INFO - Learned new concept: spatial_object_object_1_located_at_(1, 1)_11
+2025-08-02 08:34:01,838 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_12
+2025-08-02 08:34:01,843 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_13
+2025-08-02 08:34:01,848 - memory_system - INFO - Learned new concept: spatial_object_detail_4_located_at_(1, 1)_14
+2025-08-02 08:34:01,852 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_15
+2025-08-02 08:34:01,858 - memory_system - INFO - Learned new concept: spatial_discovered_location_(3, 1)_16
+2025-08-02 08:34:01,862 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_17
+2025-08-02 08:42:36,006 - root - WARNING - Social Integration System not available
+2025-08-02 09:03:15,641 - root - WARNING - Social Integration System not available
+2025-08-02 09:03:15,649 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 09:03:15,649 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 09:03:15,649 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 09:03:15,650 - marcus_spatial_learning_loop - INFO - ✅ Embodied Social Integration system initialized
+2025-08-02 09:03:15,650 - memory_system - INFO - Database initialized at marcus_spatial_learning.db
+2025-08-02 09:03:15,650 - marcus_spatial_learning_loop - INFO - ✅ Memory system initialized
+2025-08-02 09:03:15,673 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 1)_0
+2025-08-02 09:03:15,679 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_1
+2025-08-02 09:03:15,685 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_2
+2025-08-02 09:03:15,689 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_3
+2025-08-02 09:03:15,694 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 2)_4
+2025-08-02 09:03:15,698 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 2)_5
+2025-08-02 09:03:15,703 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(0, 2)_6
+2025-08-02 09:03:15,709 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_7
+2025-08-02 09:03:15,713 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_8
+2025-08-02 09:03:15,719 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_9
+2025-08-02 09:03:15,723 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_10
+2025-08-02 09:03:15,729 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_11
+2025-08-02 09:03:15,734 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_12
+2025-08-02 09:03:15,738 - memory_system - INFO - Learned new concept: spatial_discovered_location_(0, 0)_13
+2025-08-02 09:03:15,743 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 0)_14
+2025-08-02 09:03:15,748 - memory_system - INFO - Learned new concept: spatial_object_object_7_located_at_(0, 0)_15
+2025-08-02 09:03:15,753 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_16
+2025-08-02 09:03:15,759 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_17
+2025-08-02 09:03:15,766 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_18
+2025-08-02 09:03:15,771 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_19
+2025-08-02 09:03:15,777 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_20
+2025-08-02 09:03:15,782 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_21
+2025-08-02 09:03:15,790 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_22
+2025-08-02 09:03:15,794 - memory_system - INFO - Learned new concept: spatial_object_detail_2_located_at_(0, 1)_23
+2025-08-02 09:03:15,800 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_24
+2025-08-02 09:03:15,805 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 1)_25
+2025-08-02 09:03:15,811 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_26
+2025-08-02 09:03:15,816 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 0)_27
+2025-08-02 09:03:15,821 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 0)_28
+2025-08-02 09:03:15,825 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(1, 0)_29
+2025-08-02 09:03:15,831 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_30
+2025-08-02 09:03:15,838 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_31
+2025-08-02 09:03:15,844 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_32
+2025-08-02 09:03:15,850 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_33
+2025-08-02 09:03:15,855 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 0)_34
+2025-08-02 09:03:15,859 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(0, 0)_35
+2025-08-02 09:03:15,866 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_36
+2025-08-02 09:03:15,872 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_37
+2025-08-02 09:03:15,877 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_38
+2025-08-02 09:03:15,882 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_39
+2025-08-02 09:03:15,888 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_40
+2025-08-02 09:03:15,892 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_41
+2025-08-02 09:03:15,897 - memory_system - INFO - Learned new concept: spatial_object_object_6_located_at_(0, 1)_42
+2025-08-02 09:03:15,901 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_43
+2025-08-02 09:03:15,909 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_44
+2025-08-02 09:03:15,920 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_45
+2025-08-02 09:03:15,924 - memory_system - INFO - Learned new concept: spatial_object_detail_5_located_at_(0, 1)_46
+2025-08-02 09:03:15,929 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_47
+2025-08-02 09:03:15,936 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_48
+2025-08-02 09:03:15,942 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_49
+2025-08-02 09:03:15,947 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_50
+2025-08-02 09:03:15,954 - advanced_reasoning_engine - INFO - 🧠 Advanced Reasoning Engine initialized with physical experience patterns
+2025-08-02 09:03:15,954 - peer_interaction_simulation - INFO - Created 5 peer personalities
+2025-08-02 09:03:15,954 - peer_interaction_simulation - INFO - Created 3 collaborative activities
+2025-08-02 09:03:15,954 - peer_interaction_simulation - INFO - Peer Interaction Simulator initialized
+2025-08-02 09:03:15,956 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: Apply physical insight: Air feels like nothing
+2025-08-02 09:03:15,956 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 09:03:15,956 - advanced_reasoning_engine - INFO - 🎯 Attempting to solve problem: How to optimize learning strategy based on past performance
+2025-08-02 09:03:15,956 - advanced_reasoning_engine - INFO - ✅ Problem solved with goal_decomposition (confidence: 0.65)
+2025-08-02 09:03:15,988 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 1)_0
+2025-08-02 09:03:15,992 - memory_system - INFO - Learned new concept: spatial_object_detail_1_located_at_(0, 1)_1
+2025-08-02 09:03:15,995 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_2
+2025-08-02 09:03:15,999 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_3
+2025-08-02 09:03:16,003 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_4
+2025-08-02 09:03:16,007 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_5
+2025-08-02 09:03:16,012 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 2)_6
+2025-08-02 09:03:16,023 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_7
+2025-08-02 09:03:16,027 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(0, 2)_8
+2025-08-02 09:03:16,035 - memory_system - INFO - Learned new concept: spatial_object_object_1_located_at_(0, 2)_9
+2025-08-02 09:03:16,044 - memory_system - INFO - Learned new concept: spatial_movement_west_successful_10
+2025-08-02 09:03:16,049 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_11
+2025-08-02 09:03:16,059 - memory_system - INFO - Learned new concept: spatial_movement_east_successful_12
+2025-08-02 09:03:16,063 - memory_system - INFO - Learned new concept: spatial_discovered_location_(1, 3)_13
+2025-08-02 09:03:16,071 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_14
+2025-08-02 09:03:16,078 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 2)_15
+2025-08-02 09:03:16,084 - memory_system - INFO - Learned new concept: spatial_object_object_6_located_at_(1, 2)_16
+2025-08-02 09:03:16,091 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_17
+2025-08-02 09:03:16,096 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 3)_18
+2025-08-02 09:03:16,102 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(1, 3)_19
+2025-08-02 09:03:16,106 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_20
+2025-08-02 09:03:16,116 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_21
+2025-08-02 09:03:16,121 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_22
+2025-08-02 09:03:16,127 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 2)_23
+2025-08-02 09:03:16,157 - memory_system - INFO - Learned new concept: spatial_object_object_3_located_at_(1, 2)_24
+2025-08-02 09:03:16,164 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_25
+2025-08-02 09:03:16,169 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 1)_26
+2025-08-02 09:03:16,173 - memory_system - INFO - Learned new concept: spatial_object_object_8_located_at_(1, 1)_27
+2025-08-02 09:03:16,177 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_28
+2025-08-02 09:03:16,194 - memory_system - INFO - Learned new concept: spatial_movement_north_successful_29
+2025-08-02 09:03:16,198 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_30
+2025-08-02 09:03:16,202 - memory_system - INFO - Learned new concept: spatial_objects_clustered_at_(1, 0)_31
+2025-08-02 09:03:16,206 - memory_system - INFO - Learned new concept: spatial_object_object_5_located_at_(1, 0)_32
+2025-08-02 09:03:16,211 - memory_system - INFO - Learned new concept: spatial_movement_south_successful_33
+2025-08-02 09:03:16,215 - memory_system - INFO - Learned new concept: spatial_at_world_boundary_34
