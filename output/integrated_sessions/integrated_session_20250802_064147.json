@@ -1,0 +1,556 @@
+{
+  "session_id": "integrated_session_20250802_064147",
+  "date": "2025-08-02 06:41:47.622445",
+  "academic_focus": [
+    "Advanced science concept (difficulty: 0.35)",
+    "Advanced art concept (difficulty: 0.35)",
+    "Advanced reading concept (difficulty: 0.48)",
+    "Advanced social concept (difficulty: 0.53)",
+    "Advanced math concept (difficulty: 0.93)"
+  ],
+  "social_focus": [
+    "SocialSkillArea.COOPERATION",
+    "SocialSkillArea.ACTIVE_LISTENING",
+    "SocialSkillArea.TURN_TAKING"
+  ],
+  "peer_interactions": [
+    {
+      "type": "morning_warmup",
+      "peer": "emma",
+      "session": {
+        "session_id": "f9c31a5e-592a-4679-8373-dbc0881d7dc7",
+        "marcus_id": "marcus",
+        "peers_involved": [
+          "emma"
+        ],
+        "context": "InteractionContext.CLASSROOM",
+        "topic": "ConversationTopic.FRIENDSHIP_BUILDING",
+        "duration_minutes": 5,
+        "conversation_turns": [
+          {
+            "speaker": "emma",
+            "message": "Let's all play together! Should we work together?",
+            "emotion": "friendly",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.8,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "confident",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.5046792375833173,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.4494143376080896,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "enthusiastic",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.831223575119519,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.6832405576712942,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Come join our game!",
+            "emotion": "enthusiastic",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.6593669917132918,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.7852361721850282,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "patient",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.8577417380601206,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.7825022680667701,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That was fun! Let's play again tomorrow.",
+            "emotion": "satisfied",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "response_quality": 0.8,
+            "coaching_triggered": false,
+            "coaching_message": null
+          }
+        ],
+        "social_skills_practiced": [
+          "SocialSkillArea.COOPERATION",
+          "SocialSkillArea.ACTIVE_LISTENING",
+          "SocialSkillArea.TURN_TAKING"
+        ],
+        "learning_objectives_met": [
+          "academic collaboration",
+          "following classroom rules",
+          "social connection",
+          "empathy"
+        ],
+        "conflicts_resolved": 0,
+        "collaboration_successes": 1,
+        "overall_success_rating": 1.0,
+        "marcus_growth_areas": [
+          "empathy development"
+        ],
+        "peer_feedback": {
+          "Emma": "Marcus helped us solve the problem together."
+        },
+        "session_timestamp": "2025-08-02 06:41:47.595925"
+      },
+      "success_rating": 1.0,
+      "skills_practiced": [
+        "cooperation",
+        "active_listening",
+        "turn_taking"
+      ]
+    },
+    {
+      "type": "social_practice",
+      "focus_skills": [
+        "leadership",
+        "active_listening",
+        "cooperation"
+      ],
+      "peers": [
+        "emma",
+        "oliver"
+      ],
+      "session": {
+        "session_id": "594b76d3-4b51-4a1f-b625-d95e02a1729e",
+        "marcus_id": "marcus",
+        "peers_involved": [
+          "emma",
+          "oliver"
+        ],
+        "context": "InteractionContext.GROUP_PROJECT",
+        "topic": "ConversationTopic.SOLVING_PROBLEMS",
+        "duration_minutes": 10,
+        "conversation_turns": [
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "friendly",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.8,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "confident",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.7694620625390224,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "oliver",
+            "message": "Hi",
+            "emotion": "calm",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.6191967823838038,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.6770787773082552,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "oliver",
+            "message": "*waves shyly*",
+            "emotion": "hesitant",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.580432728083563,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Come join our game!",
+            "emotion": "frustrated",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.7318674686607548,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.6066617869342146,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "enthusiastic",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.7264888830331118,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "oliver",
+            "message": "Hi",
+            "emotion": "calm",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.6245315815161951,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.6859796789848269,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "oliver",
+            "message": "Hi",
+            "emotion": "anxious",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.7771353228646128,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Hi! Want to play with us?",
+            "emotion": "confident",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.8781913081334838,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.4804847310784992,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Come join our game!",
+            "emotion": "confident",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.5809010118375055,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "oliver",
+            "message": "Hello",
+            "emotion": "thoughtful",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.5693255831946068,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.6784697260832795,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "oliver",
+            "message": "*waves shyly*",
+            "emotion": "thoughtful",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.73564642165683,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "emma",
+            "message": "Come join our game!",
+            "emotion": "confident",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING"
+            ],
+            "response_quality": 0.7662023892015857,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "That sounds great! I'd like to try that too.",
+            "emotion": "engaged",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.ACTIVE_LISTENING",
+              "SocialSkillArea.TURN_TAKING"
+            ],
+            "response_quality": 0.5091502300536875,
+            "coaching_triggered": false,
+            "coaching_message": null
+          },
+          {
+            "speaker": "marcus",
+            "message": "I had a great time with you all.",
+            "emotion": "satisfied",
+            "social_skills_demonstrated": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "response_quality": 0.8,
+            "coaching_triggered": false,
+            "coaching_message": null
+          }
+        ],
+        "social_skills_practiced": [
+          "SocialSkillArea.COOPERATION",
+          "SocialSkillArea.ACTIVE_LISTENING",
+          "SocialSkillArea.TURN_TAKING"
+        ],
+        "learning_objectives_met": [
+          "teamwork",
+          "shared responsibility",
+          "critical thinking",
+          "collaboration"
+        ],
+        "conflicts_resolved": 0,
+        "collaboration_successes": 1,
+        "overall_success_rating": 0.983974990063252,
+        "marcus_growth_areas": [
+          "empathy development"
+        ],
+        "peer_feedback": {
+          "Emma": "Marcus is a good friend to play with!",
+          "Oliver": "Marcus makes me feel comfortable."
+        },
+        "session_timestamp": "2025-08-02 06:41:47.611362"
+      },
+      "success_rating": 0.983974990063252,
+      "conflicts_resolved": 0
+    }
+  ],
+  "collaborative_activities": [
+    {
+      "activity_id": "storytelling_collaboration",
+      "activity_name": "Create Our Class Adventure",
+      "participants": [
+        "marcus",
+        "emma",
+        "oliver",
+        "zoe",
+        "alex"
+      ],
+      "role_assignments": {
+        "marcus": "Story Starter",
+        "emma": "Character Creator",
+        "oliver": "Illustrator",
+        "zoe": "Problem Solver",
+        "alex": "Ending Maker"
+      },
+      "duration_minutes": 30,
+      "learning_objectives_met": [
+        "Build vocabulary"
+      ],
+      "social_skills_demonstrated": [
+        "SocialSkillArea.COOPERATION",
+        "SocialSkillArea.LEADERSHIP",
+        "SocialSkillArea.INCLUSION",
+        "SocialSkillArea.ACTIVE_LISTENING"
+      ],
+      "individual_performance": {
+        "marcus": {
+          "task_completion": 0.6901318538593348,
+          "social_engagement": 0.5077774136846791,
+          "role_fulfillment": 0.7991106144320146,
+          "peer_interaction": 0.5228425974111669
+        },
+        "emma": {
+          "task_completion": 0.7999999999999999,
+          "social_engagement": 0.8999999999999999,
+          "role_fulfillment": 0.85,
+          "peer_interaction": 0.7999999999999999
+        },
+        "oliver": {
+          "task_completion": 0.75,
+          "social_engagement": 0.6,
+          "role_fulfillment": 0.7,
+          "peer_interaction": 0.6499999999999999
+        },
+        "zoe": {
+          "task_completion": 0.7,
+          "social_engagement": 0.7,
+          "role_fulfillment": 0.7,
+          "peer_interaction": 0.7
+        },
+        "alex": {
+          "task_completion": 0.7,
+          "social_engagement": 0.7,
+          "role_fulfillment": 0.7,
+          "peer_interaction": 0.7
+        }
+      },
+      "group_dynamics": {
+        "engagement_level": 0.7343465918353873,
+        "cooperation_level": 0.6863475728112263,
+        "conflict_instances": 1,
+        "leadership_moments": 2,
+        "creative_contributions": 4
+      },
+      "success_rating": 0.7256936023626275,
+      "growth_opportunities": [
+        "social engagement",
+        "peer interaction"
+      ],
+      "recommendations": [
+        "Good progress! Continue with similar collaborative activities.",
+        "Focus on strengthening peer communication skills.",
+        "Focus on improving social engagement in future activities.",
+        "Focus on improving peer interaction in future activities."
+      ],
+      "activity_timestamp": "2025-08-02T06:41:47.610786"
+    }
+  ],
+  "eq_coaching_moments": [],
+  "social_readiness_assessment": {
+    "overall_level": 0.915,
+    "readiness_level": "advanced",
+    "strengths": [
+      "active_listening",
+      "cooperation",
+      "turn_taking"
+    ],
+    "growth_areas": [],
+    "grade_advancement_ready": true,
+    "assessment_date": "2025-08-02T06:41:47.622426"
+  },
+  "integration_success_metrics": {
+    "social_engagement": 0.991987495031626,
+    "academic_collaboration": 0.7256936023626275,
+    "eq_coaching_integration": 0.0,
+    "overall_integration_success": 0.6870724389577014,
+    "daily_social_minutes": 25,
+    "peer_interactions_completed": 2,
+    "conflicts_resolved_today": 0
+  },
+  "recommendations": [
+    "Incorporate more emotional intelligence coaching during social interactions"
+  ]
+}
