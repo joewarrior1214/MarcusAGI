@@ -1,0 +1,389 @@
+{
+    "date": "2025-08-02",
+    "physical_exploration": true,
+    "concepts_discovered": 0,
+    "key_insights": [
+        "I can see objects within 3 spaces",
+        "I can see objects within 3 spaces",
+        "Moving uses energy"
+    ],
+    "total_experiences": 6,
+    "reasoning_results": [
+        {
+            "problem_id": "physical_reasoning_14",
+            "success": true,
+            "reasoning_type": "goal_decomposition",
+            "confidence": 0.65
+        },
+        {
+            "problem_id": "meta_reasoning_14",
+            "success": true,
+            "reasoning_type": "goal_decomposition",
+            "confidence": 0.65
+        }
+    ],
+    "reasoning_insights": {
+        "total_causal_relations": 7,
+        "total_problems_attempted": 2,
+        "successful_problems": 2,
+        "success_rate": 1.0,
+        "reasoning_type_distribution": {
+            "goal_decomposition": 2
+        },
+        "strongest_causal_relations": [
+            {
+                "relation": "drop_object->object_falls",
+                "confidence": 0.99
+            },
+            {
+                "relation": "hit_boundary->movement_stops",
+                "confidence": 0.98
+            },
+            {
+                "relation": "object_too_heavy->cannot_lift",
+                "confidence": 0.95
+            },
+            {
+                "relation": "apply_force->object_moves",
+                "confidence": 0.9
+            },
+            {
+                "relation": "low_energy->reduced_performance",
+                "confidence": 0.8
+            }
+        ]
+    },
+    "reviews_completed": 19,
+    "concepts_learned": [
+        "Advanced science concept (difficulty: 0.35)",
+        "Advanced art concept (difficulty: 0.35)",
+        "Advanced reading concept (difficulty: 0.49)",
+        "Advanced social concept (difficulty: 0.55)",
+        "Advanced math concept (difficulty: 0.93)"
+    ],
+    "review_results": [
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_3",
+            "content": "Review concept review_3",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_3",
+            "content": "Review concept review_3",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.6,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 5,
+            "success": true
+        },
+        {
+            "concept_id": "review_3",
+            "content": "Review concept review_3",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "patterns with colors (math)",
+            "content": "patterns with colors (math)",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "patterns with colors (math)",
+            "content": "patterns with colors (math)",
+            "interval_days": 1,
+            "ease_factor": 2.22,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        }
+    ],
+    "mastery_levels": {
+        "math": 0.8250000000000001,
+        "reading": 0.38846153846153847,
+        "science": 0.25,
+        "social": 0.45000000000000007,
+        "art": 0.25
+    },
+    "metrics": {
+        "subject_mastery": {
+            "math": 0.8250000000000001,
+            "reading": 0.38846153846153847,
+            "science": 0.25,
+            "social": 0.45000000000000007,
+            "art": 0.25
+        },
+        "review_success_rate": 0.7368421052631579,
+        "concept_acquisition_rate": 5,
+        "adaptive_difficulty": 0.5326923076923078,
+        "retention_rate": 0.7368421052631579,
+        "learning_velocity": 5,
+        "engagement_score": 0.618421052631579,
+        "learning_trend": 5.0,
+        "embodied_learning_rate": 0,
+        "grounded_concept_ratio": 0.0,
+        "transfer_learning": 0.6307829812391248,
+        "meta_learning": {
+            "adaptation_rate": 1.0,
+            "concept_integration": 0.7050576662460577
+        }
+    },
+    "learning_journal": {
+        "timestamp": "2025-08-02T05:01:43.809341",
+        "session_id": "session_2025-08-02",
+        "narrative_reflection": "Today I discovered that i can see objects within 3 spaces. This made me feel excited because it opened up new ways of thinking. I felt really proud when I solved most of the reasoning problems. I want to learn more about more complex problems. Something that puzzles me is how different concepts connect together. I think the answer might involve looking for patterns.",
+        "key_discoveries": [
+            "I can see objects within 3 spaces",
+            "I can see objects within 3 spaces",
+            "Moving uses energy"
+        ],
+        "challenges_faced": [
+            "Coordinating physical movement with learning goals"
+        ],
+        "emotional_journey": [
+            {
+                "primary_emotion": "excited",
+                "secondary_emotion": null,
+                "intensity": 1.0,
+                "triggers": [
+                    "high success rate",
+                    "multiple new concepts",
+                    "successful reasoning"
+                ],
+                "duration_minutes": 30.0
+            }
+        ],
+        "self_assessment_score": 1.0,
+        "confidence_level": 0.65,
+        "learning_goals_met": [
+            "Practice advanced reasoning skills",
+            "Learn new concepts",
+            "Explore the physical world"
+        ],
+        "future_learning_interests": [
+            "More mathematical problem solving",
+            "Scientific experiments and observations",
+            "More challenging reasoning problems",
+            "Connecting different subjects together"
+        ],
+        "metacognitive_insights": [
+            "I'm getting better at breaking down complex problems into smaller parts",
+            "I tend to use goal decomposition thinking most often",
+            "I'm building a good understanding of how actions lead to consequences",
+            "Moving around and exploring helps me understand concepts better"
+        ]
+    },
+    "emotional_state_summary": {
+        "current_primary_emotion": "excited",
+        "current_secondary_emotion": null,
+        "current_intensity": 1.0,
+        "emotion_distribution": {
+            "excited": 1
+        },
+        "average_intensity": 1.0,
+        "total_emotions_tracked": 1
+    },
+    "journal_summary": {
+        "total_entries": 1,
+        "most_recent_reflection": "Today I discovered that i can see objects within 3 spaces. This made me feel excited because it opened up new ways of thinking. I felt really proud when I solved most of the reasoning problems. I want to learn more about more complex problems. Something that puzzles me is how different concepts connect together. I think the answer might involve looking for patterns.",
+        "emotional_summary": {
+            "current_primary_emotion": "excited",
+            "current_secondary_emotion": null,
+            "current_intensity": 1.0,
+            "emotion_distribution": {
+                "excited": 1
+            },
+            "average_intensity": 1.0,
+            "total_emotions_tracked": 1
+        },
+        "confidence_trend": [
+            0.65
+        ],
+        "self_assessment_trend": [
+            1.0
+        ],
+        "common_challenges": [
+            "Coordinating physical movement with learning goals"
+        ],
+        "learning_progress_indicators": {
+            "status": "insufficient data"
+        }
+    },
+    "session_id": "marcus_session_2025-08-02_050143",
+    "timestamp": "2025-08-02T05:01:43.809537",
+    "session_duration_minutes": 35
+}

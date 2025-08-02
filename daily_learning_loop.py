@@ -51,6 +51,14 @@ SUMMARIES_DIR = BASE_DIR / "output" / "summaries"
 from reflection_system import generate_reflection  # This import might fail
 from concept_graph_system import learn_new_concepts, review_previous_concepts  # This import might fail
 
+# Import enhanced reflection system for Issue #4 completion
+try:
+    from reflection_journal_system import create_enhanced_reflection_system, enhance_session_with_journal
+    ENHANCED_REFLECTION_AVAILABLE = True
+except ImportError:
+    ENHANCED_REFLECTION_AVAILABLE = False
+    print("Enhanced reflection system not available - using basic reflection")
+
 def get_due_reviews(session_history: List[Dict], today: str) -> List[Dict]:
     """
     Pulls concepts that are due for review based on 'next_review' date.
@@ -697,10 +705,37 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
     # Update current session with learning results
     current_session.update(learning_results)
     
-    # Step 6: Save ONLY current session (no overwriting)
+    # Step 6: Enhanced Reflection & Learning Journal (Issue #4 completion)
+    if ENHANCED_REFLECTION_AVAILABLE:
+        print("\n📖 Creating Learning Journal Entry...")
+        try:
+            # Initialize journal system (could be persistent in real implementation)
+            journal_system = create_enhanced_reflection_system()
+            
+            # Enhance session with journal entry and emotional tracking
+            current_session = enhance_session_with_journal(current_session, journal_system)
+            
+            # Show brief summary of journal entry
+            if 'learning_journal' in current_session:
+                journal_entry = current_session['learning_journal']
+                print(f"  📝 Reflection: {journal_entry['narrative_reflection'][:100]}...")
+                
+                if 'emotional_state_summary' in current_session:
+                    emotion_summary = current_session['emotional_state_summary']
+                    if 'current_primary_emotion' in emotion_summary:
+                        print(f"  😊 Primary emotion: {emotion_summary['current_primary_emotion']}")
+                
+                metacognitive_insights = journal_entry.get('metacognitive_insights', [])
+                if metacognitive_insights:
+                    print(f"  🧠 Meta-insight: {metacognitive_insights[0]}")
+        
+        except Exception as e:
+            print(f"  ⚠️ Enhanced reflection error: {str(e)[:50]}...")
+    
+    # Step 7: Save ONLY current session (no overwriting)
     save_current_session_only(current_session)
     
-    # Step 7: Generate report for current session
+    # Step 8: Generate report for current session
     generate_reports([current_session], TODAY)
     
     print("\n✅ Learning session complete!")
