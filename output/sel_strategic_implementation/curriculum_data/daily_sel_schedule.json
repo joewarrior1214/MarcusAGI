@@ -1,0 +1,27 @@
+{
+  "morning_check_in": [
+    "How are you feeling this morning?",
+    "What emotions do you notice in your body?",
+    "What do you need to have a good day?"
+  ],
+  "transition_times": [
+    "Take three deep breaths before starting new activity",
+    "Use calm down strategy if feeling overwhelmed",
+    "Check in with friends during transitions"
+  ],
+  "conflict_moments": [
+    "Use problem-solving steps immediately",
+    "Practice emotion regulation strategies",
+    "Apply empathy and perspective-taking"
+  ],
+  "afternoon_reflection": [
+    "What emotions did you experience today?",
+    "How did you handle challenging moments?",
+    "What are you proud of from today?"
+  ],
+  "bedtime_wind_down": [
+    "Practice gratitude - what went well today?",
+    "Do calming breathing exercises",
+    "Set positive intentions for tomorrow"
+  ]
+}

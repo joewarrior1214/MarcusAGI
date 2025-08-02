@@ -1,0 +1,115 @@
+[
+  {
+    "id": "anger_breathing_drill",
+    "name": "Anger Breathing Challenge",
+    "target_emotion": "anger",
+    "regulation_strategy": "deep_breathing",
+    "scenario": "Your friend accidentally knocked down your block tower that you worked hard on",
+    "practice_steps": [
+      "Stop what you're doing and pause",
+      "Notice anger rising in your body (tight fists, hot face)",
+      "Take 5 slow, deep belly breaths",
+      "Count each breath: 1... 2... 3... 4... 5...",
+      "Check: How does your body feel now?",
+      "Use words to tell your friend how you feel"
+    ],
+    "coaching_prompts": [
+      "I notice your hands are getting tight. Let's try some breathing.",
+      "Good job stopping! Now let's breathe together.",
+      "Put your hand on your belly and feel it rise and fall.",
+      "You're doing great managing your anger!"
+    ],
+    "success_criteria": [
+      "Pauses before reacting",
+      "Completes 5 breaths with coaching",
+      "Shows physical signs of calming",
+      "Uses words instead of physical actions"
+    ],
+    "difficulty_level": "foundation"
+  },
+  {
+    "id": "frustration_problem_solving",
+    "name": "Frustration Problem-Solving Drill",
+    "target_emotion": "frustration",
+    "regulation_strategy": "problem_solving",
+    "scenario": "You can't figure out how to complete a puzzle and feel like giving up",
+    "practice_steps": [
+      "Recognize frustration signals (wanting to throw puzzle, saying 'I can't')",
+      "Take 3 deep breaths",
+      "Ask yourself: 'What's the real problem here?'",
+      "Think of 3 different solutions",
+      "Try one solution",
+      "If it doesn't work, try another solution",
+      "Ask for help if you need it"
+    ],
+    "coaching_prompts": [
+      "I can see you're getting frustrated. Let's pause and think.",
+      "What exactly is making this hard for you?",
+      "What are some different ways you could try this?",
+      "It's okay to ask for help when you need it."
+    ],
+    "success_criteria": [
+      "Identifies frustration without being prompted",
+      "Can name the specific problem",
+      "Generates at least 2 solutions",
+      "Tries solutions before giving up"
+    ],
+    "difficulty_level": "building"
+  },
+  {
+    "id": "sadness_comfort_drill",
+    "name": "Sadness Comfort Strategies",
+    "target_emotion": "sadness",
+    "regulation_strategy": "self_comfort",
+    "scenario": "You miss your parent who had to go to work, and you feel sad",
+    "practice_steps": [
+      "Notice sadness in your body (heavy chest, want to cry)",
+      "It's okay to feel sad - all feelings are okay",
+      "Choose a comfort strategy: hug a stuffed animal, look at photos, draw a picture",
+      "Practice the comfort strategy for 2 minutes",
+      "Talk to someone you trust about your feelings",
+      "Remember: the sad feeling will get smaller"
+    ],
+    "coaching_prompts": [
+      "I can see you're feeling sad. That's okay.",
+      "What would help you feel a little better right now?",
+      "Sometimes when we're sad, a hug can help.",
+      "Would you like to tell me about your sad feelings?"
+    ],
+    "success_criteria": [
+      "Accepts sadness as a normal emotion",
+      "Chooses appropriate comfort strategy",
+      "Engages with comfort activity",
+      "Shares feelings with trusted person"
+    ],
+    "difficulty_level": "foundation"
+  },
+  {
+    "id": "worry_thought_check",
+    "name": "Worry Thought Checking",
+    "target_emotion": "worry",
+    "regulation_strategy": "cognitive_reframing",
+    "scenario": "You're worried about trying something new and think you might fail",
+    "practice_steps": [
+      "Notice worry thoughts ('What if I can't do it?')",
+      "Take 3 slow breaths",
+      "Ask: 'Is this worry thought helpful?'",
+      "Think of a more helpful thought: 'I can try my best'",
+      "Remember times you've succeeded at new things",
+      "Make a plan: 'If it's hard, I can ask for help'"
+    ],
+    "coaching_prompts": [
+      "What thoughts are going through your mind?",
+      "Is that worry thought helping you or making you feel worse?",
+      "What would you tell a friend who had this worry?",
+      "Remember when you learned to ride a bike? You tried your best then too."
+    ],
+    "success_criteria": [
+      "Identifies worry thoughts",
+      "Challenges unhelpful thoughts",
+      "Generates more balanced thoughts",
+      "Makes coping plan"
+    ],
+    "difficulty_level": "practicing"
+  }
+]

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "toy_sharing_conflict",
+    "scenario_name": "The Toy Sharing Disagreement",
+    "conflict_type": "resource_sharing",
+    "characters_involved": [
+      "Marcus",
+      "Emma"
+    ],
+    "conflict_description": "Marcus and Emma both want to play with the same toy truck at the same time. Marcus had it first, but Emma says she was waiting for a turn.",
+    "resolution_steps": [
+      "Stop and take a breath",
+      "Each person shares their feelings using 'I' statements",
+      "Listen to understand, not to argue",
+      "Brainstorm solutions together",
+      "Choose a solution that works for both",
+      "Try the solution and check how it's working"
+    ],
+    "coaching_questions": [
+      "How is each person feeling right now?",
+      "What does Marcus need? What does Emma need?",
+      "What are some ways they could both be happy?",
+      "How can they make sure this is fair for both of them?"
+    ],
+    "possible_outcomes": [
+      "Take turns with a timer",
+      "Play with the truck together",
+      "Find a different toy they both like",
+      "One person chooses something else for now and gets first turn later"
+    ],
+    "key_skills_practiced": [
+      "active_listening",
+      "compromise",
+      "empathy",
+      "problem_solving"
+    ]
+  },
+  {
+    "id": "game_rules_conflict",
+    "scenario_name": "The Game Rules Argument",
+    "conflict_type": "rule_disagreement",
+    "characters_involved": [
+      "Marcus",
+      "Oliver",
+      "Zoe"
+    ],
+    "conflict_description": "The children are playing a game, but they disagree about the rules. Oliver thinks they should play one way, Zoe thinks differently, and Marcus is confused about what to do.",
+    "resolution_steps": [
+      "Pause the game",
+      "Each person explains what they think the rule should be",
+      "Ask: 'Why do you think that rule is important?'",
+      "Look for common ground - what do we all agree on?",
+      "Create a new rule together that everyone can accept",
+      "Write down the rule so everyone remembers"
+    ],
+    "coaching_questions": [
+      "What rule does each person want?",
+      "Why are rules important in games?",
+      "How can we make this fair for everyone?",
+      "What happens if we can't agree on rules?"
+    ],
+    "possible_outcomes": [
+      "Vote on which rule to use",
+      "Combine ideas to make a new rule",
+      "Take turns using different rule versions",
+      "Choose a different game everyone knows"
+    ],
+    "key_skills_practiced": [
+      "negotiation",
+      "democracy",
+      "flexibility",
+      "collaboration"
+    ]
+  },
+  {
+    "id": "hurt_feelings_conflict",
+    "scenario_name": "The Hurt Feelings Situation",
+    "conflict_type": "emotional_harm",
+    "characters_involved": [
+      "Marcus",
+      "Sofia"
+    ],
+    "conflict_description": "Sofia made a comment about Marcus's drawing that hurt his feelings. She didn't mean to be hurtful, but Marcus feels sad and doesn't want to be around her.",
+    "resolution_steps": [
+      "Recognize that someone's feelings are hurt",
+      "The hurt person explains how they feel using 'I' statements",
+      "The other person listens without defending",
+      "The person who caused hurt acknowledges the impact",
+      "Both people work on understanding each other",
+      "Make a plan to prevent this in the future"
+    ],
+    "coaching_questions": [
+      "How do you think Marcus is feeling?",
+      "What did Sofia intend vs. what was the impact?",
+      "How can Sofia show she cares about Marcus's feelings?",
+      "What could they do differently next time?"
+    ],
+    "possible_outcomes": [
+      "Sofia gives a genuine apology",
+      "Marcus explains why the comment hurt",
+      "They agree on kinder ways to give feedback",
+      "They rebuild their friendship with understanding"
+    ],
+    "key_skills_practiced": [
+      "empathy",
+      "accountability",
+      "forgiveness",
+      "communication"
+    ]
+  }
+]

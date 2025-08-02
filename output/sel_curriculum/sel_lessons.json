@@ -1,0 +1,353 @@
+{
+  "emotions_basic": {
+    "id": "emotions_basic",
+    "title": "Feeling Faces: Identifying Basic Emotions",
+    "skill_area": "emotion_identification",
+    "difficulty_level": "foundation",
+    "lesson_type": "direct_instruction",
+    "duration_minutes": 20,
+    "age_range": [
+      60,
+      72
+    ],
+    "learning_objectives": [
+      "I can identify happy, sad, mad, and scared emotions",
+      "I can match facial expressions to emotion words",
+      "I can point to where I feel emotions in my body"
+    ],
+    "mr_rogers_connection": "Episode 1478 - Angry Feelings: How we can recognize different feelings",
+    "materials_needed": [
+      "Emotion face cards",
+      "Body outline drawing",
+      "Emotion mirror"
+    ],
+    "warm_up_activity": "Look in the emotion mirror and make different feeling faces",
+    "main_activities": [
+      {
+        "name": "Emotion Face Match",
+        "description": "Match emotion words to facial expression cards",
+        "duration": 8,
+        "interaction": "guided_practice"
+      },
+      {
+        "name": "Body Mapping",
+        "description": "Draw where you feel each emotion in your body",
+        "duration": 7,
+        "interaction": "individual_work"
+      }
+    ],
+    "closing_reflection": "How are you feeling right now? Show me with your face and tell me where you feel it.",
+    "success_indicators": [
+      "Correctly identifies 3/4 basic emotions",
+      "Makes appropriate facial expressions",
+      "Points to body locations for emotions"
+    ],
+    "assessment_questions": [
+      "Show me a happy face. Where do you feel happy in your body?",
+      "What emotion do you think this person is feeling?",
+      "When someone is sad, how can you tell?"
+    ],
+    "extension_activities": [
+      "Create an emotion book with drawings",
+      "Play emotion charades with family",
+      "Use emotion faces during daily check-ins"
+    ],
+    "prerequisite_skills": [],
+    "follow_up_lessons": [],
+    "cross_curricular_connections": {}
+  },
+  "emotions_complex": {
+    "id": "emotions_complex",
+    "title": "More Than Mad: Understanding Complex Emotions",
+    "skill_area": "emotion_identification",
+    "difficulty_level": "building",
+    "lesson_type": "guided_practice",
+    "duration_minutes": 25,
+    "age_range": [
+      64,
+      78
+    ],
+    "learning_objectives": [
+      "I can identify frustrated, disappointed, excited, and worried emotions",
+      "I can tell the difference between similar feelings",
+      "I can use emotion words to describe my experiences"
+    ],
+    "mr_rogers_connection": "Episode 1495 - Making Mistakes: Understanding disappointment and growth",
+    "materials_needed": [
+      "Complex emotion cards",
+      "Feeling thermometer",
+      "Scenario pictures"
+    ],
+    "warm_up_activity": "Share about a time you felt really excited about something",
+    "main_activities": [
+      {
+        "name": "Emotion Sorting",
+        "description": "Sort emotions by intensity using feeling thermometer",
+        "duration": 10,
+        "interaction": "hands_on_sorting"
+      },
+      {
+        "name": "Scenario Discussions",
+        "description": "Discuss what emotions characters might feel in different situations",
+        "duration": 10,
+        "interaction": "group_discussion"
+      }
+    ],
+    "closing_reflection": "What's one new emotion word you learned today? When might you feel that way?",
+    "success_indicators": [
+      "Uses complex emotion vocabulary",
+      "Distinguishes between similar emotions",
+      "Relates emotions to personal experiences"
+    ],
+    "assessment_questions": [
+      "How is frustrated different from mad?",
+      "What might make someone feel disappointed?",
+      "Show me excited vs. happy on the feeling thermometer"
+    ],
+    "extension_activities": [
+      "Keep an emotion journal for a week",
+      "Create emotion stories using new vocabulary",
+      "Practice emotion check-ins with friends"
+    ],
+    "prerequisite_skills": [
+      "emotions_basic"
+    ],
+    "follow_up_lessons": [],
+    "cross_curricular_connections": {}
+  },
+  "calm_down_strategies": {
+    "id": "calm_down_strategies",
+    "title": "Calm Down Tools: Learning to Self-Regulate",
+    "skill_area": "emotion_regulation",
+    "difficulty_level": "foundation",
+    "lesson_type": "guided_practice",
+    "duration_minutes": 30,
+    "age_range": [
+      60,
+      72
+    ],
+    "learning_objectives": [
+      "I can use deep breathing to calm down",
+      "I can count to 10 when I feel upset",
+      "I can ask for help when my emotions feel too big"
+    ],
+    "mr_rogers_connection": "Episode 1478 - Angry Feelings: Ways to handle angry feelings",
+    "materials_needed": [
+      "Breathing buddy (stuffed animal)",
+      "Calm down cards",
+      "Timer"
+    ],
+    "warm_up_activity": "Practice belly breathing with your breathing buddy",
+    "main_activities": [
+      {
+        "name": "Deep Breathing Practice",
+        "description": "Learn 4-7-8 breathing technique with breathing buddy",
+        "duration": 10,
+        "interaction": "mindfulness_practice"
+      },
+      {
+        "name": "Calm Down Menu",
+        "description": "Create personalized calm down strategy cards",
+        "duration": 15,
+        "interaction": "creative_activity"
+      }
+    ],
+    "closing_reflection": "Which calm down strategy feels most helpful for you? When might you use it?",
+    "success_indicators": [
+      "Demonstrates proper breathing technique",
+      "Can count to 10 slowly when prompted",
+      "Identifies personal calm down preferences"
+    ],
+    "assessment_questions": [
+      "Show me how to do belly breathing",
+      "What can you do when you feel really mad?",
+      "Who can you ask for help when emotions feel too big?"
+    ],
+    "extension_activities": [
+      "Practice breathing exercises at bedtime",
+      "Create a calm down corner at home",
+      "Teach breathing to a family member"
+    ],
+    "prerequisite_skills": [
+      "emotions_basic"
+    ],
+    "follow_up_lessons": [],
+    "cross_curricular_connections": {}
+  },
+  "anger_management": {
+    "id": "anger_management",
+    "title": "When I Feel Mad: Healthy Ways to Handle Anger",
+    "skill_area": "emotion_regulation",
+    "difficulty_level": "building",
+    "lesson_type": "role_play",
+    "duration_minutes": 35,
+    "age_range": [
+      64,
+      78
+    ],
+    "learning_objectives": [
+      "I can recognize anger warning signs in my body",
+      "I can use appropriate strategies before anger gets too big",
+      "I can express anger in ways that don't hurt others"
+    ],
+    "mr_rogers_connection": "Episode 1478 - Angry Feelings: It's okay to feel angry, but not okay to hurt",
+    "materials_needed": [
+      "Anger thermometer",
+      "Stress balls",
+      "Anger scenario cards"
+    ],
+    "warm_up_activity": "Notice how your body feels when you're calm vs. starting to get upset",
+    "main_activities": [
+      {
+        "name": "Anger Warning Signs",
+        "description": "Identify physical sensations that signal rising anger",
+        "duration": 12,
+        "interaction": "body_awareness"
+      },
+      {
+        "name": "Anger Scenarios",
+        "description": "Role-play appropriate responses to anger-triggering situations",
+        "duration": 18,
+        "interaction": "role_play_practice"
+      }
+    ],
+    "closing_reflection": "What's your anger warning sign? What strategy will you try next time?",
+    "success_indicators": [
+      "Identifies personal anger warning signs",
+      "Demonstrates appropriate anger responses in role-play",
+      "Uses strategies before anger escalates"
+    ],
+    "assessment_questions": [
+      "How does your body feel when you start to get mad?",
+      "What can you do instead of yelling or hitting?",
+      "How can you tell someone you're angry in a respectful way?"
+    ],
+    "extension_activities": [
+      "Keep an anger tracking chart",
+      "Practice anger strategies during peer conflicts",
+      "Create an anger management poster"
+    ],
+    "prerequisite_skills": [
+      "emotions_basic",
+      "calm_down_strategies"
+    ],
+    "follow_up_lessons": [],
+    "cross_curricular_connections": {}
+  },
+  "problem_solving_steps": {
+    "id": "problem_solving_steps",
+    "title": "Working It Out: Steps for Solving Problems with Friends",
+    "skill_area": "conflict_resolution",
+    "difficulty_level": "foundation",
+    "lesson_type": "direct_instruction",
+    "duration_minutes": 25,
+    "age_range": [
+      60,
+      72
+    ],
+    "learning_objectives": [
+      "I can identify when there's a problem with a friend",
+      "I can use words to tell someone how I feel",
+      "I can listen to what others have to say"
+    ],
+    "mr_rogers_connection": "Episode 1640 - Making Mistakes: Learning to say sorry and forgive",
+    "materials_needed": [
+      "Problem-solving steps poster",
+      "Role-play scenario cards"
+    ],
+    "warm_up_activity": "Think of a time you had a problem with a friend. How did it feel?",
+    "main_activities": [
+      {
+        "name": "Problem-Solving Steps",
+        "description": "Learn the 4-step process: Stop, Talk, Listen, Try Again",
+        "duration": 12,
+        "interaction": "direct_teaching"
+      },
+      {
+        "name": "Practice Scenarios",
+        "description": "Practice problem-solving steps with simple friend conflicts",
+        "duration": 10,
+        "interaction": "guided_practice"
+      }
+    ],
+    "closing_reflection": "Which step do you think might be hardest for you? How can you remember to use these steps?",
+    "success_indicators": [
+      "Can recite the 4 problem-solving steps",
+      "Uses words to express feelings appropriately",
+      "Shows listening behavior during practice"
+    ],
+    "assessment_questions": [
+      "What are the steps for solving problems?",
+      "How can you tell someone you're upset without being mean?",
+      "What does good listening look like?"
+    ],
+    "extension_activities": [
+      "Make a problem-solving poster for home",
+      "Practice steps with family members",
+      "Use steps during actual peer conflicts"
+    ],
+    "prerequisite_skills": [],
+    "follow_up_lessons": [],
+    "cross_curricular_connections": {}
+  },
+  "perspective_taking": {
+    "id": "perspective_taking",
+    "title": "In Their Shoes: Understanding How Others Feel",
+    "skill_area": "empathy_development",
+    "difficulty_level": "building",
+    "lesson_type": "creative_expression",
+    "duration_minutes": 30,
+    "age_range": [
+      64,
+      78
+    ],
+    "learning_objectives": [
+      "I can think about how other people might be feeling",
+      "I can understand that others might feel differently than I do",
+      "I can show caring when someone is upset"
+    ],
+    "mr_rogers_connection": "Episode 1479 - Making Friends: Understanding that everyone has feelings",
+    "materials_needed": [
+      "Story books",
+      "Emotion perspective cards",
+      "Art supplies"
+    ],
+    "warm_up_activity": "Look at a picture and guess how each person in it might be feeling",
+    "main_activities": [
+      {
+        "name": "Story Character Feelings",
+        "description": "Read stories and discuss character emotions and motivations",
+        "duration": 15,
+        "interaction": "literature_discussion"
+      },
+      {
+        "name": "Empathy Art",
+        "description": "Draw or create art showing how to help someone who's sad",
+        "duration": 12,
+        "interaction": "creative_expression"
+      }
+    ],
+    "closing_reflection": "How can you show someone you care about their feelings?",
+    "success_indicators": [
+      "Accurately identifies character emotions in stories",
+      "Suggests appropriate helping behaviors",
+      "Shows understanding that people can feel differently"
+    ],
+    "assessment_questions": [
+      "How do you think this character is feeling? Why?",
+      "What would you do if you saw someone crying?",
+      "How might someone feel different from you in this situation?"
+    ],
+    "extension_activities": [
+      "Keep a kindness journal",
+      "Practice noticing friends' emotions",
+      "Do acts of kindness for family members"
+    ],
+    "prerequisite_skills": [
+      "emotions_basic",
+      "emotions_complex"
+    ],
+    "follow_up_lessons": [],
+    "cross_curricular_connections": {}
+  }
+}

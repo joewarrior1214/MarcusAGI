@@ -1,0 +1,123 @@
+{
+  "date": "2025-08-02T07:51:38.943353",
+  "morning_sel_focus": "emotion_regulation",
+  "academic_integrations": {
+    "reading": [
+      "Discuss character emotions in stories",
+      "Practice empathy by understanding character motivations",
+      "Use books to explore different perspectives"
+    ],
+    "math": [
+      "Practice patience when problems are challenging",
+      "Use problem-solving steps for math word problems",
+      "Celebrate effort and growth, not just correct answers"
+    ],
+    "science": [
+      "Practice curiosity and wonder",
+      "Develop persistence when experiments don't work",
+      "Collaborate respectfully during group investigations"
+    ],
+    "art": [
+      "Express emotions through creative work",
+      "Practice accepting when art doesn't turn out as expected",
+      "Appreciate different styles and perspectives"
+    ],
+    "social_studies": [
+      "Practice deep breathing before starting",
+      "Use encouraging self-talk",
+      "Ask for help when needed"
+    ]
+  },
+  "regulation_practice_schedule": [
+    {
+      "time": "morning_start",
+      "activity": "Morning Breathing Check-in",
+      "description": "Take 3 deep breaths and notice how your body feels",
+      "skill_practiced": "body_awareness",
+      "duration_minutes": 2
+    },
+    {
+      "time": "before_challenging_activity",
+      "activity": "Pre-Challenge Preparation",
+      "description": "Practice calm breathing before starting something new or difficult",
+      "skill_practiced": "anticipatory_regulation",
+      "duration_minutes": 1
+    },
+    {
+      "time": "transition_moments",
+      "activity": "Transition Breathing",
+      "description": "One deep breath between activities to stay centered",
+      "skill_practiced": "transition_management",
+      "duration_minutes": 1
+    },
+    {
+      "time": "afternoon_reset",
+      "activity": "Midday Emotion Check",
+      "description": "Notice current emotions and use regulation tools if needed",
+      "skill_practiced": "emotional_awareness",
+      "duration_minutes": 3
+    }
+  ],
+  "conflict_resolution_readiness": {
+    "current_skill_level": "building",
+    "ready_scenarios": [
+      "The Toy Sharing Disagreement",
+      "The Game Rules Argument"
+    ],
+    "coaching_reminders": [
+      "Remember the problem-solving steps: Stop, Talk, Listen, Try Again",
+      "Use 'I' statements to share feelings",
+      "Listen to understand, not to argue",
+      "Look for solutions that work for everyone"
+    ],
+    "success_indicators": [
+      "Pauses before reacting to conflict",
+      "Uses words instead of physical responses",
+      "Shows empathy for other person's perspective",
+      "Participates in finding solutions"
+    ]
+  },
+  "empathy_opportunities": [
+    {
+      "context": "reading_time",
+      "activity": "Character Emotion Discussion",
+      "description": "Discuss how characters in stories might be feeling",
+      "empathy_focus": "perspective_taking",
+      "coaching_questions": [
+        "How do you think this character is feeling?",
+        "Why might they feel that way?",
+        "What would you want if you were in their situation?"
+      ]
+    },
+    {
+      "context": "peer_interactions",
+      "activity": "Friend Feeling Check-ins",
+      "description": "Notice and respond to friends' emotions during play",
+      "empathy_focus": "emotion_recognition",
+      "coaching_questions": [
+        "How does your friend seem to be feeling?",
+        "What clues tell you that?",
+        "How can you show you care about their feelings?"
+      ]
+    },
+    {
+      "context": "daily_activities",
+      "activity": "Kindness Opportunities",
+      "description": "Look for chances to help or show kindness to others",
+      "empathy_focus": "caring_action",
+      "coaching_questions": [
+        "How can you help someone who seems to need it?",
+        "What would make someone feel better in this situation?",
+        "How does it feel when someone is kind to you?"
+      ]
+    }
+  ],
+  "evening_reflection_prompts": [
+    "What emotions did you notice in yourself today?",
+    "How did you handle challenging moments?",
+    "What are you proud of from today?",
+    "How did you show kindness to others?",
+    "When did you use your calm-down strategies?",
+    "How well did your regulation tools work?"
+  ]
+}

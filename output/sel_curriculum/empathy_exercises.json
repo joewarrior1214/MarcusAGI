@@ -1,0 +1,80 @@
+[
+  {
+    "id": "emotion_detective",
+    "exercise_name": "Emotion Detective",
+    "exercise_type": "emotion_recognition",
+    "scenario": "You notice your friend sitting alone at recess, looking down at the ground with their shoulders slumped.",
+    "character_emotions": {
+      "friend": "sad_lonely"
+    },
+    "empathy_questions": [
+      "What clues tell you how your friend might be feeling?",
+      "What do you notice about their body language?",
+      "How do you think they might be feeling inside?",
+      "Why might they be feeling this way?"
+    ],
+    "reflection_prompts": [
+      "Think about a time when you felt lonely. What was that like?",
+      "What would have helped you feel better in that situation?",
+      "How does it feel when someone notices you're sad?"
+    ],
+    "action_suggestions": [
+      "Go sit with your friend",
+      "Ask if they're okay",
+      "Invite them to play with you",
+      "Tell a trusted adult if you're worried"
+    ]
+  },
+  {
+    "id": "perspective_glasses",
+    "exercise_name": "Perspective-Taking Glasses",
+    "exercise_type": "perspective_taking",
+    "scenario": "A new student joins your class. They don't know anyone, don't know where things are, and seem nervous about joining activities.",
+    "character_emotions": {
+      "new_student": "nervous_uncertain"
+    },
+    "empathy_questions": [
+      "How do you think the new student is feeling?",
+      "What might be hard about being new?",
+      "What might they be thinking about?",
+      "What would you want if you were the new student?"
+    ],
+    "reflection_prompts": [
+      "Remember your first day at school. How did you feel?",
+      "What helped you feel welcome when you were new somewhere?",
+      "How does it feel when others include you vs. leave you out?"
+    ],
+    "action_suggestions": [
+      "Introduce yourself and ask their name",
+      "Show them around the classroom",
+      "Invite them to sit with you at lunch",
+      "Include them in games at recess"
+    ]
+  },
+  {
+    "id": "caring_response",
+    "exercise_name": "Caring Response Practice",
+    "exercise_type": "caring_response",
+    "scenario": "Your friend tells you they're upset because their pet goldfish died last night.",
+    "character_emotions": {
+      "friend": "grief_sadness"
+    },
+    "empathy_questions": [
+      "How is your friend feeling right now?",
+      "What makes losing a pet special and sad?",
+      "What do you think would help them feel supported?",
+      "What would NOT be helpful to say right now?"
+    ],
+    "reflection_prompts": [
+      "Think about something important to you. How would you feel if you lost it?",
+      "When you're sad, what do you want from friends?",
+      "What makes you feel cared about when you're upset?"
+    ],
+    "action_suggestions": [
+      "Say 'I'm sorry your goldfish died. That must be really sad.'",
+      "Give them a hug if they want one",
+      "Listen if they want to tell you about their pet",
+      "Ask if there's anything you can do to help"
+    ]
+  }
+]
