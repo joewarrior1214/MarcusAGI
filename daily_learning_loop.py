@@ -473,6 +473,56 @@ def calculate_adaptation_rate(session: Dict[str, Any]) -> float:
     concepts_learned = len(session.get('concepts_learned', []))
     return min(1.0, concepts_learned / 5)  # Placeholder
 
+def generate_daily_reasoning_problems(current_session: Dict[str, Any], all_sessions: List[Dict]) -> List:
+    """Generate reasoning problems based on Marcus's current learning state"""
+    
+    try:
+        from advanced_reasoning_engine import ReasoningProblem
+    except ImportError:
+        return []
+    
+    problems = []
+    
+    # Problem 1: Based on physical exploration
+    if current_session.get('physical_exploration'):
+        key_insights = current_session.get('key_insights', [])
+        if key_insights:
+            problems.append(ReasoningProblem(
+                id=f"physical_reasoning_{len(all_sessions)}",
+                description=f"Apply physical insight: {key_insights[0]}",
+                domain="physics",
+                goal="use physical understanding to solve abstract problem",
+                givens=key_insights,
+                difficulty=0.6
+            ))
+    
+    # Problem 2: Based on learning performance
+    mastery_levels = current_session.get('mastery_levels', {})
+    if mastery_levels:
+        weakest_subject = min(mastery_levels, key=mastery_levels.get)
+        problems.append(ReasoningProblem(
+            id=f"learning_reasoning_{len(all_sessions)}",
+            description=f"How to improve performance in {weakest_subject}",
+            domain="learning",
+            goal=f"increase {weakest_subject} mastery from {mastery_levels[weakest_subject]:.1%} to 80%",
+            givens=[f"current {weakest_subject} mastery: {mastery_levels[weakest_subject]:.1%}"],
+            difficulty=0.7
+        ))
+    
+    # Problem 3: Meta-learning problem
+    total_sessions = len(all_sessions)
+    if total_sessions > 5:
+        problems.append(ReasoningProblem(
+            id=f"meta_reasoning_{len(all_sessions)}",
+            description="How to optimize learning strategy based on past performance",
+            domain="meta-learning",
+            goal="design optimal learning approach",
+            givens=[f"completed {total_sessions} learning sessions"],
+            difficulty=0.8
+        ))
+    
+    return problems
+
 def analyze_concept_integration() -> float:
     """Analyze how well concepts integrate with existing knowledge"""
     return random.uniform(0.4, 0.9)  # Placeholder
@@ -542,7 +592,7 @@ def save_current_session_only(current_session: Dict) -> None:
         print(f"🚨 Error saving session: {e}")
 
 def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
-    """Enhanced daily learning loop with proper session management"""
+    """Enhanced daily learning loop with advanced reasoning capabilities"""
     print("🌸 Marcus AGI - Daily Learning Session")
     print("=" * 50)
     TODAY = str(run_date)
@@ -555,7 +605,16 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
     all_previous_sessions = load_all_sessions()
     print(f"📚 Loaded {len(all_previous_sessions)} previous sessions")
     
-    # Step 2: Physical Exploration
+    # Step 2: Initialize Advanced Reasoning Engine
+    try:
+        from advanced_reasoning_engine import AdvancedReasoningEngine, ReasoningProblem
+        reasoning_engine = AdvancedReasoningEngine()
+        print("🧠 Advanced Reasoning Engine initialized")
+    except ImportError:
+        reasoning_engine = None
+        print("⚠️  Advanced Reasoning Engine not available")
+    
+    # Step 3: Physical Exploration
     print("\n🎮 Physical Exploration...")
     current_session = {'date': TODAY, 'physical_exploration': False}
     
@@ -596,20 +655,52 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
             'total_experiences': physical_learnings.get('total_experiences', 0)
         })
         
+        # Feed physical insights to reasoning engine
+        if reasoning_engine:
+            reasoning_engine.extract_causal_relations_from_session(current_session)
+        
     except Exception as e:
         print(f"  ⚠️ Physical exploration error: {str(e)[:50]}...")
     
-    # Step 3: Academic Learning (use all previous sessions for context)
+    # Step 4: Advanced Reasoning Challenge
+    reasoning_results = []
+    if reasoning_engine:
+        print("\n🎯 Advanced Reasoning Challenge...")
+        
+        # Generate reasoning problems based on current session
+        daily_problems = generate_daily_reasoning_problems(current_session, all_previous_sessions)
+        
+        for problem in daily_problems[:2]:  # Solve 2 problems per session
+            result = reasoning_engine.solve_problem_with_reasoning(problem)
+            reasoning_results.append(result)
+            
+            print(f"  🧩 Problem: {problem.description}")
+            print(f"     Solution: {result.solution[0] if result.solution else 'No solution'}")
+            print(f"     Method: {result.reasoning_type} (confidence: {result.confidence:.2f})")
+        
+        # Get reasoning insights
+        reasoning_insights = reasoning_engine.get_reasoning_insights()
+        current_session['reasoning_results'] = [
+            {
+                'problem_id': r.problem_id,
+                'success': r.success,
+                'reasoning_type': r.reasoning_type,
+                'confidence': r.confidence
+            } for r in reasoning_results
+        ]
+        current_session['reasoning_insights'] = reasoning_insights
+    
+    # Step 5: Academic Learning (use all previous sessions for context)
     session_history_for_learning = all_previous_sessions + [current_session]
     learning_results = run_learning_session(session_history_for_learning, TODAY)
     
     # Update current session with learning results
     current_session.update(learning_results)
     
-    # Step 4: Save ONLY current session (no overwriting)
+    # Step 6: Save ONLY current session (no overwriting)
     save_current_session_only(current_session)
     
-    # Step 5: Generate report for current session
+    # Step 7: Generate report for current session
     generate_reports([current_session], TODAY)
     
     print("\n✅ Learning session complete!")
