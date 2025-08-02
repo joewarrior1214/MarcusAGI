@@ -20,13 +20,13 @@ from datetime import datetime, date, timedelta
 from enum import Enum
 
 # Import existing systems
-from peer_interaction_simulation import (
+from .peer_interaction_simulation import (
     create_peer_interaction_system, PeerInteractionSimulator,
     InteractionContext, ConversationTopic, SocialSkillArea
 )
 
 try:
-    from daily_learning_loop import run_learning_session, calculate_mastery_levels
+    from ..learning.daily_learning_loop import run_learning_session, calculate_mastery_levels
     DAILY_LOOP_AVAILABLE = True
 except ImportError:
     DAILY_LOOP_AVAILABLE = False
@@ -42,7 +42,7 @@ except ImportError:
     logging.warning("EQ System not available")
 
 try:
-    from grade_progression_system import (
+    from ..learning.grade_progression_system import (
         GradeProgressionSystem, GradeLevel, AcademicSubject
     )
     GRADE_SYSTEM_AVAILABLE = True
@@ -198,7 +198,7 @@ class MarcusSocialLearningIntegration:
         # Run base academic session if available
         if DAILY_LOOP_AVAILABLE:
             try:
-                from daily_learning_loop import load_all_sessions
+                from ..learning.daily_learning_loop import load_all_sessions
                 session_history = load_all_sessions()
                 if not session_history:
                     session_history = [{"date": session_date.strftime("%Y-%m-%d"), "mastery_levels": {}}]

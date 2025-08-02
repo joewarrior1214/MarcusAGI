@@ -35,8 +35,8 @@ print("🚀 Simulating multiple learning sessions...")
 print("=" * 50)
 
 # We'll modify the date in the sessions to simulate multiple days
-from daily_learning_loop import run_daily_learning_loop
-import daily_learning_loop
+from core.learning.daily_learning_loop import run_daily_learning_loop
+import core.learning.daily_learning_loop as daily_learning_loop
 
 # Save original TODAY value
 original_today = daily_learning_loop.TODAY

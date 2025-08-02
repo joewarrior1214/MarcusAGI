@@ -34,8 +34,8 @@ from pathlib import Path
 import logging
 
 # Import our new SEL systems
-from sel_curriculum_expansion import SELCurriculumExpansion, SELSkillArea, SELDifficultyLevel
-from daily_sel_integration import DailySELIntegrationSystem
+from .sel_curriculum_expansion import SELCurriculumExpansion, SELSkillArea, SELDifficultyLevel
+from .daily_sel_integration import DailySELIntegrationSystem
 
 logger = logging.getLogger(__name__)
 

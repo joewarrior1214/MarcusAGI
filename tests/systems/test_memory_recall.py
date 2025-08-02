@@ -1,4 +1,4 @@
-from memory_system import MarcusMemorySystem
+from core.memory.memory_system import MarcusMemorySystem
 
 # Initialize Marcus's memory system
 memory = MarcusMemorySystem("marcus_memory.db")

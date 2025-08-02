@@ -21,7 +21,7 @@ from dataclasses import dataclass
 import logging
 
 # Import our Issue #6 system
-from emotional_intelligence_assessment import (
+from .emotional_intelligence_assessment import (
     EmotionalIntelligenceAssessment, EQDomain, EQSkillLevel,
     create_eq_assessment_system
 )

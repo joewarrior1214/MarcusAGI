@@ -1,5 +1,7 @@
 from datetime import date, timedelta
-from daily_learning_loop import run_daily_learning_loop
+import sys
+sys.path.insert(0, '/workspaces/MarcusAGI')
+from core.learning.daily_learning_loop import run_daily_learning_loop
 
 # Set how many days to simulate
 days_to_run = 10

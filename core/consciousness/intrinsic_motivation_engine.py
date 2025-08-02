@@ -27,8 +27,8 @@ from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass
 import uuid
 import random
-from autobiographical_memory_system import AutobiographicalMemorySystem
-from personal_narrative_constructor import PersonalNarrativeConstructor
+from ..memory.autobiographical_memory_system import AutobiographicalMemorySystem
+from .personal_narrative_constructor import PersonalNarrativeConstructor
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

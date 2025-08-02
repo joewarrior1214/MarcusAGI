@@ -33,10 +33,10 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 
 # Import all Level 2.0 systems
-from autobiographical_memory_system import AutobiographicalMemorySystem, AutobiographicalMemory
-from personal_narrative_constructor import PersonalNarrativeConstructor, PersonalNarrative
-from intrinsic_motivation_engine import IntrinsicMotivationEngine, IntrinsicGoal
-from value_learning_system import ValueLearningSystem, PersonalValue, ValueDecision
+from ..memory.autobiographical_memory_system import AutobiographicalMemorySystem, AutobiographicalMemory
+from .personal_narrative_constructor import PersonalNarrativeConstructor, PersonalNarrative
+from .intrinsic_motivation_engine import IntrinsicMotivationEngine, IntrinsicGoal
+from .value_learning_system import ValueLearningSystem, PersonalValue, ValueDecision
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

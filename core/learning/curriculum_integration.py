@@ -15,7 +15,7 @@ import json
 import random
 from typing import Dict, List, Any, Optional
 from datetime import datetime
-from kindergarten_curriculum_expansion import (
+from .kindergarten_curriculum_expansion import (
     KindergartenCurriculumExpansion, 
     DevelopmentalDomain, 
     SkillLevel,

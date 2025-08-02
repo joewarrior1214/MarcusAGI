@@ -24,12 +24,13 @@ from typing import Dict, List, Any, Optional
 
 # Add path for imports
 sys.path.append('/workspaces')
+sys.path.append('/workspaces/MarcusAGI')
 
 # Import daily learning loop
-from daily_learning_loop import run_daily_learning_loop
+from core.learning.daily_learning_loop import run_daily_learning_loop
 
 # Import spatial learning system
-from marcus_spatial_learning_loop import (
+from scripts.utilities.marcus_spatial_learning_loop import (
     MarcusSpatialLearningLoop, ExplorationStrategy, LearningObjective
 )
 

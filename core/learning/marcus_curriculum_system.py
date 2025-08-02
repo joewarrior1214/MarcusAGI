@@ -10,6 +10,18 @@ from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 from pathlib import Path
 import random
+from ..memory.memory_system import MarcusMemorySystem, Concept
+from .kindergarten_curriculum_expansion import LearningObjective
+
+@dataclass
+class DailyLesson:
+    """Represents a structured daily lesson for Marcus"""
+    date: str
+    focus_area: str
+    objectives: List['LearningObjective']
+    emotional_focus: str
+    reflection_prompt: str
+    activities: List[str]
 
 class MarcusCurriculumSystem:
     """Manages Marcus's educational curriculum and daily learning progression"""

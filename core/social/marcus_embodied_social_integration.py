@@ -30,14 +30,14 @@ from datetime import datetime, date, timedelta
 from enum import Enum
 
 # Import existing systems
-from marcus_simple_body import MarcusGridWorld, EmbodiedLearning
-from peer_interaction_simulation import (
+from ..learning.marcus_simple_body import MarcusGridWorld, EmbodiedLearning
+from .peer_interaction_simulation import (
     create_peer_interaction_system, PeerInteractionSimulator,
     InteractionContext, ConversationTopic, SocialSkillArea
 )
 
 try:
-    from marcus_social_integration import (
+    from .marcus_social_integration import (
         MarcusSocialLearningIntegration, IntegratedLearningSession,
         SocialReadinessLevel, EQCoachingSession
     )
@@ -47,14 +47,14 @@ except ImportError:
     logging.warning("Social Integration System not available")
 
 try:
-    from daily_learning_loop import run_learning_session, calculate_mastery_levels
+    from ..learning.daily_learning_loop import run_learning_session, calculate_mastery_levels
     DAILY_LOOP_AVAILABLE = True
 except ImportError:
     DAILY_LOOP_AVAILABLE = False
     logging.warning("Daily Learning Loop not available")
 
 try:
-    from emotional_intelligence_assessment import (
+    from .emotional_intelligence_assessment import (
         EmotionalIntelligenceAssessment, EQDomain, EQSkillLevel
     )
     EQ_SYSTEM_AVAILABLE = True

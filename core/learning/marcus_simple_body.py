@@ -10,10 +10,10 @@ from datetime import datetime
 from typing import Dict, List, Tuple, Any
 
 try:
-    from MarcusAGI.memory_system import MarcusMemorySystem
+    from ..memory.memory_system import MarcusMemorySystem
 except ImportError:
     try:
-        from memory_system import MarcusMemorySystem
+        from core.memory.memory_system import MarcusMemorySystem
     except ImportError:
         # Fallback for testing
         MarcusMemorySystem = None
@@ -486,7 +486,7 @@ class EmbodiedLearning:
                 logging.getLogger('memory_system').setLevel(logging.WARNING)
                 
                 if self.memory_system:
-                    from MarcusAGI.memory_system import Concept
+                    from ..memory.memory_system import Concept
                     concept = Concept(
                         id=f"physics_{concept_key}_{len(self.concept_mappings[concept_key])}",
                         content=concept_content,

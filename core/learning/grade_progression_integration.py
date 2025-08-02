@@ -19,14 +19,14 @@ from datetime import datetime, date, timedelta
 from dataclasses import asdict
 
 # Import Marcus systems
-from grade_progression_system import (
+from .grade_progression_system import (
     GradeProgressionSystem, GradeLevel, AcademicSubject, ReadinessStatus,
     create_grade_progression_system
 )
-from daily_learning_loop import DailyLearningLoop, LEARNING_CONFIG
-from kindergarten_curriculum_expansion import KindergartenCurriculumExpansion
-from emotional_intelligence_assessment import EmotionalIntelligenceAssessment
-from memory_system import MarcusMemorySystem, LearningConcept
+from .daily_learning_loop import DailyLearningLoop, LEARNING_CONFIG
+from .kindergarten_curriculum_expansion import KindergartenCurriculumExpansion
+from ..social.emotional_intelligence_assessment import EmotionalIntelligenceAssessment
+from ..memory.memory_system import MarcusMemorySystem, LearningConcept
 
 logger = logging.getLogger(__name__)
 

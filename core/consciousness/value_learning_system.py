@@ -28,9 +28,9 @@ from dataclasses import dataclass
 from enum import Enum
 import uuid
 import statistics
-from autobiographical_memory_system import AutobiographicalMemorySystem
-from personal_narrative_constructor import PersonalNarrativeConstructor
-from intrinsic_motivation_engine import IntrinsicMotivationEngine
+from ..memory.autobiographical_memory_system import AutobiographicalMemorySystem
+from .personal_narrative_constructor import PersonalNarrativeConstructor
+from .intrinsic_motivation_engine import IntrinsicMotivationEngine
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

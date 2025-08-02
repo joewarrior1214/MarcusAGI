@@ -1,0 +1,189 @@
+{
+    "date": "2025-08-02",
+    "physical_exploration": true,
+    "embodied_social_exploration": true,
+    "concepts_discovered": 3,
+    "social_interactions": 1,
+    "sensory_integration_score": 0.5,
+    "social_physical_coherence": 0.14285714285714285,
+    "learning_engagement": 0.1,
+    "key_insights": [
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing"
+    ],
+    "skills_practiced": 0,
+    "sensory_modalities_used": 3,
+    "embodied_concepts": [
+        "Air feels like nothing",
+        "Air feels like nothing",
+        "Air feels like nothing"
+    ],
+    "reasoning_results": [
+        {
+            "problem_id": "physical_reasoning_1",
+            "success": true,
+            "reasoning_type": "goal_decomposition",
+            "confidence": 0.65
+        }
+    ],
+    "reasoning_insights": {
+        "total_causal_relations": 5,
+        "total_problems_attempted": 1,
+        "successful_problems": 1,
+        "success_rate": 1.0,
+        "reasoning_type_distribution": {
+            "goal_decomposition": 1
+        },
+        "strongest_causal_relations": [
+            {
+                "relation": "drop_object->object_falls",
+                "confidence": 0.99
+            },
+            {
+                "relation": "hit_boundary->movement_stops",
+                "confidence": 0.98
+            },
+            {
+                "relation": "object_too_heavy->cannot_lift",
+                "confidence": 0.95
+            },
+            {
+                "relation": "apply_force->object_moves",
+                "confidence": 0.9
+            },
+            {
+                "relation": "low_energy->reduced_performance",
+                "confidence": 0.8
+            }
+        ]
+    },
+    "reviews_completed": 0,
+    "concepts_learned": [
+        "Advanced math concept (difficulty: 0.22)",
+        "Advanced reading concept (difficulty: 0.22)",
+        "Advanced science concept (difficulty: 0.22)",
+        "Advanced social concept (difficulty: 0.22)",
+        "Advanced art concept (difficulty: 0.22)"
+    ],
+    "review_results": [],
+    "mastery_levels": {
+        "math": 0.12000000000000001,
+        "reading": 0.12000000000000001,
+        "science": 0.12000000000000001,
+        "social": 0.12000000000000001,
+        "art": 0.12000000000000001
+    },
+    "metrics": {
+        "subject_mastery": {
+            "math": 0.12000000000000001,
+            "reading": 0.12000000000000001,
+            "science": 0.12000000000000001,
+            "social": 0.12000000000000001,
+            "art": 0.12000000000000001
+        },
+        "review_success_rate": 0.0,
+        "concept_acquisition_rate": 5,
+        "adaptive_difficulty": 0.22000000000000003,
+        "retention_rate": 0.0,
+        "learning_velocity": 5,
+        "engagement_score": 0.25,
+        "learning_trend": 5.0,
+        "embodied_learning_rate": 3,
+        "grounded_concept_ratio": 0.6,
+        "social_interactions": 1,
+        "sensory_integration_score": 0.5,
+        "social_physical_coherence": 0.14285714285714285,
+        "learning_engagement": 0.1,
+        "skills_practiced": 0,
+        "sensory_modalities_used": 3,
+        "transfer_learning": 0.6488686549372304,
+        "meta_learning": {
+            "adaptation_rate": 1.0,
+            "concept_integration": 0.4016973604097718
+        }
+    },
+    "learning_journal": {
+        "timestamp": "2025-08-02T10:43:21.268964",
+        "session_id": "session_2025-08-02",
+        "narrative_reflection": "The most interesting thing I learned was air feels like nothing. It reminded me of something I learned before. I felt really proud when I solved most of the reasoning problems. I want to learn more about more complex problems. I keep wondering about how different concepts connect together. Maybe tomorrow I can explore building connections between ideas.",
+        "key_discoveries": [
+            "Air feels like nothing",
+            "Air feels like nothing",
+            "Air feels like nothing"
+        ],
+        "challenges_faced": [
+            "Coordinating physical movement with learning goals"
+        ],
+        "emotional_journey": [
+            {
+                "primary_emotion": "excited",
+                "secondary_emotion": null,
+                "intensity": 1.0,
+                "triggers": [
+                    "high success rate",
+                    "multiple new concepts",
+                    "successful reasoning"
+                ],
+                "duration_minutes": 30.0
+            }
+        ],
+        "self_assessment_score": 1.0,
+        "confidence_level": 0.65,
+        "learning_goals_met": [
+            "Practice advanced reasoning skills",
+            "Learn new concepts",
+            "Explore the physical world"
+        ],
+        "future_learning_interests": [
+            "More mathematical problem solving",
+            "Scientific experiments and observations",
+            "More challenging reasoning problems",
+            "Connecting different subjects together"
+        ],
+        "metacognitive_insights": [
+            "I'm getting better at breaking down complex problems into smaller parts",
+            "I tend to use goal decomposition thinking most often",
+            "Moving around and exploring helps me understand concepts better"
+        ]
+    },
+    "emotional_state_summary": {
+        "current_primary_emotion": "excited",
+        "current_secondary_emotion": null,
+        "current_intensity": 1.0,
+        "emotion_distribution": {
+            "excited": 1
+        },
+        "average_intensity": 1.0,
+        "total_emotions_tracked": 1
+    },
+    "journal_summary": {
+        "total_entries": 1,
+        "most_recent_reflection": "The most interesting thing I learned was air feels like nothing. It reminded me of something I learned before. I felt really proud when I solved most of the reasoning problems. I want to learn more about more complex problems. I keep wondering about how different concepts connect together. Maybe tomorrow I can explore building connections between ideas.",
+        "emotional_summary": {
+            "current_primary_emotion": "excited",
+            "current_secondary_emotion": null,
+            "current_intensity": 1.0,
+            "emotion_distribution": {
+                "excited": 1
+            },
+            "average_intensity": 1.0,
+            "total_emotions_tracked": 1
+        },
+        "confidence_trend": [
+            0.65
+        ],
+        "self_assessment_trend": [
+            1.0
+        ],
+        "common_challenges": [
+            "Coordinating physical movement with learning goals"
+        ],
+        "learning_progress_indicators": {
+            "status": "insufficient data"
+        }
+    },
+    "session_id": "marcus_session_2025-08-02_104321",
+    "timestamp": "2025-08-02T10:43:21.269079",
+    "session_duration_minutes": 30
+}

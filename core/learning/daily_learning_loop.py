@@ -48,12 +48,12 @@ ANALYTICS_DIR = BASE_DIR / "output" / "analytics"
 SUMMARIES_DIR = BASE_DIR / "output" / "summaries"
 
 # Import your existing systems
-from reflection_system import generate_reflection  # This import might fail
-from concept_graph_system import learn_new_concepts, review_previous_concepts  # This import might fail
+from core.reasoning.reflection_system import generate_reflection  # This import might fail
+from core.learning.concept_graph_system import learn_new_concepts, review_previous_concepts  # This import might fail
 
 # Import enhanced reflection system for Issue #4 completion
 try:
-    from reflection_journal_system import create_enhanced_reflection_system, enhance_session_with_journal
+    from core.reasoning.reflection_journal_system import create_enhanced_reflection_system, enhance_session_with_journal
     ENHANCED_REFLECTION_AVAILABLE = True
 except ImportError:
     ENHANCED_REFLECTION_AVAILABLE = False
@@ -515,7 +515,7 @@ def generate_daily_reasoning_problems(current_session: Dict[str, Any], all_sessi
     """Generate reasoning problems based on Marcus's current learning state"""
     
     try:
-        from advanced_reasoning_engine import ReasoningProblem
+        from core.reasoning.advanced_reasoning_engine import ReasoningProblem
     except ImportError:
         return []
     
@@ -645,7 +645,7 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
     
     # Step 2: Initialize Advanced Reasoning Engine
     try:
-        from advanced_reasoning_engine import AdvancedReasoningEngine, ReasoningProblem
+        from core.reasoning.advanced_reasoning_engine import AdvancedReasoningEngine, ReasoningProblem
         reasoning_engine = AdvancedReasoningEngine()
         print("🧠 Advanced Reasoning Engine initialized")
     except ImportError:
@@ -663,7 +663,7 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
         
         # Try to use the new embodied social integration system first
         try:
-            from marcus_embodied_social_integration import (
+            from core.social.marcus_embodied_social_integration import (
                 MarcusEmbodiedSocialIntegration, PhysicalSocialContext
             )
             
@@ -713,8 +713,8 @@ def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
         except ImportError:
             # Fallback to basic embodied learning system
             print("  🔄 Falling back to Basic Embodied Learning System")
-            from marcus_simple_body import MarcusGridWorld, EmbodiedLearning
-            from memory_system import MarcusMemorySystem, Concept
+            from core.learning.marcus_simple_body import MarcusGridWorld, EmbodiedLearning
+            from core.memory.memory_system import MarcusMemorySystem, Concept
             
             # Initialize physical world
             world = MarcusGridWorld()

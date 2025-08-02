@@ -26,12 +26,12 @@ import logging
 import math
 
 # Import from existing systems
-from kindergarten_curriculum_expansion import (
+from .kindergarten_curriculum_expansion import (
     DevelopmentalDomain, SkillLevel, KindergartenCurriculumExpansion,
     LearningObjective, DifferentiatedPath
 )
-from emotional_intelligence_assessment import EmotionalIntelligenceAssessment
-from memory_system import MarcusMemorySystem, Concept
+from ..social.emotional_intelligence_assessment import EmotionalIntelligenceAssessment
+from ..memory.memory_system import MarcusMemorySystem, Concept
 
 logger = logging.getLogger(__name__)
 

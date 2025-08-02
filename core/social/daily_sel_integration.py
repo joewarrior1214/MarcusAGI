@@ -25,7 +25,7 @@ from pathlib import Path
 import logging
 
 # Import the SEL curriculum system
-from sel_curriculum_expansion import (
+from .sel_curriculum_expansion import (
     SELCurriculumExpansion, SELSkillArea, SELDifficultyLevel, 
     SELLesson, EmotionRegulationDrill, ConflictResolutionScenario, EmpathyExercise
 )

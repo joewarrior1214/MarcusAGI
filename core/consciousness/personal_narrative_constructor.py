@@ -27,7 +27,7 @@ from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass
 import uuid
 import re
-from autobiographical_memory_system import AutobiographicalMemorySystem, AutobiographicalMemory
+from ..memory.autobiographical_memory_system import AutobiographicalMemorySystem, AutobiographicalMemory
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
