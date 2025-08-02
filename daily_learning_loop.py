@@ -15,6 +15,32 @@ from dataclasses import dataclass, asdict
 from reflection_system import generate_reflection
 from concept_graph_system import learn_new_concepts, review_previous_concepts
 
+from datetime import datetime
+
+def get_due_reviews(session_history: List[Dict], today: str) -> List[Dict]:
+    """
+    Pulls concepts that are due for review based on 'next_review' date.
+    """
+    due_reviews = []
+
+    for session in session_history:
+        for review in session.get('review_results', []):
+            next_review_str = review.get('next_review', '')
+            try:
+                next_review_date = datetime.strptime(next_review_str, "%Y-%m-%d").date()
+                if next_review_date <= datetime.strptime(today, "%Y-%m-%d").date():
+                    due_reviews.append({
+                        'id': review.get('concept_id'),
+                        'content': review.get('content'),
+                        'interval_days': review.get('interval_days', 1),
+                        'ease_factor': review.get('ease_factor', 2.5),
+                        'repetitions': review.get('repetitions', 0)
+                    })
+            except Exception:
+                continue  # Ignore malformed dates
+
+    return due_reviews
+
 # Constants
 OUTPUT_DIR = "output/sessions"
 ANALYTICS_DIR = "output/analytics"
@@ -471,21 +497,22 @@ def run_daily_learning_loop(run_date: date = date.today()):
     # Step 4: Conduct SM-2 spaced repetition reviews
     print("\n🔄 Conducting spaced repetition reviews...")
     
-    # Get concepts due for review
-    concepts_to_review = []
-    if session_history:
-        # Look for concepts from previous sessions
-        for session in session_history[-5:]:  # Check last 5 sessions
-            for concept in session.get('concepts_learned', []):
-                # Simple check - in real implementation, would check next_review date
-                if random.random() < 0.3:  # 30% chance to review
-                    concepts_to_review.append({
-                        'id': concept,
-                        'content': concept,
-                        'interval_days': random.randint(1, 7),
-                        'ease_factor': 2.5,
-                        'repetitions': random.randint(0, 5)
-                    })
+  # Get concepts due for review
+concepts_to_review = []
+if session_history:
+    # Look for concepts from previous sessions
+    for session in session_history[-5:]:  # Check last 5 sessions
+        for concept in session.get('concepts_learned', []):
+            # Simple check - in real implementation, would check next_review date
+            if random.random() < 0.3:  # 30% chance to review
+                concepts_to_review.append({
+                    'id': concept,
+                    'content': concept,
+                    'interval_days': random.randint(1, 7),
+                    'ease_factor': 2.5,
+                    'repetitions': random.randint(0, 5)
+                })
+
     
     # Limit reviews
     concepts_to_review = concepts_to_review[:LEARNING_CONFIG['max_reviews']]
