@@ -338,23 +338,8 @@ class MarcusGridWorld:
         return {'feeling': 'empty_space', 'learning': 'Air feels like nothing'}
     
     def display(self):
-        """Show current world state"""
-        print("\n🌍 Marcus's World:")
-        print("=" * (self.size * 2 + 1))
-        
-        display_map = {
-            0: '.',  # Empty
-            1: 'M',  # Marcus
-            2: 'o',  # Movable object
-            3: '#'   # Wall
-        }
-        
-        for row in self.grid:
-            print(' '.join(display_map.get(int(cell), '?') for cell in row))
-        
-        print(f"\nMarcus facing: {self.facing}")
-        print(f"Holding: {self.holding or 'nothing'}")
-        print(f"Energy: {self.energy}")
+        """Show Marcus's current world state - simplified version"""
+        print(f"\n🌍 Marcus: Position [{self.marcus_pos[0]}, {self.marcus_pos[1]}] | Energy: {self.energy} | Holding: {self.holding or 'nothing'}")
     
     def get_learning_summary(self) -> Dict[str, Any]:
         """Summarize what Marcus has learned"""
@@ -480,18 +465,23 @@ class EmbodiedLearning:
         
         if concept_content not in self.concept_mappings[concept_key]:
             self.concept_mappings[concept_key].append(concept_content)
-            print(f"💡 Concept: {concept_content} (confidence: 0.2)")
+            # Remove the verbose print, just show summary later
+            # print(f"💡 Concept: {concept_content} (confidence: 0.2)")
             
-            # Store in memory system if available
             try:
+                # Set logging level to WARNING to reduce INFO messages
+                import logging
+                logging.getLogger('MarcusAGI.memory_system').setLevel(logging.WARNING)
+                logging.getLogger('memory_system').setLevel(logging.WARNING)
+                
                 from MarcusAGI.memory_system import Concept
                 concept = Concept(
                     id=f"physics_{concept_key}_{len(self.concept_mappings[concept_key])}",
-                    content=concept_content,  # Ensure this is a string
+                    content=concept_content,
                     subject="physics",
                     grade_level="kindergarten",
                     emotional_context="discovered"
                 )
                 self.memory_system.learn_concept(concept)
-            except Exception as e:
-                print(f"Memory storage failed: {e}")
+            except Exception:
+                pass  # Silent fail

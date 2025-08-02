@@ -1,0 +1,270 @@
+[
+    {
+        "date": "2025-08-01",
+        "timestamp": "2025-08-01T23:55:50.397813",
+        "reviews_completed": 1,
+        "review_results": [
+            {
+                "concept_id": "patterns with colors (math)",
+                "content": "patterns with colors (math)",
+                "interval_days": 1,
+                "ease_factor": 2.36,
+                "repetitions": 0,
+                "last_review": "2025-08-01",
+                "next_review": "2025-08-02",
+                "quality": 3,
+                "success": true
+            }
+        ],
+        "concepts_learned": [
+            "cutting with scissors (art)",
+            "letter B sounds (reading)",
+            "using kind words (social)"
+        ],
+        "adaptive_lessons": [
+            {
+                "id": "math_1754092550.397661_0",
+                "subject": "math",
+                "difficulty": 0.21000000000000002,
+                "content": "Advanced math concept (difficulty: 0.21)",
+                "priority_score": 1.068,
+                "adaptive": true
+            },
+            {
+                "id": "reading_1754092550.397673_1",
+                "subject": "reading",
+                "difficulty": 0.30000000000000004,
+                "content": "Advanced reading concept (difficulty: 0.30)",
+                "priority_score": 0.96,
+                "adaptive": true
+            },
+            {
+                "id": "art_1754092550.397679_2",
+                "subject": "art",
+                "difficulty": 0.21000000000000002,
+                "content": "Advanced art concept (difficulty: 0.21)",
+                "priority_score": 0.89,
+                "adaptive": true
+            },
+            {
+                "id": "science_1754092550.397684_3",
+                "subject": "science",
+                "difficulty": 0.30000000000000004,
+                "content": "Advanced science concept (difficulty: 0.30)",
+                "priority_score": 0.8,
+                "adaptive": true
+            },
+            {
+                "id": "social_1754092550.397689_4",
+                "subject": "social",
+                "difficulty": 0.61,
+                "content": "Advanced social concept (difficulty: 0.61)",
+                "priority_score": 0.49,
+                "adaptive": true
+            }
+        ],
+        "reflection": "On Friday, I grew smarter and kinder!",
+        "metrics": {
+            "retention_rate": 1.0,
+            "learning_velocity": 3,
+            "difficulty_progression": 0.1,
+            "mastery_by_subject": {
+                "math": 0.11,
+                "reading": 0.2,
+                "science": 0.2,
+                "social": 0.51,
+                "art": 0.11
+            },
+            "review_performance": {
+                "average_quality": 3.0,
+                "success_rate": 1.0,
+                "reviews_completed": 1
+            }
+        },
+        "curriculum_progression": {
+            "advanced": false,
+            "current_unit": "Kindergarten Basics",
+            "current_mastery": 0.22600000000000003,
+            "target_mastery": 0.85,
+            "estimated_concepts_needed": 31,
+            "subject_mastery": {
+                "math": 0.11,
+                "reading": 0.2,
+                "science": 0.2,
+                "social": 0.51,
+                "art": 0.11
+            },
+            "weakest_subject": "math"
+        }
+    },
+    {
+        "date": "2025-08-02",
+        "timestamp": "2025-08-02T02:16:41.615804",
+        "reviews_completed": 4,
+        "review_results": [
+            {
+                "concept_id": "using kind words (social)",
+                "content": "using kind words (social)",
+                "interval_days": 10,
+                "ease_factor": 2.6,
+                "repetitions": 5,
+                "last_review": "2025-08-02",
+                "next_review": "2025-08-12",
+                "quality": 5,
+                "success": true
+            },
+            {
+                "concept_id": "sight word: the (reading)",
+                "content": "sight word: the (reading)",
+                "interval_days": 7,
+                "ease_factor": 2.6,
+                "repetitions": 4,
+                "last_review": "2025-08-02",
+                "next_review": "2025-08-09",
+                "quality": 5,
+                "success": true
+            },
+            {
+                "concept_id": "counting objects (math)",
+                "content": "counting objects (math)",
+                "interval_days": 2,
+                "ease_factor": 2.5,
+                "repetitions": 2,
+                "last_review": "2025-08-02",
+                "next_review": "2025-08-04",
+                "quality": 4,
+                "success": true
+            },
+            {
+                "concept_id": "bigger and smaller (math)",
+                "content": "bigger and smaller (math)",
+                "interval_days": 5,
+                "ease_factor": 2.5,
+                "repetitions": 2,
+                "last_review": "2025-08-02",
+                "next_review": "2025-08-07",
+                "quality": 4,
+                "success": true
+            }
+        ],
+        "concepts_learned": [
+            "character feelings (reading)",
+            "weather types (science)",
+            "beginning sounds (reading)"
+        ],
+        "adaptive_lessons": [
+            {
+                "id": "reading_1754101001.615464_0",
+                "subject": "reading",
+                "difficulty": 0.22000000000000003,
+                "content": "Advanced reading concept (difficulty: 0.22)",
+                "priority_score": 1.056,
+                "adaptive": true
+            },
+            {
+                "id": "social_1754101001.615477_1",
+                "subject": "social",
+                "difficulty": 0.22000000000000003,
+                "content": "Advanced social concept (difficulty: 0.22)",
+                "priority_score": 0.88,
+                "adaptive": true
+            },
+            {
+                "id": "science_1754101001.615483_2",
+                "subject": "science",
+                "difficulty": 0.30000000000000004,
+                "content": "Advanced science concept (difficulty: 0.30)",
+                "priority_score": 0.8,
+                "adaptive": true
+            },
+            {
+                "id": "math_1754101001.615488_3",
+                "subject": "math",
+                "difficulty": 0.52,
+                "content": "Advanced math concept (difficulty: 0.52)",
+                "priority_score": 0.6960000000000001,
+                "adaptive": true
+            },
+            {
+                "id": "art_1754101001.615492_4",
+                "subject": "art",
+                "difficulty": 0.67,
+                "content": "Advanced art concept (difficulty: 0.67)",
+                "priority_score": 0.42999999999999994,
+                "adaptive": true
+            }
+        ],
+        "reflection": "I helped my friend understand sharing today. Learning together is better!",
+        "metrics": {
+            "retention_rate": 1.0,
+            "learning_velocity": 3,
+            "difficulty_progression": 0.1,
+            "mastery_by_subject": {
+                "math": 0.42,
+                "reading": 0.12000000000000001,
+                "science": 0.2,
+                "social": 0.12000000000000001,
+                "art": 0.5700000000000001
+            },
+            "review_performance": {
+                "average_quality": 4.5,
+                "success_rate": 1.0,
+                "reviews_completed": 4
+            }
+        },
+        "curriculum_progression": {
+            "advanced": false,
+            "current_unit": "Kindergarten Basics",
+            "current_mastery": 0.28600000000000003,
+            "target_mastery": 0.85,
+            "estimated_concepts_needed": 28,
+            "subject_mastery": {
+                "math": 0.42,
+                "reading": 0.12000000000000001,
+                "science": 0.2,
+                "social": 0.12000000000000001,
+                "art": 0.5700000000000001
+            },
+            "weakest_subject": "reading"
+        }
+    },
+    {
+        "date": "2025-08-02",
+        "physical_exploration": true,
+        "concepts_discovered": 0,
+        "key_insights": [
+            "I can see objects within 3 spaces",
+            "I can see objects within 3 spaces",
+            "Moving uses energy"
+        ],
+        "total_experiences": 9,
+        "reviews_completed": 1,
+        "concepts_learned": [
+            "Advanced science concept (difficulty: 0.23)",
+            "Advanced art concept (difficulty: 0.23)",
+            "Advanced reading concept (difficulty: 0.45)",
+            "Advanced social concept (difficulty: 0.68)",
+            "Advanced math concept (difficulty: 1.00)"
+        ],
+        "review_results": [
+            {
+                "concept_id": "patterns with colors (math)",
+                "content": "patterns with colors (math)",
+                "interval_days": 1,
+                "ease_factor": 1.82,
+                "repetitions": 0,
+                "last_review": "2025-08-02",
+                "next_review": "2025-08-03",
+                "quality": 1,
+                "success": false
+            }
+        ],
+        "mastery_levels": {
+            "math": 1.0,
+            "reading": 0.355,
+            "science": 0.13,
+            "social": 0.5800000000000001,
+            "art": 0.13
+        }
+    }
+]

@@ -1,0 +1,263 @@
+{
+    "date": "2025-08-02",
+    "physical_exploration": true,
+    "concepts_discovered": 0,
+    "key_insights": [
+        "I can see objects within 3 spaces",
+        "I can see objects within 3 spaces",
+        "Moving uses energy"
+    ],
+    "total_experiences": 5,
+    "reviews_completed": 19,
+    "concepts_learned": [
+        "Advanced science concept (difficulty: 0.31)",
+        "Advanced art concept (difficulty: 0.31)",
+        "Advanced reading concept (difficulty: 0.45)",
+        "Advanced social concept (difficulty: 0.54)",
+        "Advanced math concept (difficulty: 1.00)"
+    ],
+    "review_results": [
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_3",
+            "content": "Review concept review_3",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_3",
+            "content": "Review concept review_3",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_3",
+            "content": "Review concept review_3",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_0",
+            "content": "Review concept review_0",
+            "interval_days": 1,
+            "ease_factor": 2.18,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 2,
+            "success": false
+        },
+        {
+            "concept_id": "review_1",
+            "content": "Review concept review_1",
+            "interval_days": 1,
+            "ease_factor": 2.5,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 4,
+            "success": true
+        },
+        {
+            "concept_id": "review_2",
+            "content": "Review concept review_2",
+            "interval_days": 1,
+            "ease_factor": 2.36,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "patterns with colors (math)",
+            "content": "patterns with colors (math)",
+            "interval_days": 1,
+            "ease_factor": 2.22,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        },
+        {
+            "concept_id": "patterns with colors (math)",
+            "content": "patterns with colors (math)",
+            "interval_days": 1,
+            "ease_factor": 2.22,
+            "repetitions": 0,
+            "last_review": "2025-08-02",
+            "next_review": "2025-08-03",
+            "quality": 3,
+            "success": true
+        }
+    ],
+    "mastery_levels": {
+        "math": 0.9349999999999999,
+        "reading": 0.3484615384615385,
+        "science": 0.21000000000000002,
+        "social": 0.435,
+        "art": 0.21000000000000002
+    },
+    "metrics": {
+        "subject_mastery": {
+            "math": 0.9349999999999999,
+            "reading": 0.3484615384615385,
+            "science": 0.21000000000000002,
+            "social": 0.435,
+            "art": 0.21000000000000002
+        },
+        "review_success_rate": 0.631578947368421,
+        "concept_acquisition_rate": 5,
+        "adaptive_difficulty": 0.5276923076923077,
+        "retention_rate": 0.631578947368421,
+        "learning_velocity": 5,
+        "engagement_score": 0.5657894736842105,
+        "learning_trend": 3.8,
+        "embodied_learning_rate": 0,
+        "grounded_concept_ratio": 0.0,
+        "transfer_learning": 0.3900866148894016,
+        "meta_learning": {
+            "adaptation_rate": 1.0,
+            "concept_integration": 0.712154042490492
+        }
+    },
+    "session_id": "marcus_session_2025-08-02_044325",
+    "timestamp": "2025-08-02T04:43:25.252894",
+    "session_duration_minutes": 34
+}
