@@ -26,5 +26,5 @@ def extract_audio(video_path: str, output_dir: str = "output/audio") -> str:
 
 # Example
 if __name__ == "__main__":
-    test_video = "marcus_av_pipeline/sample_data/MrRogersspeech.mp4"
+    test_video = "marcus_av_pipeline/sample_data/mrrogersep1521conflict.mp4"
     extract_audio(test_video)
