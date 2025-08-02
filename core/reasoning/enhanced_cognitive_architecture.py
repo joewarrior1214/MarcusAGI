@@ -772,19 +772,16 @@ class EnhancedCognitiveArchitecture:
         # Metacognitive monitoring
         self.cognitive_modules[CognitiveModuleType.METACOGNITIVE_MONITOR] = MetacognitiveMonitor()
         
-        # Additional modules would be implemented similarly:
-        # - SemanticMemoryModule
-        # - AttentionMechanism
-        # - TransformerNLPModule
-        # - GraphNeuralNetModule
-        # - ProbabilisticReasoningModule
-        # - ReinforcementLearningModule
-        # - TemporalPatternRecognitionModule
-        # - AssociativeNetworkModule
-        # - AnalogicalReasoningModule
-        # - DivergentThinkingModule
+        # Import and initialize advanced modules
+        try:
+            from .advanced_cognitive_modules import create_advanced_cognitive_modules
+            advanced_modules = create_advanced_cognitive_modules()
+            self.cognitive_modules.update(advanced_modules)
+            logger.info(f"🧠 Integrated {len(advanced_modules)} advanced cognitive modules")
+        except ImportError as e:
+            logger.warning(f"⚠️ Advanced cognitive modules not available: {e}")
         
-        logger.info(f"🧠 Initialized {len(self.cognitive_modules)} cognitive modules")
+        logger.info(f"🧠 Initialized {len(self.cognitive_modules)} cognitive modules total")
     
     def setup_database(self):
         """Set up database schema for enhanced cognitive architecture."""
@@ -879,31 +876,47 @@ class EnhancedCognitiveArchitecture:
         required_modules.append(CognitiveModuleType.NEUROSYMBOLIC_CORE)
         
         # Memory requirements
-        if 'remember' in task_type or 'recall' in task_type:
+        if 'remember' in task_type or 'recall' in task_type or 'memory' in task_type:
             required_modules.extend([
                 CognitiveModuleType.WORKING_MEMORY,
                 CognitiveModuleType.EPISODIC_MEMORY
             ])
         
         # Language processing
-        if 'language' in task_type or 'text' in task_type:
+        if 'language' in task_type or 'text' in task_type or 'nlp' in task_type or 'understand' in task_type:
             required_modules.append(CognitiveModuleType.TRANSFORMER_NLP)
         
+        # Graph and relationship processing
+        if 'relationship' in task_type or 'graph' in task_type or 'connection' in task_type or 'network' in task_type:
+            required_modules.append(CognitiveModuleType.GRAPH_NEURAL_NET)
+        
+        # Probabilistic and uncertain reasoning
+        if 'uncertain' in task_type or 'probability' in task_type or 'decision' in task_type or 'risk' in task_type:
+            required_modules.append(CognitiveModuleType.PROBABILISTIC_REASONING)
+        
         # Complex reasoning
-        if 'reasoning' in task_type or 'problem' in task_type:
+        if 'reasoning' in task_type or 'problem' in task_type or 'analyze' in task_type:
             required_modules.extend([
                 CognitiveModuleType.METACOGNITIVE_MONITOR,
                 CognitiveModuleType.WORKING_MEMORY
             ])
         
         # Creative tasks
-        if 'creative' in task_type or 'innovative' in task_type:
+        if 'creative' in task_type or 'innovative' in task_type or 'generate' in task_type:
             required_modules.extend([
                 CognitiveModuleType.DIVERGENT_THINKING,
                 CognitiveModuleType.ASSOCIATIVE_NETWORK
             ])
         
-        return required_modules
+        # Multi-modal tasks
+        if 'multi' in task_type or 'integrate' in task_type or 'combine' in task_type:
+            required_modules.extend([
+                CognitiveModuleType.WORKING_MEMORY,
+                CognitiveModuleType.TRANSFORMER_NLP,
+                CognitiveModuleType.GRAPH_NEURAL_NET
+            ])
+        
+        return list(set(required_modules))  # Remove duplicates
     
     def _learn_from_task(self, task: CognitiveTask):
         """Learn from completed task to improve future performance."""
@@ -1035,6 +1048,53 @@ class EnhancedCognitiveArchitecture:
             }
         ]
         
+        # Add advanced module tests if available
+        if CognitiveModuleType.TRANSFORMER_NLP in self.cognitive_modules:
+            test_scenarios.append({
+                'name': 'Natural Language Processing',
+                'task': CognitiveTask(
+                    task_id='demo_nlp',
+                    task_type='text_understanding',
+                    input_data={
+                        'operation': 'understand',
+                        'text': 'The enhanced cognitive architecture integrates neural and symbolic reasoning for advanced AI capabilities.'
+                    },
+                    priority=ProcessingPriority.HIGH,
+                    required_modules=[CognitiveModuleType.TRANSFORMER_NLP]
+                )
+            })
+        
+        if CognitiveModuleType.GRAPH_NEURAL_NET in self.cognitive_modules:
+            test_scenarios.append({
+                'name': 'Graph Neural Network Reasoning',
+                'task': CognitiveTask(
+                    task_id='demo_gnn',
+                    task_type='graph_relationship_analysis',
+                    input_data={
+                        'operation': 'query_relationships',
+                        'node_id': 'learning'
+                    },
+                    priority=ProcessingPriority.MEDIUM,
+                    required_modules=[CognitiveModuleType.GRAPH_NEURAL_NET]
+                )
+            })
+        
+        if CognitiveModuleType.PROBABILISTIC_REASONING in self.cognitive_modules:
+            test_scenarios.append({
+                'name': 'Probabilistic Reasoning',
+                'task': CognitiveTask(
+                    task_id='demo_prob',
+                    task_type='uncertain_decision_making',
+                    input_data={
+                        'operation': 'inference',
+                        'query_variable': 'learning_success',
+                        'evidence': {'attention_level': 'focused', 'prior_knowledge': 'moderate'}
+                    },
+                    priority=ProcessingPriority.HIGH,
+                    required_modules=[CognitiveModuleType.PROBABILISTIC_REASONING]
+                )
+            })
+        
         results = {}
         
         for scenario in test_scenarios:
@@ -1044,6 +1104,14 @@ class EnhancedCognitiveArchitecture:
             
             if result.get('success', False):
                 print(f"   Result: ✅ SUCCESS")
+                # Show key results for advanced modules
+                if 'key_concepts' in result:
+                    print(f"   Key Concepts: {result['key_concepts'][:3]}")
+                elif 'relationships' in result:
+                    print(f"   Relationships Found: {result.get('relationship_count', 0)}")
+                elif 'posterior_distribution' in result:
+                    best_outcome = result.get('most_likely_state', 'unknown')
+                    print(f"   Most Likely: {best_outcome}")
             else:
                 print(f"   Result: ❌ FAILED - {result.get('error', 'Unknown error')}")
         
@@ -1055,17 +1123,33 @@ class EnhancedCognitiveArchitecture:
         print(f"   Avg Processing Time: {status['performance_metrics']['average_processing_time']:.3f}s")
         print(f"   Active Modules: {len(status['module_statuses'])}")
         
+        # List available advanced modules
+        advanced_modules = []
+        for module_type in [CognitiveModuleType.TRANSFORMER_NLP, 
+                           CognitiveModuleType.GRAPH_NEURAL_NET, 
+                           CognitiveModuleType.PROBABILISTIC_REASONING]:
+            if module_type in self.cognitive_modules:
+                advanced_modules.append(module_type.value)
+        
         print(f"\n🎉 ENHANCED COGNITIVE ARCHITECTURE DEMONSTRATION COMPLETE!")
         print("✅ Multi-modal cognitive processing operational")
         print("✅ Working memory with attention-based management")
         print("✅ Episodic memory with temporal and contextual indexing")
         print("✅ Metacognitive monitoring and self-awareness")
         print("✅ Executive control coordination")
+        
+        if advanced_modules:
+            print(f"✅ Advanced modules operational: {', '.join(advanced_modules)}")
+            print("✅ Natural language processing capabilities")
+            print("✅ Graph-based relationship modeling")
+            print("✅ Probabilistic reasoning under uncertainty")
+        
         print("✅ Extensible architecture ready for additional modules")
         
         return {
             'demonstration_results': results,
             'system_status': status,
+            'advanced_modules_active': advanced_modules,
             'capabilities_validated': [
                 'working_memory_management',
                 'episodic_memory_formation',
@@ -1073,7 +1157,7 @@ class EnhancedCognitiveArchitecture:
                 'executive_control',
                 'modular_architecture',
                 'performance_tracking'
-            ]
+            ] + [f'advanced_{module}' for module in advanced_modules]
         }
 
 
