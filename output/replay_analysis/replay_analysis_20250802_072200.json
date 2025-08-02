@@ -1,0 +1,231 @@
+{
+  "analysis_summary": {
+    "total_sessions_analyzed": 8,
+    "analysis_period": "2025-08-02 to 2025-08-02",
+    "average_success_rate": 0.9796492283897429,
+    "improvement_trend": -0.00324007627541123,
+    "trend_direction": "stable"
+  },
+  "misalignment_insights": {
+    "total_misalignments": 0,
+    "misalignment_sessions": [],
+    "pattern_analysis": {},
+    "improvement_suggestions": []
+  },
+  "coherence_insights": null,
+  "success_insights": {
+    "total_successful_sessions": 8,
+    "success_rate": 1.0,
+    "successful_sessions_detail": [
+      {
+        "session_id": "87b90471-9e12-46bf-a919-3a5abe8e5642",
+        "date": "2025-08-02",
+        "success_rating": 0.9673154110017268,
+        "peers_involved": [
+          "emma"
+        ],
+        "skills_demonstrated": [
+          "cooperation",
+          "active_listening",
+          "turn_taking"
+        ],
+        "conversation_highlights": [
+          {
+            "message": "Good job working together, everyone!",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "d90ac992-3eea-4a31-bcd5-bcc5c0ec6dc7",
+        "date": "2025-08-02",
+        "success_rating": 0.973786665044815,
+        "peers_involved": [
+          "emma",
+          "oliver"
+        ],
+        "skills_demonstrated": [],
+        "conversation_highlights": [
+          {
+            "message": "Thanks for being such good friends!",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "f9c31a5e-592a-4679-8373-dbc0881d7dc7",
+        "date": "2025-08-02",
+        "success_rating": 1.0,
+        "peers_involved": [
+          "emma"
+        ],
+        "skills_demonstrated": [
+          "cooperation",
+          "active_listening",
+          "turn_taking"
+        ],
+        "conversation_highlights": [
+          {
+            "message": "That was fun! Let's play again tomorrow.",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "594b76d3-4b51-4a1f-b625-d95e02a1729e",
+        "date": "2025-08-02",
+        "success_rating": 0.983974990063252,
+        "peers_involved": [
+          "emma",
+          "oliver"
+        ],
+        "skills_demonstrated": [],
+        "conversation_highlights": [
+          {
+            "message": "I had a great time with you all.",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "6ea85e9b-4a3e-4716-a487-5dda97635eb3",
+        "date": "2025-08-02",
+        "success_rating": 1.0,
+        "peers_involved": [
+          "emma"
+        ],
+        "skills_demonstrated": [
+          "cooperation",
+          "active_listening",
+          "turn_taking"
+        ],
+        "conversation_highlights": [
+          {
+            "message": "That was fun! Let's play again tomorrow.",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "d391fd7b-3cf6-463d-980b-ab80b5760b0b",
+        "date": "2025-08-02",
+        "success_rating": 1.0,
+        "peers_involved": [
+          "emma",
+          "oliver"
+        ],
+        "skills_demonstrated": [],
+        "conversation_highlights": [
+          {
+            "message": "I had a great time with you all.",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "0d3c5873-6d6f-450f-a0a8-9f5b50ec6262",
+        "date": "2025-08-02",
+        "success_rating": 1.0,
+        "peers_involved": [
+          "emma"
+        ],
+        "skills_demonstrated": [
+          "active_listening",
+          "turn_taking",
+          "cooperation"
+        ],
+        "conversation_highlights": [
+          {
+            "message": "Good job working together, everyone!",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      },
+      {
+        "session_id": "cfc6aa1a-9f6d-4eb8-8d9f-df5e52fbfefd",
+        "date": "2025-08-02",
+        "success_rating": 0.9121167610081491,
+        "peers_involved": [
+          "emma",
+          "oliver"
+        ],
+        "skills_demonstrated": [],
+        "conversation_highlights": [
+          {
+            "message": "Thanks for being such good friends!",
+            "emotion": "satisfied",
+            "skills_shown": [
+              "SocialSkillArea.COOPERATION"
+            ],
+            "quality_score": 0.8
+          }
+        ]
+      }
+    ],
+    "successful_behavior_patterns": {
+      "SocialSkillArea.COOPERATION": {
+        "success_frequency": 8,
+        "average_quality": 0.8,
+        "best_example": {
+          "message": "Good job working together, everyone!",
+          "emotion": "satisfied",
+          "quality": 0.8,
+          "context": "InteractionContext.CLASSROOM"
+        },
+        "common_emotions": {
+          "satisfied": 8
+        },
+        "effective_contexts": {
+          "InteractionContext.CLASSROOM": 4,
+          "InteractionContext.GROUP_PROJECT": 4
+        },
+        "reinforcement_strategies": [
+          "Continue practicing collaborative language and shared decision-making",
+          "Leverage success patterns from InteractionContext.CLASSROOM context in other settings"
+        ]
+      }
+    },
+    "key_success_factors": [
+      "Strong success rate with peer: emma",
+      "Most effective skills: cooperation, active_listening, turn_taking"
+    ],
+    "reinforcement_recommendations": [
+      "Continue leveraging SocialSkillArea.COOPERATION - current success rate: 80.0%",
+      "Continue practicing collaborative language and shared decision-making",
+      "Leverage success patterns from InteractionContext.CLASSROOM context in other settings"
+    ]
+  },
+  "actionable_recommendations": [
+    "\ud83d\udcca Stable performance - consider introducing new challenges",
+    "Continue leveraging SocialSkillArea.COOPERATION - current success rate: 80.0%",
+    "Continue practicing collaborative language and shared decision-making"
+  ]
+}

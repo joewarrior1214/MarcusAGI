@@ -1,0 +1,43 @@
+{
+  "dashboard_generated": "2025-08-02T07:22:00.105032",
+  "analysis_period": "4 weeks",
+  "sessions_analyzed": 4,
+  "emotional_regulation": {
+    "daily_scores": {
+      "2025-08-02": 0.48982461419487144
+    },
+    "trend": "insufficient_data",
+    "current_level": 0.48982461419487144,
+    "improvement": 0.0
+  },
+  "conflict_resolution": {
+    "daily_success_rates": {},
+    "trend": "insufficient_data",
+    "total_conflicts_resolved": 0,
+    "resolution_improvement": 0.0
+  },
+  "turn_taking": {
+    "daily_accuracy": {},
+    "trend": "insufficient_data",
+    "current_accuracy": 0,
+    "practice_frequency": 0
+  },
+  "perspective_taking": {
+    "daily_perspective_scores": {},
+    "trend": "insufficient_data",
+    "empathy_demonstrations": 0,
+    "development_progress": 0.0
+  },
+  "peer_relationships": {
+    "daily_relationship_strength": {},
+    "peer_interaction_counts": {},
+    "relationship_trend": "insufficient_data",
+    "most_frequent_peer": null
+  },
+  "overall_social_growth": {
+    "overall_score": 0.48982461419487144,
+    "growth_level": "needs_support",
+    "areas_assessed": 1,
+    "confidence": "medium"
+  }
+}
