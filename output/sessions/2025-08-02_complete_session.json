@@ -1,0 +1,98 @@
+{
+  "date": "2025-08-02",
+  "timestamp": "2025-08-02T01:38:31.812498",
+  "reviews_completed": 1,
+  "review_results": [
+    {
+      "concept_id": "cutting with scissors (art)",
+      "content": "cutting with scissors (art)",
+      "interval_days": 6,
+      "ease_factor": 2.36,
+      "repetitions": 3,
+      "last_review": "2025-08-02",
+      "next_review": "2025-08-08",
+      "quality": 3,
+      "success": true
+    }
+  ],
+  "concepts_learned": [
+    "sight word: the (reading)",
+    "counting objects (math)",
+    "bigger and smaller (math)"
+  ],
+  "adaptive_lessons": [
+    {
+      "id": "science_1754098711.812305_0",
+      "subject": "science",
+      "difficulty": 0.30000000000000004,
+      "content": "Advanced science concept (difficulty: 0.30)",
+      "priority_score": 0.8,
+      "adaptive": true
+    },
+    {
+      "id": "math_1754098711.812318_1",
+      "subject": "math",
+      "difficulty": 0.52,
+      "content": "Advanced math concept (difficulty: 0.52)",
+      "priority_score": 0.6960000000000001,
+      "adaptive": true
+    },
+    {
+      "id": "art_1754098711.812324_2",
+      "subject": "art",
+      "difficulty": 0.42000000000000004,
+      "content": "Advanced art concept (difficulty: 0.42)",
+      "priority_score": 0.6799999999999999,
+      "adaptive": true
+    },
+    {
+      "id": "social_1754098711.812335_3",
+      "subject": "social",
+      "difficulty": 0.52,
+      "content": "Advanced social concept (difficulty: 0.52)",
+      "priority_score": 0.5800000000000001,
+      "adaptive": true
+    },
+    {
+      "id": "reading_1754098711.81234_4",
+      "subject": "reading",
+      "difficulty": 0.67,
+      "content": "Advanced reading concept (difficulty: 0.67)",
+      "priority_score": 0.5159999999999999,
+      "adaptive": true
+    }
+  ],
+  "reflection": "My brain feels stronger after today's practice. I love learning new things!",
+  "metrics": {
+    "retention_rate": 1.0,
+    "learning_velocity": 3,
+    "difficulty_progression": 0.1,
+    "mastery_by_subject": {
+      "math": 0.42,
+      "reading": 0.5700000000000001,
+      "science": 0.2,
+      "social": 0.42,
+      "art": 0.32
+    },
+    "review_performance": {
+      "average_quality": 3.0,
+      "success_rate": 1.0,
+      "reviews_completed": 1
+    }
+  },
+  "curriculum_progression": {
+    "advanced": false,
+    "current_unit": "Kindergarten Basics",
+    "current_mastery": 0.386,
+    "target_mastery": 0.85,
+    "estimated_concepts_needed": 23,
+    "subject_mastery": {
+      "math": 0.42,
+      "reading": 0.5700000000000001,
+      "science": 0.2,
+      "social": 0.42,
+      "art": 0.32
+    },
+    "weakest_subject": "science"
+  }
+}

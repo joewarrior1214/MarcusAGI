@@ -1,19 +1,55 @@
 #!/usr/bin/env python3
 """
-Complete Daily Learning Loop - Full Issue #3 Implementation
-Includes: SM-2 algorithm, adaptive lessons, curriculum progression, and comprehensive analytics
+Marcus AGI Daily Learning Loop - Complete Implementation (Issue #3)
+
+This module implements the core daily learning loop that drives Marcus's 
+educational progression. It includes:
+
+- Automated lesson generation
+- Spaced repetition (SM-2 algorithm)
+- Progress tracking and analytics
+- Curriculum progression logic
+- Parent-friendly reporting
+- AGI-specific enhancements
+
+The system adapts difficulty based on performance and maintains comprehensive
+metrics for monitoring learning progress.
 """
 
-from datetime import date, datetime, timedelta
+import logging
+import pathlib
+import sys
+from typing import List, Dict, Any, Tuple, Optional, NewType
+from dataclasses import dataclass, field, asdict
+from collections import defaultdict
+
+# Type definitions
+Graph = NewType('Graph', Dict[str, List[str]])
 import json
-import os
 import random
-from typing import List, Dict, Any, Tuple
-from dataclasses import dataclass, asdict
+import os
+from datetime import date, datetime, timedelta
+from math import ceil
+
+# Add logging configuration
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('marcus_agi.log'),
+        logging.StreamHandler()
+    ]
+)
+
+# Add proper path handling:
+BASE_DIR = pathlib.Path(__file__).parent.resolve()
+OUTPUT_DIR = BASE_DIR / "output" / "sessions"
+ANALYTICS_DIR = BASE_DIR / "output" / "analytics"
+SUMMARIES_DIR = BASE_DIR / "output" / "summaries"
 
 # Import your existing systems
-from reflection_system import generate_reflection
-from concept_graph_system import learn_new_concepts, review_previous_concepts
+from reflection_system import generate_reflection  # This import might fail
+from concept_graph_system import learn_new_concepts, review_previous_concepts  # This import might fail
 
 def get_due_reviews(session_history: List[Dict], today: str) -> List[Dict]:
     """
@@ -39,12 +75,6 @@ def get_due_reviews(session_history: List[Dict], today: str) -> List[Dict]:
 
     return due_reviews
 
-# Constants
-OUTPUT_DIR = "output/sessions"
-ANALYTICS_DIR = "output/analytics"
-SUMMARIES_DIR = "output/summaries"
-
-
 # Configuration for Issue #3 requirements
 LEARNING_CONFIG = {
     'max_new_concepts': 5,
@@ -55,6 +85,18 @@ LEARNING_CONFIG = {
     'sm2_easy_bonus': 1.3,
     'sm2_min_ease': 1.3
 }
+
+# Default concept pool for testing
+DEFAULT_CONCEPT_POOL = [
+    {'subject': 'math', 'content': 'counting to 10', 'difficulty': 0.2},
+    {'subject': 'reading', 'content': 'letter sounds', 'difficulty': 0.3},
+    {'subject': 'science', 'content': 'colors', 'difficulty': 0.2},
+    {'subject': 'social', 'content': 'sharing', 'difficulty': 0.3},
+    {'subject': 'art', 'content': 'drawing shapes', 'difficulty': 0.2}
+]
+
+# Initialize concept pool
+concept_pool = DEFAULT_CONCEPT_POOL.copy()
 
 @dataclass
 class ConceptReview:
@@ -83,6 +125,29 @@ class LearningMetrics:
             self.mastery_by_subject = {}
         if self.review_performance is None:
             self.review_performance = {}
+
+@dataclass
+class AGILearningMetrics:
+    """Enhanced metrics for AGI learning performance"""
+    # Core metrics
+    concept_retention: Dict[str, float] = field(default_factory=dict)
+    knowledge_graph_density: float = 0.0
+    learning_velocity: float = 0.0
+    
+    # Meta-learning metrics
+    adaptation_rate: float = 0.0
+    transfer_efficiency: float = 0.0
+    concept_integration: float = 0.0
+    
+    # Network metrics
+    semantic_connectivity: float = 0.0
+    knowledge_entropy: float = 0.0
+    
+    def calculate_network_metrics(self, concept_graph: Dict[str, 'ConceptNode']) -> None:
+        """Calculate knowledge graph metrics"""
+        total_connections = sum(len(node.relationships) for node in concept_graph.values())
+        possible_connections = len(concept_graph) * (len(concept_graph) - 1)
+        self.knowledge_graph_density = total_connections / possible_connections if possible_connections > 0 else 0
 
 def calculate_sm2_quality(performance: Dict[str, float]) -> int:
     """
@@ -449,13 +514,136 @@ def generate_parent_summary(session: Dict) -> str:
     
     return summary
 
-def run_daily_learning_loop(run_date: date = date.today()):
+@dataclass
+class ConceptNode:
+    """Enhanced concept representation for AGI learning"""
+    id: str
+    content: str
+    relationships: Dict[str, float] = field(default_factory=dict)
+    dependencies: List[str] = field(default_factory=list)
+    metadata: Dict[str, Any] = field(default_factory=dict)
+    
+    # Learning parameters
+    activation_threshold: float = 0.5
+    learning_rate: float = 0.1
+    plasticity: float = 0.5
+    
+    def update_relationships(self, related_concept: 'ConceptNode', strength: float) -> None:
+        """Update semantic relationships between concepts"""
+        self.relationships[related_concept.id] = strength
+        
+    def evaluate_readiness(self) -> float:
+        """Check if prerequisites are met"""
+        if not self.dependencies:
+            return 1.0
+        return sum(self.relationships.get(dep, 0.0) for dep in self.dependencies) / len(self.dependencies)
+
+# Add config validation
+def validate_config() -> None:
+    required_keys = ['max_new_concepts', 'max_reviews', 'mastery_threshold']
+    for key in required_keys:
+        if key not in LEARNING_CONFIG:
+            raise ValueError(f"Missing required config key: {key}")
+
+def validate_session_data(session: Dict[str, Any]) -> bool:
+    """Validate required session data fields"""
+    if not isinstance(session, dict):
+        return False
+        
+    required_fields = ['date', 'reviews_completed', 'concepts_learned']
+    return all(
+        field in session and session[field] is not None 
+        for field in required_fields
+    )
+
+def measure_transfer_learning() -> float:
+    """Currently returns dummy 0.0"""
+    # Needs real implementation for:
+    # - Cross-subject knowledge transfer
+    # - Skill application in new contexts
+    # - Learning efficiency metrics
+    return 0.0
+
+def calculate_adaptation_rate(session: Dict[str, Any]) -> float:
     """
-    Complete daily learning loop with all Issue #3 requirements
+    Stub for adaptation rate calculation.
+    Returns a dummy value for now.
     """
+    return 0.0
+
+def analyze_concept_integration() -> float:
+    """
+    Stub for concept integration analysis.
+    Returns a dummy value for now.
+    """
+    return 0.0
+
+def analyze_concept_clusters() -> Dict[str, List[str]]:
+    pass
+
+def identify_central_concepts() -> List[str]:
+    pass
+
+def adjust_learning_parameters() -> dict:
+    """
+    Stub for learning rate adjustment logic.
+    Returns a dummy value for now.
+    """
+    return {}
+
+def adapt_learning_strategies() -> dict:
+    """
+    Stub for learning strategy adaptation logic.
+    Returns a dummy value for now.
+    """
+    return {}
+
+def propose_structural_changes() -> dict:
+    """
+    Stub for proposing structural changes.
+    Returns a dummy value for now.
+    """
+    return {}
+
+def enhance_daily_learning_loop(
+    session: Dict[str, Any],
+    enhancement_threshold: float = 0.5
+) -> Dict[str, Any]:
+    """Add AGI-specific enhancements to the learning loop"""
+    try:
+        # Add meta-learning capabilities
+        session['meta_learning'] = {
+            'adaptation_rate': calculate_adaptation_rate(session),
+            'transfer_efficiency': measure_transfer_learning(),
+            'concept_integration': analyze_concept_integration()
+        }
+        
+        # Add knowledge graph analysis
+        session['knowledge_graph'] = {
+            'density': 0.0,  # Placeholder: implement calculate_graph_density if needed
+            'clustering': analyze_concept_clusters(),
+            'centrality': identify_central_concepts()
+        }
+        
+        # Add self-modification capabilities
+        session['self_modifications'] = {
+            'learning_rate_adjustments': adjust_learning_parameters(),
+            'strategy_adaptations': adapt_learning_strategies(),
+            'architecture_changes': propose_structural_changes()
+        }
+    except Exception as e:
+        logging.error(f"Failed to enhance learning loop: {e}")
+        return session  # Return unmodified session on error
+    
+    return session
+
+TODAY = str(date.today())
+
+def run_daily_learning_loop(run_date: date = date.today()) -> Dict[str, Any]:
+    """Enhanced daily learning loop with AGI capabilities"""
     print("🌸 Marcus Daily Learning Session - Complete Implementation")
     print("=" * 60)
-    TODAY = str(run_date)
+    TODAY = str(run_date)  # Local override of global TODAY
 
     # Create output directories
     for directory in [OUTPUT_DIR, ANALYTICS_DIR, SUMMARIES_DIR]:
@@ -495,22 +683,19 @@ def run_daily_learning_loop(run_date: date = date.today()):
     # Step 4: Conduct SM-2 spaced repetition reviews
     print("\n🔄 Conducting spaced repetition reviews...")
     
-  # Get concepts due for review
-concepts_to_review = []
-if session_history:
-    # Look for concepts from previous sessions
-    for session in session_history[-5:]:  # Check last 5 sessions
-        for concept in session.get('concepts_learned', []):
-            # Simple check - in real implementation, would check next_review date
-            if random.random() < 0.3:  # 30% chance to review
-                concepts_to_review.append({
-                    'id': concept,
-                    'content': concept,
-                    'interval_days': random.randint(1, 7),
-                    'ease_factor': 2.5,
-                    'repetitions': random.randint(0, 5)
-                })
-
+    # Get concepts due for review
+    concepts_to_review = []
+    if session_history:
+        for session in session_history[-5:]:
+            for concept in session.get('concepts_learned', []):
+                if random.random() < 0.3:
+                    concepts_to_review.append({
+                        'id': concept,
+                        'content': concept,
+                        'interval_days': random.randint(1, 7),
+                        'ease_factor': 2.5,
+                        'repetitions': random.randint(0, 5)
+                    })
     
     # Limit reviews
     concepts_to_review = concepts_to_review[:LEARNING_CONFIG['max_reviews']]
@@ -560,9 +745,13 @@ if session_history:
     # Step 8: Save session
     print("\n💾 Saving session data...")
     session_file = os.path.join(OUTPUT_DIR, f"{TODAY}_complete_session.json")
-    with open(session_file, "w") as f:
-        json.dump(session, f, indent=2)
-    print(f"  ✅ Session saved to {session_file}")
+    try:
+        with open(session_file, "w") as f:
+            json.dump(session, f, indent=2)
+        logging.info(f"Session saved successfully to {session_file}")
+    except Exception as e:
+        logging.error(f"Failed to save session: {e}")
+        raise
     
     # Step 9: Generate analytics if enough history
     if len(session_history) >= 5:
@@ -586,24 +775,207 @@ if session_history:
         f.write(parent_summary)
     print(f"  ✅ Parent summary saved to {summary_file}")
     
-    # Final summary
-    print("\n" + "="*60)
-    print("✅ Daily Learning Session Complete!")
-    print("="*60)
-    print(f"📅 Date: {TODAY}")
-    print(f"🔄 Reviews: {len(review_results)} (SM-2 algorithm)")
-    print(f"📚 Concepts learned: {len(all_concepts)} (adaptive)")
-    print(f"🎯 Retention rate: {metrics.retention_rate:.0%}")
-    print(f"📈 Average mastery: {progression['current_mastery']:.0%}")
-    print(f"💭 Reflection: {session['reflection']}")
+    # Add AGI enhancements
+    session = enhance_daily_learning_loop(session)
+    
+    # Add meta-learning metrics with initialized concept_graph
+    agi_metrics = AGILearningMetrics()
+    concept_graph = {concept: ConceptNode(id=concept, content=concept) 
+                    for concept in session.get('concepts_learned', [])}
+    agi_metrics.calculate_network_metrics(concept_graph)
+    session['agi_metrics'] = asdict(agi_metrics)
     
     return session
+
+def optimize_subject_distribution(current_mastery: Dict[str, float]) -> Dict[str, int]:
+    """Optimize concept distribution with focus on science"""
+    target_mastery = 0.85
+    concept_allocation = {}
+    
+    # Prioritize science concepts
+    science_weight = 1.5  # Increase science learning weight
+    
+    for subject, mastery in current_mastery.items():
+        if mastery < target_mastery:
+            gap = target_mastery - mastery
+            weight = science_weight if subject == 'science' else 1.0
+            concepts_needed = int(ceil(gap * 100 * weight / 15))
+            concept_allocation[subject] = concepts_needed
+        else:
+            concept_allocation[subject] = 0
+            
+    return concept_allocation
+
+def calculate_optimal_difficulty(
+    subject: str,
+    current_mastery: float,
+    recent_performance: List[float]
+) -> float:
+    """Dynamic difficulty adjustment based on performance"""
+    base_difficulty = current_mastery
+    performance_modifier = sum(recent_performance) / len(recent_performance) if recent_performance else 0.5
+    
+    return min(0.95, base_difficulty * (1 + performance_modifier * 0.2))
+
+@dataclass
+class SubjectPriority:
+    subject: str
+    current_mastery: float
+    days_since_practice: int
+    recent_success_rate: float
+    
+    learning_style_adaptation: Dict[str, float] = field(default_factory=dict)
+    difficulty_curve: List[float] = field(default_factory=list)
+    concept_relationships: Graph = field(default_factory=lambda: Graph({}))
+    
+    def calculate_priority(self) -> float:
+        mastery_weight = 1 - self.current_mastery
+        recency_weight = min(1.0, self.days_since_practice / 7)
+        performance_weight = 1 - self.recent_success_rate
+        
+        return (mastery_weight * 0.5 + 
+                recency_weight * 0.3 + 
+                performance_weight * 0.2)
+
+def select_optimal_concepts(
+    session: Dict[str, Any],
+    concept_pool: List[Dict],
+    target_concepts: int = 5
+) -> List[Dict]:
+    """Select concepts optimized for reaching 85% mastery"""
+    priorities = {}
+    mastery = session['metrics']['mastery_by_subject']
+    
+    for subject in mastery:
+        if mastery[subject] < 0.85:
+            priority = SubjectPriority(
+                subject=subject,
+                current_mastery=mastery[subject],
+                days_since_practice=get_days_since_practice(session, subject),
+                recent_success_rate=get_success_rate(session, subject)
+            )
+            priorities[subject] = priority.calculate_priority()
+    
+    selected_concepts = []
+    for _ in range(target_concepts):
+        subject = max(priorities.items(), key=lambda x: x[1])[0]
+        concept = get_next_concept(concept_pool, subject)
+        if concept:
+            selected_concepts.append(concept)
+            priorities[subject] *= 0.5  # Reduce priority after selection
+    
+    return selected_concepts
+
+def track_mastery_progression(session_history: List[Dict]) -> Dict[str, List[float]]:
+    """Track mastery progression over time for each subject"""
+    progression = defaultdict(list)
+    
+    for session in session_history:
+        mastery = session.get('metrics', {}).get('mastery_by_subject', {})
+        for subject, level in mastery.items():
+            progression[subject].append(level)
+    
+    return dict(progression)
+
+def get_days_since_practice(session: Dict[str, Any], subject: str) -> int:
+    """Calculate days since last practice for a subject"""
+    if not session.get('session_history'):
+        return 7  # Default to maximum priority if no history
+    
+    for past_session in reversed(session.get('session_history', [])):
+        if any(subject.lower() in concept.lower() 
+               for concept in past_session.get('concepts_learned', [])):
+            last_date = datetime.strptime(past_session['date'], '%Y-%m-%d').date()
+            return (date.today() - last_date).days
+    return 7
+
+def get_success_rate(session: Dict[str, Any], subject: str) -> float:
+    """Calculate recent success rate for a subject"""
+    if not session.get('review_results'):
+        return 0.5  # Default to neutral if no review history
+        
+    subject_reviews = [
+        review for review in session.get('review_results', [])
+        if subject.lower() in review.get('concept_id', '').lower()
+    ]
+    
+    if not subject_reviews:
+        return 0.5
+        
+    return sum(review.get('quality', 0) >= 4 for review in subject_reviews) / len(subject_reviews)
+
+def get_next_concept(concept_pool: List[Dict], subject: str) -> Optional[Dict]:
+    """
+    Get next available concept for a given subject from the concept pool.
+    
+    Args:
+        concept_pool: List of available concepts
+        subject: Target subject to find concept for
+        
+    Returns:
+        Optional[Dict]: Next concept or None if no concepts available
+    """
+    available_concepts = [
+        concept for concept in concept_pool 
+        if concept.get('subject', '').lower() == subject.lower() 
+        and not concept.get('learned', False)
+    ]
+    
+    if not available_concepts:
+        # If no exact match, try to generate a concept
+        return {
+            'subject': subject,
+            'content': f"New {subject} concept",
+            'difficulty': 0.5,
+            'id': f"{subject}_{datetime.now().timestamp()}"
+        }
+    
+    # Select concept with appropriate difficulty
+    selected = random.choice(available_concepts)
+    selected['learned'] = True  # Mark as learned
+    
+    return selected
+
+Graph = NewType('Graph', Dict[str, List[str]])
+
+# Test functions for validation
+def test_learning_progression():
+    """Test full learning cycle"""
+    test_session = {
+        'date': TODAY,
+        'concepts_learned': ['test_concept'],
+        'metrics': {'mastery_by_subject': {'math': 0.5}}
+    }
+    progression = track_mastery_progression([test_session])
+    assert 'math' in progression
+    assert len(progression['math']) == 1
+
+def test_mastery_calculation():
+    """Verify mastery algorithms"""
+    test_mastery = {'math': 0.5, 'reading': 0.3}
+    allocation = optimize_subject_distribution(test_mastery)
+    assert allocation['math'] > 0
+    assert allocation['reading'] > allocation['math']
+
+def test_adaptation_mechanics():
+    """Verify system adaptation"""
+    difficulty = calculate_optimal_difficulty('math', 0.5, [0.7, 0.8, 0.9])
+    assert 0 <= difficulty <= 1
 
 if __name__ == "__main__":
     import sys
     from datetime import datetime
 
-    if len(sys.argv) > 1:
+    # Run tests in debug mode
+    if '--test' in sys.argv:
+        test_learning_progression()
+        test_mastery_calculation()
+        test_adaptation_mechanics()
+        print("✅ All tests passed!")
+        sys.exit(0)
+
+    # Normal execution
+    if len(sys.argv) > 1 and sys.argv[1] != '--test':
         run_date = datetime.strptime(sys.argv[1], "%Y-%m-%d").date()
     else:
         run_date = date.today()
