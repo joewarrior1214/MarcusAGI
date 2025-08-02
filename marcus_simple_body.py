@@ -8,7 +8,15 @@ import numpy as np
 import json
 from datetime import datetime
 from typing import Dict, List, Tuple, Any
-from MarcusAGI.memory_system import MarcusMemorySystem
+
+try:
+    from MarcusAGI.memory_system import MarcusMemorySystem
+except ImportError:
+    try:
+        from memory_system import MarcusMemorySystem
+    except ImportError:
+        # Fallback for testing
+        MarcusMemorySystem = None
 
 class MarcusGridWorld:
     """A simple 2D grid world for Marcus to explore and learn physics"""
@@ -379,7 +387,10 @@ class EmbodiedLearning:
     
     def __init__(self, world: MarcusGridWorld):
         self.world = world
-        self.memory_system = MarcusMemorySystem("marcus_embodied.db")
+        if MarcusMemorySystem:
+            self.memory_system = MarcusMemorySystem("marcus_embodied.db")
+        else:
+            self.memory_system = None
         self.concept_mappings = {}  # Add this missing line!
     
     def explore_and_learn(self, num_actions: int = 20):
@@ -474,14 +485,15 @@ class EmbodiedLearning:
                 logging.getLogger('MarcusAGI.memory_system').setLevel(logging.WARNING)
                 logging.getLogger('memory_system').setLevel(logging.WARNING)
                 
-                from MarcusAGI.memory_system import Concept
-                concept = Concept(
-                    id=f"physics_{concept_key}_{len(self.concept_mappings[concept_key])}",
-                    content=concept_content,
-                    subject="physics",
-                    grade_level="kindergarten",
-                    emotional_context="discovered"
-                )
-                self.memory_system.learn_concept(concept)
+                if self.memory_system:
+                    from MarcusAGI.memory_system import Concept
+                    concept = Concept(
+                        id=f"physics_{concept_key}_{len(self.concept_mappings[concept_key])}",
+                        content=concept_content,
+                        subject="physics",
+                        grade_level="kindergarten",
+                        emotional_context="discovered"
+                    )
+                    self.memory_system.learn_concept(concept)
             except Exception:
                 pass  # Silent fail
