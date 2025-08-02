@@ -114,17 +114,22 @@ class ConceptReview:
 @dataclass
 class LearningMetrics:
     """Comprehensive learning metrics for Issue #3"""
-    retention_rate: float = 0.0
-    learning_velocity: int = 0
-    difficulty_progression: float = 0.0
-    mastery_by_subject: Dict[str, float] = None
-    review_performance: Dict[str, float] = None
+    subject_mastery: Dict[str, float]
+    review_success_rate: float
+    concept_acquisition_rate: float
+    adaptive_difficulty: float
     
-    def __post_init__(self):
-        if self.mastery_by_subject is None:
-            self.mastery_by_subject = {}
-        if self.review_performance is None:
-            self.review_performance = {}
+    def calculate_learning_velocity(self) -> float:
+        """Calculate rate of learning progress"""
+        return (self.review_success_rate * 0.6 + 
+                self.concept_acquisition_rate * 0.4) * 
+                self.adaptive_difficulty
+
+    def get_optimal_difficulty(self) -> float:
+        """Determine optimal challenge level"""
+        return min(1.0, self.subject_mastery.get(
+            max(self.subject_mastery, key=self.subject_mastery.get), 0
+        ) + 0.2)
 
 @dataclass
 class AGILearningMetrics:
@@ -503,11 +508,6 @@ def generate_parent_summary(session: Dict) -> str:
             summary += f"\n💡 Focus area: {progression['weakest_subject']}"
     
     # Add reflection
-    summary += f"\n\n💭 Marcus's Reflection:\n\"{session.get('reflection', 'Today was a good day for learning!')}\"\n"
-    
-    # Add metrics if available
-    if 'metrics' in session:
-        metrics = session['metrics']
         summary += f"\n📈 Learning Stats:\n"
         summary += f"• Retention rate: {metrics.get('retention_rate', 0):.0%}\n"
         summary += f"• Learning speed: {metrics.get('learning_velocity', 0)} concepts/session\n"
@@ -537,6 +537,19 @@ class ConceptNode:
         if not self.dependencies:
             return 1.0
         return sum(self.relationships.get(dep, 0.0) for dep in self.dependencies) / len(self.dependencies)
+
+# Replace these imports with default functions
+def generate_reflection() -> str:
+    """Temporary reflection generator"""
+    return "Today's learning session was productive."
+
+def learn_new_concepts() -> List[str]:
+    """Temporary concept generator"""
+    return ["counting objects (math)", "sight word: the (reading)"]
+
+def review_previous_concepts(history: List[Dict]) -> List[str]:
+    """Temporary review generator"""
+    return ["using kind words (social)", "bigger and smaller (math)"]
 
 # Add config validation
 def validate_config() -> None:
@@ -621,19 +634,6 @@ def enhance_daily_learning_loop(
         # Add knowledge graph analysis
         session['knowledge_graph'] = {
             'density': 0.0,  # Placeholder: implement calculate_graph_density if needed
-            'clustering': analyze_concept_clusters(),
-            'centrality': identify_central_concepts()
-        }
-        
-        # Add self-modification capabilities
-        session['self_modifications'] = {
-            'learning_rate_adjustments': adjust_learning_parameters(),
-            'strategy_adaptations': adapt_learning_strategies(),
-            'architecture_changes': propose_structural_changes()
-        }
-    except Exception as e:
-        logging.error(f"Failed to enhance learning loop: {e}")
-        return session  # Return unmodified session on error
     
     return session
 
